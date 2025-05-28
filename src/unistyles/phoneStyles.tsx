@@ -1,22 +1,22 @@
-import { createStyleSheet } from "react-native-unistyles";
-import { Colors } from "./Constants";
+import {createStyleSheet} from 'react-native-unistyles';
+import {Colors} from './Constants';
 
 export const shadowStyle = {
-    shadowOffset: { width: 1, height: 1 },
+    shadowOffset: {width: 1, height: 1},
     shadowOpacity: 0.4,
     elevation: 5,
     shadowRadius: 4,
     shadowColor: Colors.lightText,
     borderColor: Colors.border,
     borderRadius: 10,
-}
+};
 
-export const phoneStyles = createStyleSheet(({ colors, fonts, border }) => ({
+export const phoneStyles = createStyleSheet(({colors, fonts, border}) => ({
     container: {
         gap: 10,
         flexDirection: 'row',
         alignItems: 'center',
-        marginVertical: 15
+        marginVertical: 15,
     },
     countryPickerContainer: {
         backgroundColor: '#fff',
@@ -41,13 +41,13 @@ export const phoneStyles = createStyleSheet(({ colors, fonts, border }) => ({
     input: {
         height: 45,
         fontFamily: fonts.Medium,
-        width:"100%"
+        width: '100%',
     },
     socialContainer: {
         flexDirection: 'row',
-        alignItems: "center",
+        alignItems: 'center',
         gap: 60,
-        marginTop: 20
+        marginTop: 20,
     },
     iconContainer: {
         width: 50,
@@ -55,12 +55,11 @@ export const phoneStyles = createStyleSheet(({ colors, fonts, border }) => ({
         ...shadowStyle,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colors.background
+        backgroundColor: colors.background,
     },
     gimg: {
         width: 20,
         height: 20,
-        resizeMode: 'contain'
-    }
-
-}))
+        resizeMode: 'contain',
+    },
+}));

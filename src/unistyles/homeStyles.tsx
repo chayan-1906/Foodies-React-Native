@@ -1,12 +1,12 @@
-import { RFValue } from "react-native-responsive-fontsize";
-import { createStyleSheet } from "react-native-unistyles";
-import { isBannerHeight } from "./Constants";
-import { Platform } from "react-native";
+import {RFValue} from 'react-native-responsive-fontsize';
+import {createStyleSheet} from 'react-native-unistyles';
+import {isBannerHeight} from './Constants';
+import {Platform} from 'react-native';
 
-export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
+export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     container: {
         flex: 1,
-        backgroundColor: colors.background
+        backgroundColor: colors.background,
     },
     topHidingContainer: {
         marginTop: isBannerHeight,
@@ -19,12 +19,12 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
     },
     animatedText: {
         fontSize: RFValue(10.5),
-        fontFamily: 'Okra-Bold'
+        fontFamily: 'Okra-Bold',
     },
     animatedSubText: {
         fontSize: RFValue(7),
         lineHeight: 9,
-        fontFamily: 'Okra-Bold'
+        fontFamily: 'Okra-Bold',
     },
     exploreContainer: {
         marginVertical: 10,
@@ -33,10 +33,10 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
         width: device.width,
         backgroundColor: colors.primary,
         height: Platform.OS === 'android' ? device.height * 0.54 : device.height * 0.6,
-        justifyContent: "flex-end",
-        position: "absolute",
+        justifyContent: 'flex-end',
+        position: 'absolute',
         zIndex: -3,
-        alignSelf: 'center'
+        alignSelf: 'center',
     },
     lottie: {
         width: '100%',
@@ -54,7 +54,7 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
     flexRowGap: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 4
+        gap: 4,
     },
     flexRow: {
         flexDirection: 'row',
@@ -64,20 +64,20 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
         paddingVertical: 2,
         paddingHorizontal: 5,
         borderRadius: border.md,
-        justifyContent: "center",
+        justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colors.background
+        backgroundColor: colors.background,
     },
     translationIcon: {
         resizeMode: 'contain',
         width: 32,
-        height: 32
+        height: 32,
     },
     profileImage: {
         width: '100%',
         height: '100%',
         borderRadius: border.full,
-        resizeMode: 'contain'
+        resizeMode: 'contain',
     },
     goldenCircle: {
         width: 50,
@@ -93,24 +93,24 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
         height: 40,
         borderRadius: border.full,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
 
     vegMode: {
         width: '15%',
         top: 3,
-        justifyContent: "center",
-        alignItems: 'center'
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     switch: {
         width: 35,
         height: 35,
-        resizeMode: "contain",
-        bottom: 2
+        resizeMode: 'contain',
+        bottom: 2,
     },
     searchInputContainer: {
         backgroundColor: '#F3F4F7',
-        shadowOffset: { width: 1, height: 1 },
+        shadowOffset: {width: 1, height: 1},
         shadowOpacity: 0.7,
         elevation: 5,
         shadowRadius: 6,
@@ -127,22 +127,22 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
     textContainer: {
         width: '80%',
         paddingLeft: 10,
-        height: 48
+        height: 48,
     },
     divider: {
         width: 1,
         height: 24,
         backgroundColor: '#ddd',
-        marginHorizontal: 10
+        marginHorizontal: 10,
     },
     padding: {
-        padding: 10
+        padding: 10,
     },
     flexRowCenter: {
         alignSelf: 'center',
         justifyContent: 'center',
         alignItems: 'center',
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     leftTab: (isActive: boolean) => ({
         justifyContent: 'center',
@@ -154,7 +154,7 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
         borderWidth: 1,
         borderColor: isActive ? colors.active : colors.border,
         borderTopLeftRadius: 8,
-        borderBottomLeftRadius: 8
+        borderBottomLeftRadius: 8,
     }),
     rightTab: (isActive: boolean) => ({
         justifyContent: 'center',
@@ -167,7 +167,6 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
         borderWidth: 1,
         borderColor: isActive ? colors.active : colors.border,
         borderTopRightRadius: 8,
-        borderBottomRightRadius: 8
+        borderBottomRightRadius: 8,
     }),
-
-}))
+}));

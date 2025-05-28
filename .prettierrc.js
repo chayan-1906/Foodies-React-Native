@@ -7,5 +7,5 @@ module.exports = {
     singleQuote: true,
     trailingComma: 'all',
     printWidth: 400,
-    endOfLine: "lf"
+    endOfLine: 'lf',
 };

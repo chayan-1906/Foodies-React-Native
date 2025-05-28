@@ -1,18 +1,18 @@
-import { createStyleSheet } from 'react-native-unistyles';
-import { screenHeight, screenWidth } from './Constants';
+import {createStyleSheet} from 'react-native-unistyles';
+import {screenHeight, screenWidth} from './Constants';
 
-export const cartStyles = createStyleSheet(({ device, colors, border }) => ({
+export const cartStyles = createStyleSheet(({device, colors, border}) => ({
     cartContainer: {
         position: 'absolute',
         bottom: 0,
         width: '100%',
         backgroundColor: colors.background,
         alignItems: 'center',
-        paddingVertical: 10
+        paddingVertical: 10,
     },
     expandedCartContainer: {
         justifyContent: 'flex-end',
-        paddingVertical: 10
+        paddingVertical: 10,
     },
     moreButton: {
         backgroundColor: colors.background,
@@ -28,14 +28,14 @@ export const cartStyles = createStyleSheet(({ device, colors, border }) => ({
         borderRadius: 100,
         paddingHorizontal: 10,
         paddingVertical: 4,
-        shadowOffset: { width: 1, height: 1 },
+        shadowOffset: {width: 1, height: 1},
         shadowOpacity: 0.3,
         elevation: 5,
         shadowRadius: 5,
         shadowColor: colors.lightText,
     },
     cartItemContainer: {
-        flexDirection: "row",
+        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: 8,
@@ -43,28 +43,28 @@ export const cartStyles = createStyleSheet(({ device, colors, border }) => ({
         borderWidth: 0.5,
         borderRadius: 10,
         borderColor: colors.border,
-        shadowOffset: { width: 1, height: 1 },
+        shadowOffset: {width: 1, height: 1},
         shadowOpacity: 0.1,
         elevation: 5,
         shadowRadius: 1.5,
         shadowColor: colors.lightText,
         backgroundColor: colors.background,
-        width: "96%",
-        alignSelf: 'center'
+        width: '96%',
+        alignSelf: 'center',
     },
     flexRowGap: {
         alignItems: 'center',
-        flexDirection: "row",
-        gap: 10
+        flexDirection: 'row',
+        gap: 10,
     },
     closeButton: {
         opacity: 0.6,
-        marginHorizontal: 10
+        marginHorizontal: 10,
     },
     flexRow: {
         alignItems: 'center',
-        flexDirection: "row",
-        marginTop: 2
+        flexDirection: 'row',
+        marginTop: 2,
     },
     cartButton: {
         backgroundColor: colors.active,
@@ -72,13 +72,13 @@ export const cartStyles = createStyleSheet(({ device, colors, border }) => ({
         paddingVertical: 5,
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 8
+        borderRadius: 8,
     },
     image: {
         width: 40,
         height: 40,
         borderRadius: 10,
-        resizeMode: 'cover'
+        resizeMode: 'cover',
     },
     contentContainer: {
         width: screenWidth,
@@ -94,7 +94,7 @@ export const cartStyles = createStyleSheet(({ device, colors, border }) => ({
         backgroundColor: 'rgba(0,0,0,0.5)',
         borderRadius: 200,
         padding: 5,
-        marginBottom: 10
+        marginBottom: 10,
     },
     absolute: {
         position: 'absolute',
@@ -114,6 +114,6 @@ export const cartStyles = createStyleSheet(({ device, colors, border }) => ({
         paddingHorizontal: 10,
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginVertical: 15
-    }
+        marginVertical: 15,
+    },
 }));

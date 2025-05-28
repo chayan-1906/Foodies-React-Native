@@ -21,9 +21,7 @@ function ScalePress({onPress, onLongPress, children, style}: ScalePressProps) {
 
     return (
         <TouchableOpacity onPress={onPress} onLongPress={onLongPress} onPressIn={onPressIn} onPressOut={onPressOut} activeOpacity={1} style={{...style}}>
-            <Animated.View style={{transform: [{scale: scaleValue}], width: '100%'}}>
-                {children}
-            </Animated.View>
+            <Animated.View style={{transform: [{scale: scaleValue}], width: '100%'}}>{children}</Animated.View>
         </TouchableOpacity>
     );
 }

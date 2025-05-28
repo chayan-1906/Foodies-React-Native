@@ -1,14 +1,14 @@
-import { createStyleSheet } from "react-native-unistyles";
-import { Colors } from "./Constants";
-import { Platform } from "react-native";
-import { RFValue } from "react-native-responsive-fontsize";
+import {createStyleSheet} from 'react-native-unistyles';
+import {Colors} from './Constants';
+import {Platform} from 'react-native';
+import {RFValue} from 'react-native-responsive-fontsize';
 
-export const restaurantStyles = createStyleSheet(({ device, colors, border }) => ({
+export const restaurantStyles = createStyleSheet(({device, colors, border}) => ({
     listContainer: {
-        paddingBottom: 300
+        paddingBottom: 300,
     },
     shadowBottom: {
-        shadowOffset: { width: 1, height: 18 },
+        shadowOffset: {width: 1, height: 18},
         shadowOpacity: 0.08,
         elevation: 5,
         shadowRadius: 10,
@@ -19,18 +19,18 @@ export const restaurantStyles = createStyleSheet(({ device, colors, border }) =>
         backgroundColor: colors.background,
         borderRadius: border.lg,
         marginBottom: 25,
-        shadowOffset: { width: 1, height: 1 },
+        shadowOffset: {width: 1, height: 1},
         shadowOpacity: 0.2,
         elevation: 5,
         shadowRadius: 10,
         shadowColor: colors.dark,
-        margin: 10
+        margin: 10,
     },
     image: {
         borderTopLeftRadius: border.lg,
         borderTopRightRadius: border.lg,
         width: '100%',
-        height: device.height * 0.30,
+        height: device.height * 0.3,
         resizeMode: 'cover',
     },
     info: {
@@ -40,7 +40,7 @@ export const restaurantStyles = createStyleSheet(({ device, colors, border }) =>
         marginBottom: 5,
     },
     details: {
-        opacity: 0.7
+        opacity: 0.7,
     },
     textContainer: {
         flexDirection: 'row',
@@ -48,7 +48,7 @@ export const restaurantStyles = createStyleSheet(({ device, colors, border }) =>
         justifyContent: 'space-between',
     },
     textPart: {
-        width: '70%'
+        width: '70%',
     },
     backToTopButton: {
         position: 'absolute',
@@ -63,25 +63,25 @@ export const restaurantStyles = createStyleSheet(({ device, colors, border }) =>
         paddingVertical: 5,
         zIndex: 999,
     },
-}))
+}));
 
 export const shadowStyle = {
     backgroundColor: Colors.background,
-    shadowOffset: { width: 1, height: 16 },
+    shadowOffset: {width: 1, height: 16},
     shadowOpacity: 0.4,
     elevation: 5,
     shadowRadius: 6,
     shadowColor: Colors.border,
-}
+};
 
-export const restaurantHeaderStyles = createStyleSheet(({ device, colors, border }) => ({
+export const restaurantHeaderStyles = createStyleSheet(({device, colors, border}) => ({
     headerContainer: {
-        flexDirection: "row",
+        flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: "space-between",
+        justifyContent: 'space-between',
         paddingVertical: 10,
         paddingHorizontal: 5,
-        ...shadowStyle
+        ...shadowStyle,
     },
     flexRowBetween: {
         flexDirection: 'row',
@@ -91,34 +91,33 @@ export const restaurantHeaderStyles = createStyleSheet(({ device, colors, border
     flexRowGap: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 8
+        gap: 8,
     },
     flexRow: {
         flexDirection: 'row',
         alignItems: 'center',
     },
     title: {
-        opacity: 0.5
+        opacity: 0.5,
     },
     sortingContainer: {
         paddingVertical: 2,
         zIndex: 2,
-        ...shadowStyle
+        ...shadowStyle,
     },
     mainPadding: {
         paddingHorizontal: 10,
     },
     scrollContainer: {
         backgroundColor: colors.background,
-        paddingBottom: 100
-    }
-}))
+        paddingBottom: 100,
+    },
+}));
 
-
-export const searchStyles = createStyleSheet(({ device, colors, border }) => ({
+export const searchStyles = createStyleSheet(({device, colors, border}) => ({
     container: {
         backgroundColor: colors.background,
-        shadowOffset: { width: 1, height: -4 },
+        shadowOffset: {width: 1, height: -4},
         shadowOpacity: 0.1,
         elevation: 5,
         shadowRadius: 5,
@@ -128,7 +127,7 @@ export const searchStyles = createStyleSheet(({ device, colors, border }) => ({
     },
     searchInputContainer: {
         backgroundColor: '#F3F4F7',
-        shadowOffset: { width: 1, height: 1 },
+        shadowOffset: {width: 1, height: 1},
         shadowOpacity: 1,
         elevation: 5,
         shadowRadius: 14,
@@ -145,17 +144,17 @@ export const searchStyles = createStyleSheet(({ device, colors, border }) => ({
     textContainer: {
         width: '80%',
         paddingLeft: 10,
-        height: 48
+        height: 48,
     },
     flexRowBetween: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingTop: 15,
-        paddingBottom: 20
+        paddingBottom: 20,
     },
     padding: {
-        padding: 10
+        padding: 10,
     },
     rollingText: {
         opacity: 0.6,
@@ -171,7 +170,7 @@ export const searchStyles = createStyleSheet(({ device, colors, border }) => ({
         height: 48,
     },
     offerContainer: {
-        overflow: 'hidden'
+        overflow: 'hidden',
     },
     offerContent: {
         flexDirection: 'row',
@@ -201,6 +200,6 @@ export const searchStyles = createStyleSheet(({ device, colors, border }) => ({
     confetti: {
         width: '100%',
         height: 400,
-        position: 'absolute'
-    }
-}))
+        position: 'absolute',
+    },
+}));

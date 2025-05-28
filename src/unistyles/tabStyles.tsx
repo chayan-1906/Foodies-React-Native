@@ -1,21 +1,20 @@
-import { RFValue } from "react-native-responsive-fontsize";
-import { createStyleSheet } from "react-native-unistyles";
-import { BOTTOM_TAB_HEIGHT } from "./Constants";
+import {RFValue} from 'react-native-responsive-fontsize';
+import {createStyleSheet} from 'react-native-unistyles';
+import {BOTTOM_TAB_HEIGHT} from './Constants';
 
-
-export const tabStyles = createStyleSheet(({ colors, fonts, device }) => ({
+export const tabStyles = createStyleSheet(({colors, fonts, device}) => ({
     tabContainer: {
         width: device.width * 0.82,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingLeft: 15
+        paddingLeft: 15,
     },
     tabBarContainer: {
         width: '100%',
         position: 'absolute',
         height: BOTTOM_TAB_HEIGHT,
-        shadowOffset: { width: 1, height: 1 },
+        shadowOffset: {width: 1, height: 1},
         shadowOpacity: 0.1,
         elevation: 5,
         shadowRadius: 11,
@@ -30,11 +29,11 @@ export const tabStyles = createStyleSheet(({ colors, fonts, device }) => ({
         marginHorizontal: 10,
         height: '60%',
         width: 1,
-        position: "absolute",
+        position: 'absolute',
         left: '55%',
         borderRadius: 20,
         opacity: 0.2,
-        backgroundColor: colors.lightText
+        backgroundColor: colors.lightText,
     },
     tabItem: {
         justifyContent: 'center',
@@ -60,7 +59,7 @@ export const tabStyles = createStyleSheet(({ colors, fonts, device }) => ({
         overflow: 'hidden',
         backgroundColor: '#F7CB46',
         borderTopLeftRadius: 6,
-        borderBottomLeftRadius: 6
+        borderBottomLeftRadius: 6,
     },
     groceryLogo: {
         width: '100%',
@@ -75,4 +74,4 @@ export const tabStyles = createStyleSheet(({ colors, fonts, device }) => ({
     focusedTabLabel: {
         color: '#fff',
     },
-}))
+}));

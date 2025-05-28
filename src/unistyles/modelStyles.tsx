@@ -1,33 +1,33 @@
-import { Platform } from "react-native";
-import { RFValue } from "react-native-responsive-fontsize";
-import { createStyleSheet } from "react-native-unistyles";
+import {Platform} from 'react-native';
+import {RFValue} from 'react-native-responsive-fontsize';
+import {createStyleSheet} from 'react-native-unistyles';
 
-export const modelStyles = createStyleSheet(({ device, border, colors }) => ({
+export const modelStyles = createStyleSheet(({device, border, colors}) => ({
     headerContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: colors.background,
-        shadowOffset: { width: 1, height: 3 },
+        shadowOffset: {width: 1, height: 3},
         shadowOpacity: 0.1,
         elevation: 5,
         shadowRadius: 2,
         zIndex: 1,
         shadowColor: colors.text,
-        padding: 10
+        padding: 10,
     },
     vegIcon: {
         width: 15,
         height: 15,
         top: 3,
-        resizeMode: "contain"
+        resizeMode: 'contain',
     },
     noShadowHeaderContainer: {
         borderBottomWidth: 1,
         borderColor: colors.border,
         backgroundColor: colors.background,
         zIndex: 1,
-        padding: 15
+        padding: 15,
     },
     flexRowGap: {
         flexDirection: 'row',
@@ -37,7 +37,7 @@ export const modelStyles = createStyleSheet(({ device, border, colors }) => ({
     flexRow: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 4
+        marginTop: 4,
     },
     flexRowItemBaseline: {
         flexDirection: 'row',
@@ -45,21 +45,21 @@ export const modelStyles = createStyleSheet(({ device, border, colors }) => ({
         justifyContent: 'space-between',
         borderBottomWidth: 1,
         paddingVertical: 10,
-        borderBottomColor: colors.border
+        borderBottomColor: colors.border,
     },
     flexRowGapBaseline: {
         flexDirection: 'row',
-        width: "70%",
+        width: '70%',
         alignItems: 'flex-start',
         gap: 10,
     },
     icon: {
         width: 30,
         height: 30,
-        justifyContent: "center",
+        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: colors.background,
-        shadowOffset: { width: 1, height: 1 },
+        shadowOffset: {width: 1, height: 1},
         shadowOpacity: 0.2,
         elevation: 5,
         shadowRadius: 3,
@@ -70,7 +70,7 @@ export const modelStyles = createStyleSheet(({ device, border, colors }) => ({
         width: 40,
         height: 40,
         resizeMode: 'cover',
-        borderRadius: 12
+        borderRadius: 12,
     },
     scrollContainer: {
         backgroundColor: colors.background_light,
@@ -84,7 +84,7 @@ export const modelStyles = createStyleSheet(({ device, border, colors }) => ({
         backgroundColor: colors.background,
         padding: 10,
         borderRadius: 10,
-        marginVertical: 10
+        marginVertical: 10,
     },
     optionContainer: {
         flexDirection: 'row',
@@ -97,14 +97,14 @@ export const modelStyles = createStyleSheet(({ device, border, colors }) => ({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: colors.background,
-        shadowOffset: { width: 1, height: -3 },
+        shadowOffset: {width: 1, height: -3},
         shadowOpacity: 0.1,
         elevation: 5,
         shadowRadius: 2,
         zIndex: 2,
         shadowColor: colors.text,
         padding: 10,
-        paddingBottom: Platform.OS === 'ios' ? 30 : 10
+        paddingBottom: Platform.OS === 'ios' ? 30 : 10,
     },
     noShadowFooterContainer: {
         flexDirection: 'row',
@@ -112,7 +112,7 @@ export const modelStyles = createStyleSheet(({ device, border, colors }) => ({
         justifyContent: 'center',
         backgroundColor: colors.background,
         padding: 15,
-        paddingBottom: Platform.OS === 'ios' ? 30 : 10
+        paddingBottom: Platform.OS === 'ios' ? 30 : 10,
     },
     selectedContainer: {
         height: 45,
@@ -124,7 +124,7 @@ export const modelStyles = createStyleSheet(({ device, border, colors }) => ({
         borderWidth: 1,
         borderColor: colors.active,
         borderRadius: 12,
-        backgroundColor: colors.active_light
+        backgroundColor: colors.active_light,
     },
     animatedCount: {
         fontSize: RFValue(16),
@@ -138,27 +138,27 @@ export const modelStyles = createStyleSheet(({ device, border, colors }) => ({
         width: '65%',
         justifyContent: 'center',
         alignItems: 'center',
-        height: 45
+        height: 45,
     },
     selectedOptions: {
         opacity: 0.6,
-        marginTop: 2
+        marginTop: 2,
     },
     cartOperationContainer: {
         width: '25%',
-        alignItems: "flex-end",
-        justifyContent: 'flex-end'
+        alignItems: 'flex-end',
+        justifyContent: 'flex-end',
     },
     miniAddButtonContainer: {
         backgroundColor: colors.active_light,
         borderRadius: 10,
         borderWidth: 1,
-        flexDirection: "row",
+        flexDirection: 'row',
         borderColor: colors.border,
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingHorizontal: 10,
-        height: 30
+        height: 30,
     },
     miniAnimatedCount: {
         fontSize: RFValue(12),
@@ -167,4 +167,4 @@ export const modelStyles = createStyleSheet(({ device, border, colors }) => ({
         marginHorizontal: 12,
         marginLeft: 14,
     },
-}))
+}));

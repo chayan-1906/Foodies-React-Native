@@ -6,19 +6,13 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 function Icon({color, size, name, iconFamily}: IconProps) {
     return (
         <>
-            {iconFamily === 'Ionicons' && (
-                <Ionicons name={name} size={size} color={color}/>
-            )}
+            {iconFamily === 'Ionicons' && <Ionicons name={name} size={size} color={color} />}
 
-            {iconFamily === 'MaterialIcons' && (
-                <MaterialIcons name={name} size={size} color={color}/>
-            )}
+            {iconFamily === 'MaterialIcons' && <MaterialIcons name={name} size={size} color={color} />}
 
-            {iconFamily === 'MaterialCommunityIcons' && (
-                <MaterialCommunityIcons name={name} size={size} color={color}/>
-            )}
+            {iconFamily === 'MaterialCommunityIcons' && <MaterialCommunityIcons name={name} size={size} color={color} />}
         </>
-    )
+    );
 }
 
 export default Icon;

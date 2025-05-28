@@ -1,12 +1,12 @@
-import { createStyleSheet } from "react-native-unistyles";
+import {createStyleSheet} from 'react-native-unistyles';
 
-export const cardStyles = createStyleSheet(({ colors, device, border }) => ({
+export const cardStyles = createStyleSheet(({colors, device, border}) => ({
     recommendedContainer: {
         marginTop: 25,
-        paddingLeft:10
+        paddingLeft: 10,
     },
     mainPadding: {
-        padding: 10
+        padding: 10,
     },
     regularFoodContainer: {
         marginVertical: 10,
@@ -23,7 +23,7 @@ export const cardStyles = createStyleSheet(({ colors, device, border }) => ({
     regularFoodImage: {
         width: device.width * 0.28,
         height: device.width * 0.28,
-        resizeMode: 'cover'
+        resizeMode: 'cover',
     },
     bookmarkIcon: {
         position: 'absolute',
@@ -34,7 +34,7 @@ export const cardStyles = createStyleSheet(({ colors, device, border }) => ({
     bookmarkIconImage: {
         width: 15,
         height: 18,
-        resizeMode: 'contain'
+        resizeMode: 'contain',
     },
     itemImage: {
         width: '100%',
@@ -44,16 +44,16 @@ export const cardStyles = createStyleSheet(({ colors, device, border }) => ({
         position: 'absolute',
         bottom: 8,
         left: 8,
-        zIndex: 2
+        zIndex: 2,
     },
     flexRow: {
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     clockIcon: {
         width: 14,
         height: 14,
-        resizeMode: 'contain'
+        resizeMode: 'contain',
     },
     itemInfo: {
         marginTop: 8,
@@ -62,12 +62,11 @@ export const cardStyles = createStyleSheet(({ colors, device, border }) => ({
         borderRadius: 12,
         overflow: 'hidden',
         borderWidth: 1,
-        borderColor: colors.border
+        borderColor: colors.border,
     },
     centerText: {
         textAlign: 'center',
         opacity: 0.4,
         marginVertical: 10,
     },
-
-}))
+}));

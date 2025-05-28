@@ -1,20 +1,20 @@
-import { RFValue } from "react-native-responsive-fontsize";
-import { createStyleSheet } from "react-native-unistyles";
+import {RFValue} from 'react-native-responsive-fontsize';
+import {createStyleSheet} from 'react-native-unistyles';
 
-export const foodStyles = createStyleSheet(({ device, colors, border }) => ({
+export const foodStyles = createStyleSheet(({device, colors, border}) => ({
     container: {
-        flexDirection: "row",
+        flexDirection: 'row',
         alignItems: 'flex-start',
-        justifyContent: "space-between",
+        justifyContent: 'space-between',
         paddingVertical: 10,
         marginHorizontal: 10,
-        marginVertical: 5
+        marginVertical: 5,
     },
     vegIcon: {
         width: 15,
         height: 15,
         resizeMode: 'contain',
-        marginBottom: 10
+        marginBottom: 10,
     },
     animatedCount: {
         fontSize: RFValue(16),
@@ -25,14 +25,14 @@ export const foodStyles = createStyleSheet(({ device, colors, border }) => ({
     lowOpacity: {
         opacity: 0.5,
         marginTop: 2,
-        marginBottom: 10
+        marginBottom: 10,
     },
     infoContainer: {
         width: '57%',
-        overflow: 'hidden'
+        overflow: 'hidden',
     },
     imageContainer: {
-        width: "40%"
+        width: '40%',
     },
     addToCollectionContainer: {
         flexDirection: 'row',
@@ -43,18 +43,18 @@ export const foodStyles = createStyleSheet(({ device, colors, border }) => ({
         borderColor: colors.border,
         padding: 5,
         alignSelf: 'flex-start',
-        marginTop: 20
+        marginTop: 20,
     },
     image: {
-        width: "100%",
+        width: '100%',
         height: 130,
-        borderRadius: 15
+        borderRadius: 15,
     },
     foodImage: {
-        width: "100%",
+        width: '100%',
         height: '100%',
-        resizeMode: "cover",
-        borderRadius: 15
+        resizeMode: 'cover',
+        borderRadius: 15,
     },
 
     customizeText: {
@@ -68,7 +68,7 @@ export const foodStyles = createStyleSheet(({ device, colors, border }) => ({
         borderWidth: 0.7,
         borderRadius: 10,
         bottom: -12,
-        position: "absolute",
+        position: 'absolute',
         justifyContent: 'center',
         alignSelf: 'center',
         height: 40,
@@ -82,9 +82,9 @@ export const foodStyles = createStyleSheet(({ device, colors, border }) => ({
         alignItems: 'center',
     },
     plusSmallIcon: {
-        position: "absolute",
+        position: 'absolute',
         top: -1,
-        right: 8
+        right: 8,
     },
     selectedContainer: {
         height: '100%',
@@ -93,5 +93,5 @@ export const foodStyles = createStyleSheet(({ device, colors, border }) => ({
         alignItems: 'center',
         flexDirection: 'row',
         paddingHorizontal: 10,
-    }
-}))
+    },
+}));
