@@ -28,7 +28,7 @@ export const tabStyles = createStyleSheet(({colors, fonts, device}) => ({
     verticalLine: {
         marginHorizontal: 10,
         height: '60%',
-        width: 1,
+        width: 2,
         position: 'absolute',
         left: '55%',
         borderRadius: 20,

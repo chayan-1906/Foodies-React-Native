@@ -12,7 +12,7 @@ export const Colors = {
     active_light: '#ECFAF1',
     secondary: '#2D2D2D',
     tertiary: '#F4F4F2',
-    background: '#fff',
+    background: '#FFF',
     background_light: '#F4F6FC',
     border: '#E5E9EF',
     lightText: '#9197A6',

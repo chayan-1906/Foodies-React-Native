@@ -6,8 +6,8 @@ function LiveScreen() {
     const {styles} = useStyles(emptyStyles);
 
     return (
-        <View style={styles.container(false)}>
-            <Image source={require('@assets/images/coming_soon.jpg')} style={styles.emptyImage} />
+        <View style={styles.container(true)}>
+            <Image source={require('@assets/images/coming_soon2.jpg')} style={styles.emptyImage} />
         </View>
     );
 }

@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import SplashScreen from '@features/auth/SplashScreen.tsx';
 import LoginScreen from '@features/auth/LoginScreen.tsx';
 import screens from '@utils/screens.ts';
-import {navigationRef} from '@utils/NavigationUtils.tsx';
+import {navigationRef} from '@utils/NavigationUtils.ts';
 import AnimatedTabs from '@features/tabs/AnimatedTabs.tsx';
 
 const Stack = createNativeStackNavigator();

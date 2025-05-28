@@ -1,16 +1,17 @@
+import {Animated, Image, Text, View} from 'react-native';
+import screens from '@utils/screens.ts';
+import {tabStyles} from '@unistyles/tabStyles.tsx';
+import {Colors, screenWidth} from '@unistyles/Constants.tsx';
+import {useStyles} from 'react-native-unistyles';
+import ScalePress from '@components/ui/ScalePress.tsx';
 import {useSharedState} from '@features/tabs/SharedContext.tsx';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {useStyles} from 'react-native-unistyles';
-import {tabStyles} from '@unistyles/tabStyles.tsx';
 import {useAnimatedStyle, withTiming} from 'react-native-reanimated';
-import {Colors, screenWidth} from '@unistyles/Constants.tsx';
-import {Animated, View} from 'react-native';
-import ScalePress from '@components/ui/ScalePress.tsx';
 import {DeliveryTabIcon, DiningTabIcon, LiveTabIcon, ReorderTabIcon} from '@features/tabs/TabIcon.tsx';
-import screens from '@utils/screens.ts';
 
 function CustomTabBar({state, navigation}: BottomTabBarProps) {
+    const isVegMode = true;
     const {scrollY} = useSharedState();
     const bottom = useSafeAreaInsets();
 
@@ -35,8 +36,6 @@ function CustomTabBar({state, navigation}: BottomTabBarProps) {
             left: withTiming(baseLeft + state.index * screenWidth * slideValue),
         };
     });
-
-    console.log('state.routes', state.routes);
 
     return (
         <>
@@ -83,6 +82,21 @@ function CustomTabBar({state, navigation}: BottomTabBarProps) {
                             </ScalePress>
                         );
                     })}
+                    <View style={styles.verticalLine} />
+                </View>
+
+                {/*<Animated.View
+                    style={[
+                        styles.slidingIndicator,
+                        indicatorStyle,
+                        {
+                            backgroundColor: isLiveTabFocused ? '#FFF' : isVegMode ? Colors.active : Colors.primary,
+                        },
+                    ]}
+                />*/}
+
+                <View style={styles.groceryLogoContainer}>
+                    <Image source={require('@assets/icons/grocery.png')} style={styles.groceryLogo} />
                 </View>
             </Animated.View>
         </>

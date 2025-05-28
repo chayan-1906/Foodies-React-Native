@@ -31,6 +31,9 @@ cd ios && xcodebuild clean && cd ..
 npm run ios
 ``
 
+npx react-native log-android
+npx react-native log-ios
+
 # Resolve react_native_pods.rb with node to allow for hoisting
 
 require Pod::Executable.execute_command('node', ['-p',

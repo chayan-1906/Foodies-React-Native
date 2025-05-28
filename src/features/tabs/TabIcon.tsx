@@ -20,10 +20,7 @@ const styles = {
 };
 
 const tabStyles: ViewStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignContent: 'center',
+    alignItems: 'center',
 };
 
 const testStyleInactive: TextStyle = {
@@ -66,7 +63,7 @@ const TabIcon = memo(({name}: {name: string}) => {
 });
 
 const TabIconFocused = memo(({name}: {name: string}) => {
-    const isVegMode = false;
+    const isVegMode = true;
     let image;
     switch (name) {
         case screens.deliveryScreen.replaceAll('Screen', ''):

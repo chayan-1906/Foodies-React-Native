@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2FA96A5B03FB4B78A56B56AC /* Okra-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD3898DB871A4D3A8A0C59CA /* Okra-Bold.ttf */; };
-		3808FFE89D124E141C7D37D5 /* libPods-foodies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B6813178E023DFACCE168A /* libPods-foodies.a */; };
 		5792EF0839AD4DB892EB7A44 /* Okra-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BFA02929E724717894701E7 /* Okra-ExtraBold.ttf */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8C9488DD6A25465799A09B63 /* Okra-MediumLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F1658706494175BFE7608B /* Okra-MediumLight.ttf */; };
 		95A8B67128BC47A0919A91FC /* Okra-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D1A3F3C224548CC9124DF30 /* Okra-Medium.ttf */; };
 		9FEF2C9E46F1476088FA9159 /* Okra-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95D45F30209F4E61848C816E /* Okra-Regular.ttf */; };
+		A2C4D86CF90C8915C7D73A72 /* libPods-foodies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 555048CD8CDCA3125279CBA0 /* libPods-foodies.a */; };
 		F22963275DB830597ED0305A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
@@ -26,13 +26,13 @@
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = foodies/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		18F1658706494175BFE7608B /* Okra-MediumLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Okra-MediumLight.ttf"; path = "../src/assets/fonts/Okra-MediumLight.ttf"; sourceTree = "<group>"; };
 		1BFA02929E724717894701E7 /* Okra-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Okra-ExtraBold.ttf"; path = "../src/assets/fonts/Okra-ExtraBold.ttf"; sourceTree = "<group>"; };
+		4C376BC689B2EBF1AE687F3C /* Pods-foodies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodies.release.xcconfig"; path = "Target Support Files/Pods-foodies/Pods-foodies.release.xcconfig"; sourceTree = "<group>"; };
+		555048CD8CDCA3125279CBA0 /* libPods-foodies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-foodies.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D1A3F3C224548CC9124DF30 /* Okra-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Okra-Medium.ttf"; path = "../src/assets/fonts/Okra-Medium.ttf"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = foodies/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = foodies/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		85C85B1D5FE3ACCDF636D353 /* Pods-foodies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodies.release.xcconfig"; path = "Target Support Files/Pods-foodies/Pods-foodies.release.xcconfig"; sourceTree = "<group>"; };
-		88B6813178E023DFACCE168A /* libPods-foodies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-foodies.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FBB0CD785CFD0E127F23553 /* Pods-foodies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodies.debug.xcconfig"; path = "Target Support Files/Pods-foodies/Pods-foodies.debug.xcconfig"; sourceTree = "<group>"; };
 		95D45F30209F4E61848C816E /* Okra-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Okra-Regular.ttf"; path = "../src/assets/fonts/Okra-Regular.ttf"; sourceTree = "<group>"; };
+		A28FF791DB82969D9FFCE9CB /* Pods-foodies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodies.debug.xcconfig"; path = "Target Support Files/Pods-foodies/Pods-foodies.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FD3898DB871A4D3A8A0C59CA /* Okra-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Okra-Bold.ttf"; path = "../src/assets/fonts/Okra-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -42,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3808FFE89D124E141C7D37D5 /* libPods-foodies.a in Frameworks */,
+				A2C4D86CF90C8915C7D73A72 /* libPods-foodies.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				88B6813178E023DFACCE168A /* libPods-foodies.a */,
+				555048CD8CDCA3125279CBA0 /* libPods-foodies.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,8 +116,8 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8FBB0CD785CFD0E127F23553 /* Pods-foodies.debug.xcconfig */,
-				85C85B1D5FE3ACCDF636D353 /* Pods-foodies.release.xcconfig */,
+				A28FF791DB82969D9FFCE9CB /* Pods-foodies.debug.xcconfig */,
+				4C376BC689B2EBF1AE687F3C /* Pods-foodies.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -129,13 +129,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "foodies" */;
 			buildPhases = (
-				87B59E45F0B477DBAE416451 /* [CP] Check Pods Manifest.lock */,
+				4BA8B1786CCB6A908D1A1308 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				1BF664F15BB5C1C4D943D7AA /* [CP] Embed Pods Frameworks */,
-				B113D70AC32D767C1CE0244D /* [CP] Copy Pods Resources */,
+				222CC108BC62806C8D92C12A /* [CP] Embed Pods Frameworks */,
+				AB14B59EA59CCBBD14F50543 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,7 +212,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		1BF664F15BB5C1C4D943D7AA /* [CP] Embed Pods Frameworks */ = {
+		222CC108BC62806C8D92C12A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -229,7 +229,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-foodies/Pods-foodies-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		87B59E45F0B477DBAE416451 /* [CP] Check Pods Manifest.lock */ = {
+		4BA8B1786CCB6A908D1A1308 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -251,7 +251,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B113D70AC32D767C1CE0244D /* [CP] Copy Pods Resources */ = {
+		AB14B59EA59CCBBD14F50543 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -284,7 +284,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FBB0CD785CFD0E127F23553 /* Pods-foodies.debug.xcconfig */;
+			baseConfigurationReference = A28FF791DB82969D9FFCE9CB /* Pods-foodies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -314,7 +314,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85C85B1D5FE3ACCDF636D353 /* Pods-foodies.release.xcconfig */;
+			baseConfigurationReference = 4C376BC689B2EBF1AE687F3C /* Pods-foodies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

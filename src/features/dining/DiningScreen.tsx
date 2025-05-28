@@ -7,7 +7,7 @@ function DiningScreen() {
 
     return (
         <View style={styles.container(false)}>
-            <Image source={require('@assets/images/coming_soon2.jpg')} style={styles.emptyImage} />
+            <Image source={require('@assets/images/coming_soon.jpg')} style={styles.emptyImage} />
         </View>
     );
 }

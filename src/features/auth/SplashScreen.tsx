@@ -4,7 +4,7 @@ import {useStyles} from 'react-native-unistyles';
 import {splashStyles} from '@unistyles/authStyles.tsx';
 import CustomText from '@components/global/CustomText.tsx';
 import {useEffect} from 'react';
-import {resetAndNavigate} from '@utils/NavigationUtils.tsx';
+import {resetAndNavigate} from '@utils/NavigationUtils.ts';
 import screens from '@utils/screens.ts';
 
 function SplashScreen() {

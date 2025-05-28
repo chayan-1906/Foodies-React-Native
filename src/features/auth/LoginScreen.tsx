@@ -6,9 +6,9 @@ import CustomText from '@components/global/CustomText.tsx';
 import BreakerText from '@components/ui/BreakerText.tsx';
 import PhoneInput from '@components/ui/PhoneInput.tsx';
 import {useCallback, useEffect, useRef, useState} from 'react';
-import {resetAndNavigate} from '@utils/NavigationUtils.tsx';
+import {resetAndNavigate} from '@utils/NavigationUtils.ts';
 import SocialLogin from '@components/ui/SocialLogin.tsx';
-import useKeyboardOffsetHeight from '@utils/useKeyboardOffsetHeight.tsx';
+import useKeyboardOffsetHeight from '@utils/useKeyboardOffsetHeight.ts';
 
 function LoginScreen() {
     const animatedValue = useRef(new Animated.Value(0)).current;
@@ -23,7 +23,7 @@ function LoginScreen() {
         setTimeout(async () => {
             await resetAndNavigate(screens.userBottomTab);
             setIsLoading(false);
-        }, 2000);
+        }, 500);
     }, []);
 
     useEffect(() => {
