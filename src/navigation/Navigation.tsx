@@ -1,0 +1,23 @@
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+import SplashScreen from '@features/auth/SplashScreen.tsx';
+import LoginScreen from '@features/auth/LoginScreen.tsx';
+import screens from '@utils/screens.ts';
+import {navigationRef} from '@utils/NavigationUtils.tsx';
+import AnimatedTabs from '@features/tabs/AnimatedTabs.tsx';
+
+const Stack = createNativeStackNavigator();
+
+function Navigation() {
+    return (
+        <NavigationContainer ref={navigationRef}>
+            <Stack.Navigator initialRouteName={screens.splashScreen} screenOptions={{headerShown: false}}>
+                <Stack.Screen name={screens.splashScreen} component={SplashScreen} />
+                <Stack.Screen name={screens.loginScreen} component={LoginScreen} options={{animation: 'fade'}} />
+                <Stack.Screen name={screens.userBottomTab} component={AnimatedTabs} options={{animation: 'fade'}} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}
+
+export default Navigation;
