@@ -9,6 +9,8 @@ import CustomTabBar from '@features/tabs/CustomTabBar.tsx';
 const Tab = createBottomTabNavigator();
 
 function UserBottomTab() {
+    console.log('UserBottomTab');
+
     return (
         <Tab.Navigator tabBar={props => <CustomTabBar {...props} />} screenOptions={{headerShown: false, tabBarHideOnKeyboard: true}}>
             <Tab.Screen name={screens.deliveryScreen} component={DeliveryScreen} />

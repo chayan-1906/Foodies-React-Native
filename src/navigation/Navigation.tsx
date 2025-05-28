@@ -9,6 +9,8 @@ import AnimatedTabs from '@features/tabs/AnimatedTabs.tsx';
 const Stack = createNativeStackNavigator();
 
 function Navigation() {
+    console.log('Navigation');
+
     return (
         <NavigationContainer ref={navigationRef}>
             <Stack.Navigator initialRouteName={screens.splashScreen} screenOptions={{headerShown: false}}>
