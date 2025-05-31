@@ -1,4 +1,4 @@
-import {SafeAreaView, TouchableOpacity, View} from 'react-native';
+import {Image, SafeAreaView, TouchableOpacity, View} from 'react-native';
 import Animated, {interpolate, useAnimatedStyle} from 'react-native-reanimated';
 import {useStyles} from 'react-native-unistyles';
 import {homeStyles} from '@unistyles/homeStyles.tsx';
@@ -35,6 +35,17 @@ function LocationHeader() {
                             Lucknow, Uttar Pradesh
                         </CustomText>
                     </View>
+                </View>
+
+                <View style={styles.flexRowGap}>
+                    <TouchableOpacity style={styles.translation}>
+                        <Image source={require('@assets/icons/translation.png')} style={styles.translationIcon} />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.profileAvatar}>
+                        <Image source={require('@assets/icons/golden_circle.png')} style={styles.goldenCircle} />
+                        <Image source={require('@assets/images/user.jpg')} style={styles.profileImage} />
+                    </TouchableOpacity>
                 </View>
             </View>
         </Animated.View>

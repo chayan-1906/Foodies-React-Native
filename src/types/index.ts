@@ -52,3 +52,9 @@ export interface ScalePressProps {
     children: React.ReactNode;
     style?: ViewStyle | ViewStyle[];
 }
+
+export interface RollingBarProps {
+    interval: number;
+    defaultStyle: boolean;
+    children: React.ReactNode;
+}
