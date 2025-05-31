@@ -13,6 +13,7 @@ import ReorderFocused from '@assets/tabicons/reorder_focused.png';
 import Live from '@assets/tabicons/live.png';
 import LiveFocused from '@assets/tabicons/live_focused.png';
 import screens from '@utils/screens.ts';
+import {useAppSelector} from '@states/reduxHook.ts';
 
 const styles = {
     width: RFValue(20),
@@ -63,7 +64,7 @@ const TabIcon = memo(({name}: {name: string}) => {
 });
 
 const TabIconFocused = memo(({name}: {name: string}) => {
-    const isVegMode = true;
+    const isVegMode = useAppSelector(state => state.user.isVegMode);
     let image;
     switch (name) {
         case screens.deliveryScreen.replaceAll('Screen', ''):

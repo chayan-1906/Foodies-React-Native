@@ -9,9 +9,10 @@ import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useAnimatedStyle, withTiming} from 'react-native-reanimated';
 import {DeliveryTabIcon, DiningTabIcon, LiveTabIcon, ReorderTabIcon} from '@features/tabs/TabIcon.tsx';
+import {useAppSelector} from '@states/reduxHook.ts';
 
 function CustomTabBar({state, navigation}: BottomTabBarProps) {
-    const isVegMode = true;
+    const isVegMode = useAppSelector(state => state.user.isVegMode);
     const {scrollY} = useSharedState();
     const bottom = useSafeAreaInsets();
 

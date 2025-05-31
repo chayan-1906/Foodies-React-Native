@@ -3,6 +3,14 @@ import Animated from 'react-native-reanimated';
 
 import React from 'react';
 
+/** redux props */
+export interface UserState {
+    user: any;
+    isVegMode: boolean;
+}
+
+
+/** component props */
 export type TextVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'h7';
 
 export type PlatformType = 'android' | 'ios';
