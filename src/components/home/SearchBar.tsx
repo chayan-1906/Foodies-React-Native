@@ -45,7 +45,7 @@ function SearchBar() {
                     <Icon size={20} name={'mic-outline'} iconFamily={'Ionicons'} color={isVegMode ? Colors.active : Colors.primary} />
                 </TouchableOpacity>
 
-                <Pressable style={styles.vegMode} onPress={() => dispatch(setVegMode(false))}>
+                <Pressable style={styles.vegMode} onPress={() => dispatch(setVegMode(!isVegMode))}>
                     <Animated.Text style={[textColorAnimation, styles.animatedText]}>VEG</Animated.Text>
                     <Animated.Text style={[textColorAnimation, styles.animatedSubText]}>MODE</Animated.Text>
 
