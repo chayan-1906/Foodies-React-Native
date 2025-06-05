@@ -66,3 +66,12 @@ export interface RollingBarProps {
     defaultStyle: boolean;
     children: React.ReactNode;
 }
+
+export interface BackToTopButtonProps {
+    onPress: () => void;
+}
+
+export interface SortingFiltersProps {
+    menuTitle: string;
+    options: Record<string, any>;
+}

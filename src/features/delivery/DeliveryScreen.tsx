@@ -6,6 +6,7 @@ import {useSharedState} from '@features/tabs/SharedContext.tsx';
 import {Extrapolate, interpolate, useAnimatedStyle} from 'react-native-reanimated';
 import Graphics from '@components/home/Graphics.tsx';
 import HeaderSection from '@components/home/HeaderSection.tsx';
+import MainList from '@components/list/MainList.tsx';
 
 function DeliveryScreen() {
     const insets = useSafeAreaInsets();
@@ -45,7 +46,9 @@ function DeliveryScreen() {
                         <HeaderSection />
                     </Animated.View>
 
-                    <Animated.View style={moveUpStyle}></Animated.View>
+                    <Animated.View style={moveUpStyle}>
+                        <MainList />
+                    </Animated.View>
                 </Animated.View>
             </View>
         </View>
