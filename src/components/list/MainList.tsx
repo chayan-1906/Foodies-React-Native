@@ -2,7 +2,7 @@ import {NativeScrollEvent, NativeSyntheticEvent, SectionList, ViewToken} from 'r
 import ExploreList from '@components/list/ExploreList.tsx';
 import RestaurantList from '@components/list/RestaurantList.tsx';
 import {useStyles} from 'react-native-unistyles';
-import {restaurantStyles} from '@unistyles/restuarantStyles.tsx';
+import {restaurantStyles} from '@unistyles/restaurantStyles.tsx';
 import {useSharedState} from '@features/tabs/SharedContext.tsx';
 import {useRef, useState} from 'react';
 import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
@@ -101,12 +101,12 @@ function MainList() {
                 viewabilityConfig={viewabilityConfig}
                 onViewableItemsChanged={onViewableItemsChanged}
                 renderSectionHeader={({section}) => {
-                    if (section.title === 'Restaurants') {
+                    if (section.title !== 'Restaurants') {
                         return null;
                     }
 
                     return (
-                        <Animated.View style={[isRestaurantVisible || isNearEnd ? styles.shadowBottom : null]}>
+                        <Animated.View style={[isRestaurantVisible || isNearEnd ? styles.shadowBottom : {}]}>
                             <SortingAndFilters menuTitle={'Sort'} options={filtersOption} />
                         </Animated.View>
                     );

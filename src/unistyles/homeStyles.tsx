@@ -1,7 +1,7 @@
+import {Platform} from 'react-native';
+import {bannerHeight, Colors} from './Constants';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {createStyleSheet} from 'react-native-unistyles';
-import {isBannerHeight} from './Constants';
-import {Platform} from 'react-native';
 
 export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     container: {
@@ -9,8 +9,9 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
         backgroundColor: colors.background,
     },
     topHidingContainer: {
-        marginTop: isBannerHeight,
-        backgroundColor: colors.background,
+        marginTop: bannerHeight + 10,
+        marginBottom: 5,
+        backgroundColor: Colors.background,
     },
     topHeader: {
         zIndex: 1,

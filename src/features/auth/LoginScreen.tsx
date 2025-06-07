@@ -9,6 +9,7 @@ import {useCallback, useEffect, useRef, useState} from 'react';
 import {resetAndNavigate} from '@utils/NavigationUtils.ts';
 import SocialLogin from '@components/ui/SocialLogin.tsx';
 import useKeyboardOffsetHeight from '@utils/useKeyboardOffsetHeight.ts';
+import {Fonts} from '@unistyles/Constants.tsx';
 
 function LoginScreen() {
     const animatedValue = useRef(new Animated.Value(0)).current;
@@ -48,7 +49,7 @@ function LoginScreen() {
             <Image source={require('@assets/images/login.png')} style={styles.cover} />
 
             <Animated.ScrollView bounces={false} keyboardShouldPersistTaps={'handled'} keyboardDismissMode={'on-drag'} contentContainerStyle={styles.bottomContainer} style={{transform: [{translateY: animatedValue}]}}>
-                <CustomText fontFamily={'Okra-Bold'} variant={'h2'} style={styles.title}>
+                <CustomText fontFamily={Fonts.Bold} variant={'h2'} style={styles.title}>
                     India's #1 Food Delivery and Dining App
                 </CustomText>
 
@@ -60,7 +61,7 @@ function LoginScreen() {
                     {isLoading ? (
                         <ActivityIndicator size={'small'} color={'#FFF'} />
                     ) : (
-                        <CustomText color={'#FFF'} fontFamily={'Okra-Medium'} variant={'h5'}>
+                        <CustomText color={'#FFF'} fontFamily={Fonts.Medium} variant={'h5'}>
                             Continue
                         </CustomText>
                     )}

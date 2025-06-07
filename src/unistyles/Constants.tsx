@@ -3,7 +3,7 @@ import {Dimensions} from 'react-native';
 export const BOTTOM_TAB_HEIGHT = 90;
 export const screenHeight = Dimensions.get('screen').height;
 export const screenWidth = Dimensions.get('screen').width;
-export const isBannerHeight = screenHeight * 0.4;
+export const bannerHeight = screenHeight * 0.4;
 
 export const Colors = {
     primary: '#EF6F1E',
@@ -23,9 +23,9 @@ export const Colors = {
 export enum Fonts {
     Regular = 'Okra-Regular',
     Medium = 'Okra-Medium',
-    Light = 'Okra-MediumLight',
-    SemiBold = 'Okra-Bold',
-    Bold = 'Okra-ExtraBold',
+    MediumLight = 'Okra-MediumLight',
+    Bold = 'Okra-Bold',
+    ExtraBold = 'Okra-ExtraBold',
 }
 
 export const lightColors = ['rgba(255,255,255,1)', 'rgba(255,255,255,0.9)', 'rgba(255,255,255,0.7)', 'rgba(255,255,255,0.6)', 'rgba(255,255,255,0.5)', 'rgba(255,255,255,0.4)', 'rgba(255,255,255,0.003)'];

@@ -4,7 +4,7 @@ import {homeStyles} from '@unistyles/homeStyles.tsx';
 import {useSharedState} from '@features/tabs/SharedContext.tsx';
 import Animated, {interpolate, useAnimatedStyle} from 'react-native-reanimated';
 import Icon from '@components/global/Icon.tsx';
-import {Colors} from '@unistyles/Constants.tsx';
+import {Colors, Fonts} from '@unistyles/Constants.tsx';
 import RollingContent from 'react-native-rolling-bar';
 import CustomText from '@components/global/CustomText.tsx';
 import {useAppDispatch, useAppSelector} from '@states/reduxHook.ts';
@@ -35,7 +35,7 @@ function SearchBar() {
                     <RollingContent interval={3000} defaultStyle={false} customStyle={styles.textContainer} {...({} as any)}>
                         {searchItems.map((text, index) => {
                             return (
-                                <CustomText key={index} fontSize={12} fontFamily={'Okra-Medium'} style={styles.rollingText}>
+                                <CustomText key={index} fontSize={12} fontFamily={Fonts.Medium} style={styles.rollingText}>
                                     {text}
                                 </CustomText>
                             );

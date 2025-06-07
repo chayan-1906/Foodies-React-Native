@@ -13,7 +13,7 @@ export const restaurantStyles = createStyleSheet(({device, colors, border}) => (
         elevation: 5,
         shadowRadius: 10,
         shadowColor: colors.dark,
-        backgroundColor: colors.background,
+        // backgroundColor: 'transparent',
     },
     card: {
         backgroundColor: colors.background,

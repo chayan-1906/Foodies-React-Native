@@ -4,7 +4,7 @@ import {PhoneInputProps} from '../../types';
 import {phoneStyles} from '@unistyles/phoneStyles.tsx';
 import CustomText from '@components/global/CustomText.tsx';
 import Icon from '@components/global/Icon.tsx';
-import {Colors} from '@unistyles/Constants.tsx';
+import {Colors, Fonts} from '@unistyles/Constants.tsx';
 
 function PhoneInput({value, onChangeText, onBlur, onFocus}: PhoneInputProps) {
     const {styles} = useStyles(phoneStyles);
@@ -17,7 +17,7 @@ function PhoneInput({value, onChangeText, onBlur, onFocus}: PhoneInputProps) {
             </Pressable>
 
             <View style={styles.phoneInputContainer}>
-                <CustomText fontFamily={'Okra-Bold'}>+91</CustomText>
+                <CustomText fontFamily={Fonts.Bold}>+91</CustomText>
                 <TextInput placeholder={'Enter mobile number...'} keyboardType={'phone-pad'} value={value} placeholderTextColor={Colors.lightText} onChangeText={onChangeText} onFocus={onFocus} onBlur={onBlur} style={styles.input} />
             </View>
         </View>

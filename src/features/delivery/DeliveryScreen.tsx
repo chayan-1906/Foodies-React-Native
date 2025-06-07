@@ -1,12 +1,12 @@
-import {Animated, View} from 'react-native';
+import {Animated, Platform, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useStyles} from 'react-native-unistyles';
 import {homeStyles} from '@unistyles/homeStyles.tsx';
 import {useSharedState} from '@features/tabs/SharedContext.tsx';
 import {Extrapolate, interpolate, useAnimatedStyle} from 'react-native-reanimated';
+import MainList from '@components/list/MainList.tsx';
 import Graphics from '@components/home/Graphics.tsx';
 import HeaderSection from '@components/home/HeaderSection.tsx';
-import MainList from '@components/list/MainList.tsx';
 
 function DeliveryScreen() {
     const insets = useSafeAreaInsets();
@@ -36,21 +36,21 @@ function DeliveryScreen() {
 
     return (
         <View style={styles.container}>
-            <View style={{height: insets.top}}>
-                <Animated.View style={moveUpStyle}>
-                    <Animated.View style={moveUpStyleNotExtrapolate}>
-                        <Graphics />
-                    </Animated.View>
+            <View style={{height: Platform.OS === 'android' ? insets.top : 0}} />
 
-                    <Animated.View style={[backgroundColorChanges, styles.topHeader]}>
-                        <HeaderSection />
-                    </Animated.View>
-
-                    <Animated.View style={moveUpStyle}>
-                        <MainList />
-                    </Animated.View>
+            <Animated.View style={moveUpStyle}>
+                <Animated.View style={moveUpStyleNotExtrapolate}>
+                    <Graphics />
                 </Animated.View>
-            </View>
+
+                <Animated.View style={[backgroundColorChanges, styles.topHeader]}>
+                    <HeaderSection />
+                </Animated.View>
+            </Animated.View>
+
+            <Animated.View style={moveUpStyle}>
+                <MainList />
+            </Animated.View>
         </View>
     );
 }

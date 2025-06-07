@@ -5,6 +5,7 @@ import {homeStyles} from '@unistyles/homeStyles.tsx';
 import {useSharedState} from '@features/tabs/SharedContext.tsx';
 import Icon from '@components/global/Icon.tsx';
 import CustomText from '@components/global/CustomText.tsx';
+import {Fonts} from '@unistyles/Constants.tsx';
 
 function LocationHeader() {
     const {scrollYGlobal} = useSharedState();
@@ -26,12 +27,12 @@ function LocationHeader() {
                     <Icon size={32} name={'map-marker'} iconFamily={'MaterialCommunityIcons'} color={textColor} />
                     <View>
                         <TouchableOpacity style={styles.flexRow}>
-                            <CustomText variant={'h5'} color={textColor} fontFamily={'Okra-Bold'}>
+                            <CustomText variant={'h5'} color={textColor} fontFamily={Fonts.Bold}>
                                 Erangel, Pochinki
                             </CustomText>
                             <Icon size={18} name={'chevron-down'} iconFamily={'MaterialCommunityIcons'} color={textColor} />
                         </TouchableOpacity>
-                        <CustomText color={textColor} fontFamily={'Okra-Medium'}>
+                        <CustomText color={textColor} fontFamily={Fonts.Medium}>
                             Lucknow, Uttar Pradesh
                         </CustomText>
                     </View>
