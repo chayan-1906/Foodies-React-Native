@@ -14,17 +14,16 @@ export const restaurantStyles = createStyleSheet(({device, colors, border}) => (
         shadowRadius: 10,
         shadowColor: colors.dark,
         // backgroundColor: 'transparent',
+        backgroundColor: 'red',
     },
     card: {
         backgroundColor: colors.background,
         borderRadius: border.lg,
-        marginBottom: 25,
         shadowOffset: {width: 1, height: 1},
         shadowOpacity: 0.2,
         elevation: 5,
         shadowRadius: 10,
         shadowColor: colors.dark,
-        margin: 10,
     },
     image: {
         borderTopLeftRadius: border.lg,

@@ -14,7 +14,7 @@ function RestaurantCard({restaurant}: {restaurant: RestaurantItem}) {
     const {styles} = useStyles(restaurantStyles);
 
     return (
-        <ScalePress onPress={() => navigate(screens.restaurantDetailsScreen, {restaurant})}>
+        <ScalePress style={{marginBottom: 25, paddingHorizontal: 16}} onPress={() => navigate(screens.restaurantDetailsScreen, {restaurant})}>
             <View style={styles.card}>
                 <View>
                     <Image source={{uri: restaurant.imageUrl}} style={styles.image} />

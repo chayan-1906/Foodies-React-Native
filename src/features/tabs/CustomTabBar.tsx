@@ -1,4 +1,4 @@
-import {Animated, Image, Text, View} from 'react-native';
+import {Image, View} from 'react-native';
 import screens from '@utils/screens.ts';
 import {tabStyles} from '@unistyles/tabStyles.tsx';
 import {Colors, screenWidth} from '@unistyles/Constants.tsx';
@@ -7,7 +7,7 @@ import ScalePress from '@components/ui/ScalePress.tsx';
 import {useSharedState} from '@features/tabs/SharedContext.tsx';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {useAnimatedStyle, withTiming} from 'react-native-reanimated';
+import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
 import {DeliveryTabIcon, DiningTabIcon, LiveTabIcon, ReorderTabIcon} from '@features/tabs/TabIcon.tsx';
 import {useAppSelector} from '@states/reduxHook.ts';
 

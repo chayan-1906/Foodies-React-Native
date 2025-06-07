@@ -77,8 +77,8 @@ function MainList() {
     };
 
     const onViewableItemsChanged = ({viewableItems}: {viewableItems: Array<ViewToken>}) => {
-        const restaurantVisible = viewableItems.some(item => item?.section?.title === 'Restaurants' && item?.isViewable);
-        setIsRestaurantVisible(restaurantVisible);
+        const isRestaurantVisible = viewableItems.some(item => item?.section?.title === 'Restaurants' && item?.isViewable);
+        setIsRestaurantVisible(isRestaurantVisible);
     };
 
     return (
@@ -96,7 +96,7 @@ function MainList() {
                 nestedScrollEnabled={true}
                 showsVerticalScrollIndicator={false}
                 keyExtractor={(item, index) => index.toString()}
-                stickyHeaderHiddenOnScroll={true}
+                stickySectionHeadersEnabled={true}
                 contentContainerStyle={styles.listContainer}
                 viewabilityConfig={viewabilityConfig}
                 onViewableItemsChanged={onViewableItemsChanged}
@@ -106,7 +106,7 @@ function MainList() {
                     }
 
                     return (
-                        <Animated.View style={[isRestaurantVisible || isNearEnd ? styles.shadowBottom : {}]}>
+                        <Animated.View style={[isRestaurantVisible || isNearEnd ? styles.shadowBottom : null]}>
                             <SortingAndFilters menuTitle={'Sort'} options={filtersOption} />
                         </Animated.View>
                     );

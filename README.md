@@ -34,6 +34,7 @@ npm run ios
 npm start
 
 ### Issues
-1. Scroll up Delivery Screen, the banner (lottie portion) should go away, and header (searchbar) should be at the top. Check desired behaviour at 02:08:46
+1. Scroll up Delivery Screen, the banner (lottie portion) should go away, and header (searchbar) should be at the top. Check desired behaviour at 02:08:46 ✅
 2. When you scroll up, the marginTop at of Recommended/Collection should persist
-3. On scrolling up, the bottom tabbar should go away
+3. On scrolling up, the bottom tabbar should go away ✅
+4. SortingAndFilters should be sticky
