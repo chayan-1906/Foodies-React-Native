@@ -1,10 +1,13 @@
-import {Pressable, Text, View} from 'react-native';
+import {Pressable, View} from 'react-native';
 import {useState} from 'react';
 import {useStyles} from 'react-native-unistyles';
 import {homeStyles} from '@unistyles/homeStyles.tsx';
 import CustomText from '@components/global/CustomText.tsx';
 import Icon from '@components/global/Icon.tsx';
 import {Colors, Fonts} from '@unistyles/Constants.tsx';
+import RecommendedList from '@components/list/RecommendedList.tsx';
+import BreakerText from '@components/ui/BreakerText.tsx';
+import RegularFoodList from '@components/list/RegularFoodList.tsx';
 
 function ExploreList() {
     const [tabSelected, setTabSelected] = useState(1);
@@ -26,6 +29,11 @@ function ExploreList() {
                     </CustomText>
                 </Pressable>
             </View>
+
+            <RecommendedList />
+            <BreakerText text={'WHAT\'S ON YOUR MIND?'}/>
+            <RegularFoodList/>
+            <BreakerText text={'ALL RESTAURANTS'}/>
         </View>
     );
 }
