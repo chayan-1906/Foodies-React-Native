@@ -1,9 +1,9 @@
-import {Animated, Platform, View} from 'react-native';
+import {Platform, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useStyles} from 'react-native-unistyles';
 import {homeStyles} from '@unistyles/homeStyles.tsx';
 import {useSharedState} from '@features/tabs/SharedContext.tsx';
-import {Extrapolate, interpolate, useAnimatedStyle} from 'react-native-reanimated';
+import Animated, {Extrapolate, interpolate, useAnimatedStyle} from 'react-native-reanimated';
 import MainList from '@components/list/MainList.tsx';
 import Graphics from '@components/home/Graphics.tsx';
 import HeaderSection from '@components/home/HeaderSection.tsx';
