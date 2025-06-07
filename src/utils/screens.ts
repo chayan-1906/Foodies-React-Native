@@ -7,6 +7,7 @@ const screens = {
     diningScreen: 'DiningScreen',
     restaurantsScreen: 'RestaurantsScreen',
     liveScreen: 'LiveScreen',
+    restaurantDetailsScreen: 'RestaurantScreen',
 };
 
 export default screens;

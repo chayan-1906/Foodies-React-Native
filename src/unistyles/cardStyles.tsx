@@ -39,6 +39,7 @@ export const cardStyles = createStyleSheet(({colors, device, border}) => ({
     itemImage: {
         width: '100%',
         height: 100,
+        resizeMode: 'cover',
     },
     discountContainer: {
         position: 'absolute',

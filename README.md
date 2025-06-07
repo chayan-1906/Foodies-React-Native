@@ -31,49 +31,9 @@ cd ios && xcodebuild clean && cd ..
 npm run ios
 ``
 
-npx react-native log-android
-npx react-native log-ios
+npm start
 
-# Resolve react_native_pods.rb with node to allow for hoisting
-
-require Pod::Executable.execute_command('node', ['-p',
-'require.resolve(
-"react-native/scripts/react_native_pods.rb",
-{paths: [process.argv[1]]},
-)', __dir__]).strip
-
-platform :ios, min_ios_version_supported
-prepare_react_native_project!
-
-linkage = ENV['USE_FRAMEWORKS']
-if linkage != nil
-Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
-use_frameworks! :linkage => linkage.to_sym
-end
-
-target 'foodies' do
-config = use_native_modules!
-
-use_react_native!(
-:path => config[:reactNativePath],
-# An absolute path to your application root.
-:app_path => "#{Pod::Config.instance.installation_root}/.."
-)
-
-post_install do |installer|
-# https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
-react_native_post_install(
-installer,
-config[:reactNativePath],
-:mac_catalyst_enabled => false,
-# :ccache_enabled => true
-)
-
-    # Mark build dir as deletable by Xcode build system
-    build_dir = File.join(__dir__, 'ios', 'build')
-    if Dir.exist?(build_dir)
-      system("xattr -w com.apple.xcode.CreatedByBuildSystem true #{build_dir}")
-    end
-
-end
-end
+### Issues
+1. Scroll up Delivery Screen, the banner (lottie portion) should go away, and header (searchbar) should be at the top. Check desired behaviour at 02:08:46
+2. When you scroll up, the marginTop at of Recommended/Collection should persist
+3. On scrolling up, the bottom tabbar should go away

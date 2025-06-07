@@ -75,3 +75,31 @@ export interface SortingFiltersProps {
     menuTitle: string;
     options: Record<string, any>;
 }
+
+export interface CustomGradientProps {
+    position: 'top' | 'bottom';
+    mode?: 'dark' | 'light';
+    style?: ViewStyle;
+}
+
+export type FoodItem = {
+    id: number;
+    name: string;
+    imageUrl: string;
+    discount?: string;
+    discountAmount?: string;
+    time?: string;
+    distance?: string;
+    rating?: number;
+};
+
+export type RestaurantItem = {
+    id: number;
+    name: string;
+    imageUrl: string;
+    discount?: string;
+    discountAmount?: string;
+    time?: string;
+    distance?: string;
+    rating?: number;
+}
