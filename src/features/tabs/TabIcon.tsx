@@ -24,17 +24,17 @@ const tabStyles: ViewStyle = {
     alignItems: 'center',
 };
 
-const testStyleInactive: TextStyle = {
+const testStyleActive: TextStyle = {
     textAlign: 'center',
     marginTop: 4,
     color: Colors.lightText,
     fontSize: RFValue(9.5),
 };
 
-const testStyleActive: TextStyle = {
+const testStyleInactive: TextStyle = {
     textAlign: 'center',
     marginTop: 4,
-    color: Colors.active,
+    color: Colors.lightText,
     fontSize: RFValue(9.5),
 };
 
@@ -57,8 +57,8 @@ const TabIcon = memo(({name}: {name: string}) => {
 
     return (
         <View style={tabStyles}>
-            <Image source={image} style={styles} />
-            <CustomText style={testStyleActive}>{name}</CustomText>
+            <Image source={image} style={[styles, {tintColor: Colors.lightText}]} />
+            <CustomText style={[testStyleActive]}>{name}</CustomText>
         </View>
     );
 });
@@ -92,7 +92,7 @@ const TabIconFocused = memo(({name}: {name: string}) => {
                     },
                 ]}
             />
-            <CustomText style={[testStyleActive, {color: name === screens.liveScreen.replaceAll('Screen', '') ? 'white' : isVegMode ? Colors.active : Colors.primary}]}>{name}</CustomText>
+            <CustomText style={[testStyleInactive, {color: name === screens.liveScreen.replaceAll('Screen', '') ? Colors.lightText : isVegMode ? Colors.active : Colors.primary}]}>{name}</CustomText>
         </View>
     );
 });
