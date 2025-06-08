@@ -82,7 +82,7 @@ export interface CustomGradientProps {
     style?: ViewStyle;
 }
 
-export type FoodItem = {
+export type RecommendedItem = {
     id: number;
     name: string;
     imageUrl: string;
@@ -102,4 +102,30 @@ export type RestaurantItem = {
     time?: string;
     distance?: string;
     rating?: number;
+}
+
+export interface CustomSafeAreaViewProps {
+    children: React.ReactNode;
+    style?: ViewStyle;
+}
+
+export interface RestaurantHeaderProps {
+    title: string;
+}
+
+export interface FoodItem {
+    id: string;
+    name: string;
+    description: string;
+    price: number;
+    image: string;
+    isCustomizable: boolean;
+    isVeg: boolean;
+    customizationOptions?: {
+        type: string;
+        options: {
+            name: string;
+            price: number;
+        }[];
+    }[];
 }

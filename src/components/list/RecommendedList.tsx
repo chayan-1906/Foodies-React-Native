@@ -1,7 +1,7 @@
 import {FlatList, Image, ScrollView, TouchableOpacity, View} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
 import {cardStyles} from '@unistyles/cardStyles.tsx';
-import {FoodItem} from '../../types';
+import {RecommendedItem} from '../../types';
 import ScalePress from '@components/ui/ScalePress.tsx';
 import {navigate} from '@utils/NavigationUtils.ts';
 import screens from '@utils/screens.ts';
@@ -13,7 +13,7 @@ import {recommendedListData} from '@utils/dummyData.ts';
 function RecommendedList() {
     const {styles} = useStyles(cardStyles);
 
-    const renderItem = ({item}: {item: FoodItem}) => {
+    const renderItem = ({item}: {item: RecommendedItem}) => {
         return (
             <ScalePress style={styles.itemContainer} onPress={async () => await navigate(screens.restaurantDetailsScreen, {item})}>
                 <View style={styles.imageContainer}>

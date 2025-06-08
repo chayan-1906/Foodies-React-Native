@@ -56,18 +56,18 @@ export const foodStyles = createStyleSheet(({device, colors, border}) => ({
         resizeMode: 'cover',
         borderRadius: 15,
     },
-
     customizeText: {
         textAlign: 'center',
         opacity: 0.6,
         marginTop: 5,
-        bottom: -10,
+        bottom: -20,
     },
     addButtonContainer: (isAdded: boolean) => ({
+        flexDirection: 'row',
         width: 120,
         borderWidth: 0.7,
         borderRadius: 10,
-        bottom: -12,
+        bottom: -20,
         position: 'absolute',
         justifyContent: 'center',
         alignSelf: 'center',
@@ -76,15 +76,16 @@ export const foodStyles = createStyleSheet(({device, colors, border}) => ({
         backgroundColor: isAdded ? colors.primary : '#FFF5F6',
     }),
     noSelectionContainer: {
+        flexDirection: 'row',
         height: '100%',
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
     },
     plusSmallIcon: {
-        position: 'absolute',
-        top: -1,
-        right: 8,
+        // position: 'absolute',
+        top: -8,
+        right: -24,
     },
     selectedContainer: {
         height: '100%',
