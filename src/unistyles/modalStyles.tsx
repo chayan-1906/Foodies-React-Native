@@ -2,7 +2,7 @@ import {Platform} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {createStyleSheet} from 'react-native-unistyles';
 
-export const modelStyles = createStyleSheet(({device, border, colors}) => ({
+export const modalStyles = createStyleSheet(({device, border, colors}) => ({
     headerContainer: {
         flexDirection: 'row',
         alignItems: 'center',

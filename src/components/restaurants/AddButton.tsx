@@ -10,7 +10,11 @@ import ScalePress from '@components/ui/ScalePress.tsx';
 import {RFValue} from 'react-native-responsive-fontsize';
 import AnimatedNumbers from 'react-native-animated-numbers';
 import {useAppDispatch, useAppSelector} from '@states/reduxHook.ts';
-import {selectRestaurantCartItem} from '@states/reducers/cartSlice.ts';
+import {addItemToCart, removeCustomizableItem, removeItemFromCart, selectRestaurantCartItem} from '@states/reducers/cartSlice.ts';
+import CustomModal from '@components/modal/CustomModal.tsx';
+import AddFoodModal from '@components/modal/AddFoodModal.tsx';
+import RepeatFoodModal from '@components/modal/RepeatFoodModal.tsx';
+import RemoveFoodModal from '@components/modal/RemoveFoodModal.tsx';
 
 function AddButton({food, restaurant}: {food: FoodItem; restaurant: RestaurantItem}) {
     const dispatch = useAppDispatch();
@@ -20,20 +24,61 @@ function AddButton({food, restaurant}: {food: FoodItem; restaurant: RestaurantIt
     const cart = useAppSelector(selectRestaurantCartItem(restaurantId, foodId));
     const modalRef = useRef<any>(null);
 
+    const openAddModal = () => {
+        modalRef?.current?.openModal(<AddFoodModal food={food} restaurant={restaurant} onClose={() => modalRef?.current?.closeModal()} />);
+    };
+
+    const openRepeatModal = () => {
+        modalRef?.current?.openModal(<RepeatFoodModal food={food} restaurant={restaurant} onClose={() => modalRef?.current?.closeModal()} />);
+    };
+
+    const openRemoveModal = () => {
+        modalRef?.current?.openModal(<RemoveFoodModal food={food} restaurant={restaurant} onClose={() => modalRef?.current?.closeModal()} />);
+    };
+
     const addCartHandler = useCallback(() => {
         if (isCustomizable) {
+            if (cart !== null) {
+                openRepeatModal();
+                return;
+            }
+            openAddModal();
         } else {
+            dispatch(
+                addItemToCart({
+                    restaurant,
+                    cartItem: {...food, quantity: cart?.quantity || 1, customizations: []},
+                }),
+            );
         }
     }, [dispatch, food, restaurant, cart]);
 
     const removeCartHandler = useCallback(() => {
         if (isCustomizable) {
+            if (cart?.customizations && cart?.customizations.length > 1) {
+                openRepeatModal();
+                return;
+            }
+            dispatch(
+                removeCustomizableItem({
+                    restaurantId,
+                    customizationId: cart?.customizations![0]?.id,
+                    cartItemId: foodId,
+                }),
+            );
         } else {
+            dispatch(
+                removeItemFromCart({
+                    restaurantId: restaurantId,
+                    cartItemId: foodId,
+                }),
+            );
         }
     }, [dispatch, food, restaurant, cart]);
 
     return (
         <>
+            <CustomModal ref={modalRef} />
             <View style={styles.addButtonContainer(cart !== null)}>
                 {cart ? (
                     <View style={styles.selectedContainer}>
@@ -41,7 +86,7 @@ function AddButton({food, restaurant}: {food: FoodItem; restaurant: RestaurantIt
                             <Icon size={RFValue(13)} name={'minus-thick'} iconFamily={'MaterialCommunityIcons'} color={'#FFF'} />
                         </ScalePress>
                         <AnimatedNumbers includeComma={false} animationDuration={300} animateToNumber={cart?.quantity} fontStyle={styles.animatedCount} />
-                        <ScalePress>
+                        <ScalePress onPress={addCartHandler}>
                             <Icon size={RFValue(13)} name={'plus-thick'} iconFamily={'MaterialCommunityIcons'} color={'#FFF'} />
                         </ScalePress>
                     </View>

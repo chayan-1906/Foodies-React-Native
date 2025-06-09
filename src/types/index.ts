@@ -129,3 +129,26 @@ export interface FoodItem {
         }[];
     }[];
 }
+
+export type CustomModalHandle = {
+    openModal: (data: any) => void;
+    closeModal: () => void;
+};
+
+export interface AddFoodModalProps {
+    food: FoodItem;
+    restaurant: RestaurantItem;
+    onClose: () => void;
+}
+
+export interface RepeatFoodModalProps {
+    food: FoodItem;
+    restaurant: RestaurantItem;
+    onClose: () => void;
+}
+
+export interface RemoveFoodModalProps {
+    food: FoodItem;
+    restaurant: RestaurantItem;
+    onClose: () => void;
+}
