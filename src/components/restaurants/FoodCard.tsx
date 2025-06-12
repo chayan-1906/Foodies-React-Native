@@ -37,7 +37,7 @@ function FoodCard({food, restaurant}: {food: FoodItem; restaurant: RestaurantIte
             <View style={styles.imageContainer}>
                 <View style={styles.image}>
                     <Image source={{uri: image}} style={styles.foodImage} />
-                    <AddButton food={food} restaurant={restaurant} />
+                    <AddButton item={food} restaurant={restaurant} />
                 </View>
             </View>
         </View>

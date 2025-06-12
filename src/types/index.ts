@@ -130,6 +130,17 @@ export interface FoodItem {
     }[];
 }
 
+export interface CartItem {
+    id: string;
+    name: string;
+    price: number;
+    quantity: number;
+    cartPrice?: number;
+    isVeg: boolean;
+    isCustomizable: boolean;
+    customizations?: any[];
+}
+
 export type CustomModalHandle = {
     openModal: (data: any) => void;
     closeModal: () => void;
@@ -142,13 +153,27 @@ export interface AddFoodModalProps {
 }
 
 export interface RepeatFoodModalProps {
+    item: CartItem;
+    restaurant: RestaurantItem;
+    onOpenAddFoodModal: () => void;
+    closeModal: () => void;
+}
+
+export interface RemoveFoodModalProps {
     food: FoodItem;
     restaurant: RestaurantItem;
     onClose: () => void;
 }
 
-export interface RemoveFoodModalProps {
-    food: FoodItem;
+export interface MiniFoodCardProps {
+    item: CartItem;
+    customization: any;
+    restaurant: RestaurantItem;
+}
+
+export interface EditFoodModalProps {
+    cartItem: CartItem;
+    customization: any;
     restaurant: RestaurantItem;
     onClose: () => void;
 }
