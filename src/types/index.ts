@@ -9,7 +9,6 @@ export interface UserState {
     isVegMode: boolean;
 }
 
-
 /** component props */
 export type TextVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'h7';
 
@@ -61,12 +60,6 @@ export interface ScalePressProps {
     style?: ViewStyle | ViewStyle[];
 }
 
-export interface RollingBarProps {
-    interval: number;
-    defaultStyle: boolean;
-    children: React.ReactNode;
-}
-
 export interface BackToTopButtonProps {
     onPress: () => void;
 }
@@ -102,7 +95,7 @@ export type RestaurantItem = {
     time?: string;
     distance?: string;
     rating?: number;
-}
+};
 
 export interface CustomSafeAreaViewProps {
     children: React.ReactNode;
@@ -153,27 +146,37 @@ export interface AddFoodModalProps {
 }
 
 export interface RepeatFoodModalProps {
-    item: CartItem;
+    item: Customization;
     restaurant: RestaurantItem;
     onOpenAddFoodModal: () => void;
     closeModal: () => void;
 }
 
 export interface RemoveFoodModalProps {
-    food: FoodItem;
+    item: Customization;
     restaurant: RestaurantItem;
-    onClose: () => void;
+    closeModal: () => void;
 }
 
 export interface MiniFoodCardProps {
-    item: CartItem;
-    customization: any;
+    item: Customization;
+    customization: Customization;
     restaurant: RestaurantItem;
 }
 
 export interface EditFoodModalProps {
-    cartItem: CartItem;
-    customization: any;
+    item: Customization;
+    customization: Customization;
     restaurant: RestaurantItem;
     onClose: () => void;
+}
+
+export interface Customization extends CartItem, FoodItem {
+    quantity: number;
+    price: number;
+    customizationOptions: any[];
+}
+
+export interface SearchAndOffersProps {
+    restaurant: RestaurantItem;
 }

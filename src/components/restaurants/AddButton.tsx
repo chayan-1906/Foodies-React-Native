@@ -1,6 +1,6 @@
 import {TouchableOpacity, View} from 'react-native';
 import {memo, useCallback, useRef} from 'react';
-import {CartItem, FoodItem, RestaurantItem} from '../../types';
+import {Customization, RestaurantItem} from '../../types';
 import {useStyles} from 'react-native-unistyles';
 import {foodStyles} from '@unistyles/foodStyles.tsx';
 import CustomText from '@components/global/CustomText.tsx';
@@ -16,7 +16,7 @@ import AddFoodModal from '@components/modal/AddFoodModal.tsx';
 import RepeatFoodModal from '@components/modal/RepeatFoodModal.tsx';
 import RemoveFoodModal from '@components/modal/RemoveFoodModal.tsx';
 
-function AddButton({item, restaurant}: {item: CartItem; restaurant: RestaurantItem}) {
+function AddButton({item, restaurant}: {item: Customization; restaurant: RestaurantItem}) {
     const dispatch = useAppDispatch();
     const {styles} = useStyles(foodStyles);
     const {id: itemId, isCustomizable} = item;
@@ -33,7 +33,7 @@ function AddButton({item, restaurant}: {item: CartItem; restaurant: RestaurantIt
     };
 
     const openRemoveModal = () => {
-        modalRef?.current?.openModal(<RemoveFoodModal food={item} restaurant={restaurant} onClose={() => modalRef?.current?.closeModal()} />);
+        modalRef?.current?.openModal(<RemoveFoodModal item={item} restaurant={restaurant} closeModal={() => modalRef?.current?.closeModal()} />);
     };
 
     const addCartHandler = useCallback(() => {
@@ -56,7 +56,7 @@ function AddButton({item, restaurant}: {item: CartItem; restaurant: RestaurantIt
     const removeCartHandler = useCallback(() => {
         if (isCustomizable) {
             if (cart?.customizations && cart?.customizations.length > 1) {
-                openRepeatModal();
+                openRemoveModal();
                 return;
             }
             dispatch(

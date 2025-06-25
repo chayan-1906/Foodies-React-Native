@@ -1,10 +1,10 @@
 import {Image, SafeAreaView, ScrollView, TouchableOpacity, View} from 'react-native';
-import {AddFoodModalProps, Customization} from '../../types';
+import {Customization, EditFoodModalProps} from '../../types';
 import {useAppDispatch} from '@states/reduxHook.ts';
 import {useStyles} from 'react-native-unistyles';
 import {modalStyles} from '@unistyles/modalStyles.tsx';
 import {useEffect, useState} from 'react';
-import {addCustomizableItem} from '@states/reducers/cartSlice.ts';
+import {updateCustomizableItem} from '@states/reducers/cartSlice.ts';
 import CustomText from '@components/global/CustomText.tsx';
 import {Colors, Fonts} from '@unistyles/Constants.tsx';
 import Icon from '@components/global/Icon.tsx';
@@ -26,22 +26,22 @@ function transformSelectedOptions(selectedOption: any, customizationOptions: any
     });
 }
 
-function AddFoodModal({food, restaurant, onClose}: AddFoodModalProps) {
+function EditFoodModal({item, customization, restaurant, onClose}: EditFoodModalProps) {
     const dispatch = useAppDispatch();
     const {styles} = useStyles(modalStyles);
     const [data, setData] = useState({
-        quantity: 1,
-        price: food.price,
+        quantity: customization.quantity,
+        price: customization.price,
         selectedOption: {} as Record<string, number>,
     });
 
     const calculatePrice = (quantity: number, selectedOption: Record<string, number>) => {
-        const basePrice = food.price || 0;
+        const basePrice = item.price || 0;
         let customizationPrice = 0;
 
         Object.keys(selectedOption).forEach(type => {
             const optionIndex = selectedOption[type];
-            const optionPrice = food.customizationOptions?.find((c: any) => c.type === type)?.options?.[optionIndex]?.price || 0;
+            const optionPrice = item.customizationOptions?.find((c: any) => c.type === type)?.options?.[optionIndex]?.price || 0;
             customizationPrice += optionPrice;
         });
 
@@ -81,34 +81,33 @@ function AddFoodModal({food, restaurant, onClose}: AddFoodModalProps) {
         }
     };
 
-    const addItemToCart = () => {
-        const customizationOptions = transformSelectedOptions(data?.selectedOption, food?.customizationOptions).sort((a, b) => a.type.localeCompare(b.type));
-
-        const cartItem = {...food, quantity: data?.quantity || 1, customizations: []};
+    const updateItemIntoToCart = () => {
+        const customizationOptions = transformSelectedOptions(data?.selectedOption, item?.customizationOptions).sort((a, b) => a.type.localeCompare(b.type));
 
         const customizedData = {
-            restaurant,
-            item: cartItem,
-            customization: {
+            restaurantId: restaurant.id,
+            cartItemId: item.id,
+            customizationId: customization.id,
+            newCustomization: {
                 quantity: data?.quantity,
                 price: data?.price,
                 customizationOptions,
             } as Customization,
         };
 
-        dispatch(addCustomizableItem(customizedData));
+        dispatch(updateCustomizableItem(customizedData));
         onClose();
     };
 
     useEffect(() => {
         const defaultSelectedOption: Record<string, number> = {};
-        let initialPrice = food.price || 0;
-        food.customizationOptions?.forEach((customization: any) => {
-            if (customization?.required) {
-                const defaultOptionIndex = customization?.options?.findIndex((option: any) => option?.price === 0);
-                if (defaultOptionIndex !== -1) {
-                    defaultSelectedOption[customization.type] = defaultOptionIndex;
-                    initialPrice += customization?.options[defaultOptionIndex]?.price || 0;
+        customization.customizationOptions?.forEach((customizationOption: any) => {
+            const itemCustomization = item?.customizationOptions.find((option: any) => option.type === customizationOption.type);
+
+            if (itemCustomization) {
+                const selectedIndex = itemCustomization.options.findIndex((option: any) => option?.name === customizationOption.selectedIndex?.name);
+                if (selectedIndex !== 1) {
+                    defaultSelectedOption[customizationOption.type] = selectedIndex;
                 }
             }
         });
@@ -116,18 +115,22 @@ function AddFoodModal({food, restaurant, onClose}: AddFoodModalProps) {
         setData(prevData => ({
             ...prevData,
             selectedOption: defaultSelectedOption,
-            price: initialPrice,
         }));
-    }, [food]);
+    }, [customization, item]);
 
     return (
         <View>
             <View style={styles.headerContainer}>
                 <View style={styles.flexRowGap}>
-                    <Image source={{uri: food?.image}} style={styles.headerImage} />
-                    <CustomText fontFamily={Fonts.Medium} fontSize={12}>
-                        {food?.name}
-                    </CustomText>
+                    <Image source={{uri: item?.image}} style={styles.headerImage} />
+                    <View>
+                        <CustomText fontFamily={'Okra-Medium'} fontSize={12}>
+                            {item?.name}
+                        </CustomText>
+                        <CustomText fontFamily={'Okra-Medium'} fontSize={9}>
+                            Edit
+                        </CustomText>
+                    </View>
                 </View>
 
                 <View style={styles.flexRowGap}>
@@ -141,7 +144,7 @@ function AddFoodModal({food, restaurant, onClose}: AddFoodModalProps) {
             </View>
 
             <ScrollView contentContainerStyle={styles.scrollContainer}>
-                {food?.customizationOptions?.map((customization: any, index: number) => (
+                {item?.customizationOptions?.map((customization: any, index: number) => (
                     <View key={index} style={styles.subContainer}>
                         <CustomText fontFamily={Fonts.Medium}>{customization?.type}</CustomText>
                         <CustomText fontFamily={Fonts.Medium} variant={'h7'} color={'#888'}>
@@ -176,9 +179,9 @@ function AddFoodModal({food, restaurant, onClose}: AddFoodModalProps) {
                         <Icon size={RFValue(13)} name={'plus-thick'} iconFamily={'MaterialCommunityIcons'} color={Colors.active} />
                     </ScalePress>
                 </View>
-                <TouchableOpacity style={styles.addButtonContainer} onPress={addItemToCart}>
+                <TouchableOpacity style={styles.addButtonContainer} onPress={updateItemIntoToCart}>
                     <CustomText color={'#FFF'} fontFamily={Fonts.Medium} variant={'h5'}>
-                        Add Item - ₹{data?.price}
+                        Update Item - ₹{data?.price}
                     </CustomText>
                 </TouchableOpacity>
             </View>
@@ -187,4 +190,4 @@ function AddFoodModal({food, restaurant, onClose}: AddFoodModalProps) {
     );
 }
 
-export default AddFoodModal;
+export default EditFoodModal;

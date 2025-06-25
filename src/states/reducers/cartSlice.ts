@@ -1,5 +1,5 @@
 import {createSelector, createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {CartItem, RestaurantItem} from '../../types';
+import {CartItem, Customization, RestaurantItem} from '../../types';
 import {RootState} from '@states/store.ts';
 import {v4 as uuid} from 'uuid';
 
@@ -79,7 +79,7 @@ export const cartSlice = createSlice({
                 state.carts = state.carts.filter(cart => cart.restaurant.id !== restaurantId);
             }
         },
-        addCustomizableItem: (state, action: PayloadAction<{restaurant: RestaurantItem; item: CartItem; customization: {quantity: number; price: number; customizationOptions: any[]}}>) => {
+        addCustomizableItem: (state, action: PayloadAction<{restaurant: RestaurantItem; item: CartItem; customization: Customization}>) => {
             const {restaurant, item, customization} = action.payload;
             const existingRestaurantCart = state.carts.find(cart => cart.restaurant.id === restaurant.id);
             if (existingRestaurantCart) {
@@ -93,8 +93,8 @@ export const cartSlice = createSlice({
                     } else {
                         const newCustomizationId = uuid();
                         existingItem?.customizations?.push({
-                            id: newCustomizationId,
                             ...customization,
+                            id: newCustomizationId,
                             quantity: customization?.quantity,
                             cartPrice: customization?.price,
                             price: customization?.price / customization?.quantity,
@@ -111,8 +111,8 @@ export const cartSlice = createSlice({
                         cartPrice: customization.price,
                         customizations: [
                             {
-                                id: newCustomizationId,
                                 ...customization,
+                                id: newCustomizationId,
                                 quantity: customization.quantity,
                                 cartPrice: customization?.price,
                                 price: customization.price / customization.quantity,
@@ -131,8 +131,8 @@ export const cartSlice = createSlice({
                             cartPrice: customization?.price,
                             customizations: [
                                 {
-                                    id: newCustomizationId,
                                     ...customization,
+                                    id: newCustomizationId,
                                     quantity: customization.quantity,
                                     cartPrice: customization?.price,
                                     price: customization.price / customization.quantity,
@@ -188,10 +188,10 @@ export const cartSlice = createSlice({
             const item = restaurantCart?.items?.find(cartItem => cartItem?.id === cartItemId);
             if (!item || !item.customizations) return;
 
-            const matchingCustomizationIndex = item?.customizations?.findIndex((cust: any) => cust?.id === customizationId && JSON.stringify(cust.customizationOptions) === JSON.stringify(newCustomization.customizationOptions));
+            const matchingCustomizationIndex = item?.customizations?.findIndex((cust: any) => cust?.id !== customizationId && JSON.stringify(cust.customizationOptions) === JSON.stringify(newCustomization.customizationOptions));
 
             const targetCustomizationIndex = item?.customizations?.findIndex(cust => cust?.id === customizationId);
-            if (targetCustomizationIndex !== -1) return;
+            if (targetCustomizationIndex === -1) return;
 
             const targetCustomization = item?.customizations[targetCustomizationIndex];
             if (matchingCustomizationIndex !== -1) {

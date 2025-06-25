@@ -10,6 +10,7 @@ import {FoodItem, RestaurantItem} from '../../types';
 import RestaurantHeader from '@components/restaurants/RestaurantHeader.tsx';
 import DottedLine from '@components/ui/DottedLine.tsx';
 import FoodCard from '@components/restaurants/FoodCard.tsx';
+import SearchAndOffers from '@components/restaurants/SearchAndOffers.tsx';
 
 function RestaurantScreen() {
     const route = useRoute() as any;
@@ -18,16 +19,14 @@ function RestaurantScreen() {
     const insets = useSafeAreaInsets();
 
     const renderItem = ({item}: {item: FoodItem}) => {
-        return (
-            <FoodCard food={item} restaurant={restaurant}/>
-        )
+        return <FoodCard food={item} restaurant={restaurant} />;
     };
 
     return (
         <>
             <View style={{height: Platform.OS === 'android' ? insets.top : 0}} />
             <CustomSafeAreaView>
-                <RestaurantHeader title={restaurant?.name} />
+                <RestaurantHeader title={restaurant.name} />
                 <View style={styles.sortingContainer}>
                     <SortingAndFilters menuTitle={'Filter'} options={restaurantsItemFiltersOption} />
                 </View>
@@ -43,6 +42,7 @@ function RestaurantScreen() {
                     )}
                     contentContainerStyle={styles.scrollContainer}
                 />
+                <SearchAndOffers restaurant={restaurant} />
             </CustomSafeAreaView>
         </>
     );

@@ -1,10 +1,10 @@
-import {ScrollView, TouchableOpacity, View} from 'react-native';
+import {SafeAreaView, ScrollView, TouchableOpacity, View} from 'react-native';
 import {RepeatFoodModalProps} from '../../types';
 import {useAppSelector} from '@states/reduxHook.ts';
 import {selectRestaurantCartItem} from '@states/reducers/cartSlice.ts';
 import {useStyles} from 'react-native-unistyles';
 import {modalStyles} from '@unistyles/modalStyles.tsx';
-import {useCallback, useEffect} from 'react';
+import {useEffect} from 'react';
 import CustomText from '@components/global/CustomText.tsx';
 import {Colors, Fonts} from '@unistyles/Constants.tsx';
 import MiniFoodCard from '@components/restaurants/MiniFoodCard.tsx';
@@ -42,6 +42,7 @@ function RepeatFoodModal({item, restaurant, onOpenAddFoodModal, closeModal}: Rep
                     </CustomText>
                 </TouchableOpacity>
             </View>
+            <SafeAreaView />
         </View>
     );
 }
