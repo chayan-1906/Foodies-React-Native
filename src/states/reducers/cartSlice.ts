@@ -1,5 +1,5 @@
 import {createSelector, createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {CartItem, Customization, RestaurantItem} from '../../types';
+import {Customization, ICartItem, RestaurantItem} from '../../types';
 import {RootState} from '@states/store.ts';
 import {v4 as uuid} from 'uuid';
 
@@ -14,9 +14,9 @@ interface RestaurantDetails {
     imageUrl: string;
 }
 
-interface RestaurantCart {
+export interface RestaurantCart {
     restaurant: RestaurantItem;
-    items: CartItem[];
+    items: ICartItem[];
 }
 
 interface CartState {
@@ -31,7 +31,7 @@ export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addItemToCart: (state, action: PayloadAction<{restaurant: RestaurantItem; cartItem: CartItem}>) => {
+        addItemToCart: (state, action: PayloadAction<{restaurant: RestaurantItem; cartItem: ICartItem}>) => {
             const {restaurant, cartItem} = action.payload;
             const existingRestaurantCart = state.carts.find(cart => cart?.restaurant?.id === restaurant?.id);
             if (existingRestaurantCart) {
@@ -79,7 +79,7 @@ export const cartSlice = createSlice({
                 state.carts = state.carts.filter(cart => cart.restaurant.id !== restaurantId);
             }
         },
-        addCustomizableItem: (state, action: PayloadAction<{restaurant: RestaurantItem; item: CartItem; customization: Customization}>) => {
+        addCustomizableItem: (state, action: PayloadAction<{restaurant: RestaurantItem; item: ICartItem; customization: Customization}>) => {
             const {restaurant, item, customization} = action.payload;
             const existingRestaurantCart = state.carts.find(cart => cart.restaurant.id === restaurant.id);
             if (existingRestaurantCart) {

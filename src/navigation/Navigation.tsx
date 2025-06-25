@@ -6,6 +6,8 @@ import screens from '@utils/screens.ts';
 import {navigationRef} from '@utils/NavigationUtils.ts';
 import AnimatedTabs from '@features/tabs/AnimatedTabs.tsx';
 import RestaurantScreen from '@features/restaurants/RestaurantScreen.tsx';
+import CheckoutScreen from '@features/checkout/CheckoutScreen.tsx';
+import OrderSuccessScreen from '@features/checkout/OrderSuccessScreen.tsx';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +21,8 @@ function Navigation() {
                 <Stack.Screen name={screens.restaurantDetailsScreen} component={RestaurantScreen} />
                 <Stack.Screen name={screens.loginScreen} component={LoginScreen} options={{animation: 'fade'}} />
                 <Stack.Screen name={screens.userBottomTab} component={AnimatedTabs} options={{animation: 'fade'}} />
+                <Stack.Screen name={screens.checkoutScreen} component={CheckoutScreen} options={{animation: 'fade'}} />
+                <Stack.Screen name={screens.orderSuccessScreen} component={OrderSuccessScreen} options={{animation: 'fade'}} />
             </Stack.Navigator>
         </NavigationContainer>
     );

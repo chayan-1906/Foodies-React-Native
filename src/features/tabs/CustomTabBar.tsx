@@ -10,6 +10,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
 import {DeliveryTabIcon, DiningTabIcon, LiveTabIcon, ReorderTabIcon} from '@features/tabs/TabIcon.tsx';
 import {useAppSelector} from '@states/reduxHook.ts';
+import CartHOC from '@features/checkout/CartHOC.tsx';
 
 function CustomTabBar({state, navigation}: BottomTabBarProps) {
     const isVegMode = useAppSelector(state => state.user.isVegMode);
@@ -40,16 +41,8 @@ function CustomTabBar({state, navigation}: BottomTabBarProps) {
 
     return (
         <>
-            <Animated.View
-                style={[
-                    styles.tabBarContainer,
-                    animatedStyle,
-                    {
-                        paddingBottom: bottom.bottom,
-                        backgroundColor: isLiveTabFocused ? Colors.dark : Colors.background,
-                    },
-                ]}
-            >
+            {!isLiveTabFocused && <CartHOC />}
+            <Animated.View style={[styles.tabBarContainer, animatedStyle, {paddingBottom: bottom.bottom, backgroundColor: isLiveTabFocused ? Colors.dark : Colors.background}]}>
                 <View style={styles.tabContainer}>
                     {state.routes.map((route, index) => {
                         console.log('route:', route);

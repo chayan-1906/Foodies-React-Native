@@ -85,7 +85,6 @@ export const cartStyles = createStyleSheet(({device, colors, border}) => ({
         height: screenHeight,
         backgroundColor: 'rgba(0,0,0,0.2)',
         zIndex: -2,
-        bottom: -40,
         position: 'absolute',
     },
     closeIcon: {

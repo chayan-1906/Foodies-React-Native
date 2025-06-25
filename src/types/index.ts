@@ -123,7 +123,7 @@ export interface FoodItem {
     }[];
 }
 
-export interface CartItem {
+export interface ICartItem {
     id: string;
     name: string;
     price: number;
@@ -171,7 +171,7 @@ export interface EditFoodModalProps {
     onClose: () => void;
 }
 
-export interface Customization extends CartItem, FoodItem {
+export interface Customization extends ICartItem, FoodItem {
     quantity: number;
     price: number;
     customizationOptions: any[];
