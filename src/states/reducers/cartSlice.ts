@@ -101,7 +101,7 @@ export const cartSlice = createSlice({
                         });
                     }
 
-                    existingItem.quantity = customization?.quantity;
+                    existingItem.quantity += customization?.quantity;
                     existingItem.cartPrice = (existingItem?.cartPrice || 0) + customization?.price;
                 } else {
                     const newCustomizationId = 'c1';
@@ -164,7 +164,7 @@ export const cartSlice = createSlice({
                 item.cartPrice = (item?.cartPrice || 0) - customization?.price;
 
                 if (item?.quantity === 0 || item?.customizations?.length === 0) {
-                    restaurantCart.items = restaurantCart?.items?.filter(cartItem => cartItem?.id === cartItemId);
+                    restaurantCart.items = restaurantCart?.items?.filter(cartItem => cartItem?.id !== cartItemId);
                 }
 
                 if (restaurantCart?.items?.length === 0) {
