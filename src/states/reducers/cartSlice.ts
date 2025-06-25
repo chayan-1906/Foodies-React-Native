@@ -3,17 +3,6 @@ import {Customization, ICartItem, RestaurantItem} from '../../types';
 import {RootState} from '@states/store.ts';
 import {v4 as uuid} from 'uuid';
 
-interface RestaurantDetails {
-    id: string;
-    name: string;
-    discount: string;
-    discountAmount: string;
-    time: string;
-    distance: string;
-    rating: number;
-    imageUrl: string;
-}
-
 export interface RestaurantCart {
     restaurant: RestaurantItem;
     items: ICartItem[];
@@ -58,7 +47,6 @@ export const cartSlice = createSlice({
                     ],
                 });
             }
-            // Alert.alert(`Cart item added: ${JSON.stringify(state.carts[0].items)}`);
         },
         removeItemFromCart: (state, action: PayloadAction<{restaurantId: number; cartItemId: string}>) => {
             const {cartItemId, restaurantId} = action.payload;

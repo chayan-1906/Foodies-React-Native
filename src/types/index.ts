@@ -180,3 +180,18 @@ export interface Customization extends ICartItem, FoodItem {
 export interface SearchAndOffersProps {
     restaurant: RestaurantItem;
 }
+
+export interface ArrowButtonProps {
+    title: string;
+    onPress: () => void;
+    price?: number;
+    isLoading?: boolean;
+}
+
+export interface ReportItemProps {
+    iconName: string;
+    underline?: boolean;
+    title: string;
+    price: number;
+    styles: any;
+}
