@@ -6,7 +6,7 @@ import {restaurantHeaderStyles} from '@unistyles/restaurantStyles.tsx';
 import CustomSafeAreaView from '@components/global/CustomSafeAreaView.tsx';
 import SortingAndFilters from '@components/home/SortingAndFilters.tsx';
 import {restaurantItemsData, restaurantsItemFiltersOption} from '@utils/dummyData.ts';
-import {FoodItem, RestaurantItem} from '../../types';
+import {IFoodItem, IRestaurantItem} from '../../types';
 import RestaurantHeader from '@components/restaurants/RestaurantHeader.tsx';
 import DottedLine from '@components/ui/DottedLine.tsx';
 import FoodCard from '@components/restaurants/FoodCard.tsx';
@@ -14,11 +14,11 @@ import SearchAndOffers from '@components/restaurants/SearchAndOffers.tsx';
 
 function RestaurantScreen() {
     const route = useRoute() as any;
-    const restaurant = route?.params?.restaurant as RestaurantItem;
+    const restaurant = route?.params?.restaurant as IRestaurantItem;
     const {styles} = useStyles(restaurantHeaderStyles);
     const insets = useSafeAreaInsets();
 
-    const renderItem = ({item}: {item: FoodItem}) => {
+    const renderItem = ({item}: {item: IFoodItem}) => {
         return <FoodCard food={item} restaurant={restaurant} />;
     };
 

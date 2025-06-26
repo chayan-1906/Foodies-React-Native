@@ -1,11 +1,11 @@
 import {Image, StyleSheet, View} from 'react-native';
-import {RestaurantItem} from '../../types';
+import {IRestaurantItem} from '../../types';
 import {Colors} from '@unistyles/Constants.tsx';
 import CustomText from '@components/global/CustomText.tsx';
 import NonCustomizableCard from '@components/checkout/NonCustomizableCard.tsx';
 import MiniFoodCard from '@components/restaurants/MiniFoodCard.tsx';
 
-function OrderList({restaurant, cartItems, totalItems}: {restaurant: RestaurantItem; cartItems: any; totalItems: number}) {
+function OrderList({restaurant, cartItems, totalItems}: {restaurant: IRestaurantItem; cartItems: any; totalItems: number}) {
     return (
         <View style={styles.container}>
             <View style={styles.flexRow}>

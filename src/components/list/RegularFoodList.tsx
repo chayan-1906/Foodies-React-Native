@@ -1,14 +1,14 @@
 import {FlatList, Image, ScrollView} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
 import {cardStyles} from '@unistyles/cardStyles.tsx';
-import {RecommendedItem} from '../../types';
+import {IRecommendedItem} from '../../types';
 import ScalePress from '@components/ui/ScalePress.tsx';
 import {regularFoodData} from '@utils/dummyData.ts';
 
 function RegularFoodList() {
     const {styles} = useStyles(cardStyles);
 
-    const renderItem = ({item}: {item: RecommendedItem}) => {
+    const renderItem = ({item}: {item: IRecommendedItem}) => {
         return (
             <ScalePress style={styles.itemContainer}>
                 <Image source={{uri: item?.imageUrl}} style={styles.regularFoodImage} />

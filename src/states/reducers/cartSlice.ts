@@ -1,10 +1,10 @@
 import {createSelector, createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {ICartCustomization, ICartItem, ICustomization, RestaurantItem} from '../../types';
+import {ICartCustomization, ICartItem, ICustomization, IRestaurantItem} from '../../types';
 import {RootState} from '@states/store.ts';
 import {v4 as uuid} from 'uuid';
 
 export interface RestaurantCart {
-    restaurant: RestaurantItem;
+    restaurant: IRestaurantItem;
     items: ICartItem[];
 }
 
@@ -20,7 +20,7 @@ export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addItemToCart: (state, action: PayloadAction<{restaurant: RestaurantItem; cartItem: ICartItem}>) => {
+        addItemToCart: (state, action: PayloadAction<{restaurant: IRestaurantItem; cartItem: ICartItem}>) => {
             const {restaurant, cartItem} = action.payload;
             const existingRestaurantCart = state.carts.find(cart => cart?.restaurant?.id === restaurant?.id);
             if (existingRestaurantCart) {
@@ -67,7 +67,7 @@ export const cartSlice = createSlice({
                 state.carts = state.carts.filter(cart => cart.restaurant.id !== restaurantId);
             }
         },
-        addCustomizableItem: (state, action: PayloadAction<{restaurant: RestaurantItem; item: ICartItem; customization: ICustomization}>) => {
+        addCustomizableItem: (state, action: PayloadAction<{restaurant: IRestaurantItem; item: ICartItem; customization: ICustomization}>) => {
             const {restaurant, item, customization} = action.payload;
             const existingRestaurantCart = state.carts.find(cart => cart.restaurant.id === restaurant.id);
             if (existingRestaurantCart) {
@@ -116,6 +116,28 @@ export const cartSlice = createSlice({
                         ],
                     });
                 }
+            } else {
+                // Create new restaurant cart
+                const newCustomizationId = 'c1';
+                state.carts.push({
+                    restaurant,
+                    items: [
+                        {
+                            ...item,
+                            quantity: customization.quantity,
+                            cartPrice: customization.price,
+                            customizations: [
+                                {
+                                    ...customization,
+                                    id: newCustomizationId,
+                                    quantity: customization.quantity,
+                                    cartPrice: customization.price,
+                                    price: customization.price / customization.quantity,
+                                },
+                            ],
+                        },
+                    ],
+                });
             }
         },
         removeCustomizableItem: (state, action: PayloadAction<{restaurantId: number; cartItemId: string; customizationId: string}>) => {

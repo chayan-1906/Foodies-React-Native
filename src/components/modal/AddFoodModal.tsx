@@ -1,5 +1,5 @@
 import {Image, SafeAreaView, ScrollView, TouchableOpacity, View} from 'react-native';
-import {AddFoodModalProps, ICustomization} from '../../types';
+import {IAddFoodModalProps, ICustomization} from '../../types';
 import {useAppDispatch} from '@states/reduxHook.ts';
 import {useStyles} from 'react-native-unistyles';
 import {modalStyles} from '@unistyles/modalStyles.tsx';
@@ -26,7 +26,7 @@ function transformSelectedOptions(selectedOption: any, customizationOptions: any
     });
 }
 
-function AddFoodModal({food, restaurant, onClose}: AddFoodModalProps) {
+function AddFoodModal({food, restaurant, onClose}: IAddFoodModalProps) {
     const dispatch = useAppDispatch();
     const {styles} = useStyles(modalStyles);
     const [data, setData] = useState({

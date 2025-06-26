@@ -1,6 +1,6 @@
 import {StyleSheet, View} from 'react-native';
 import {useRoute} from '@react-navigation/native';
-import {RestaurantItem} from '../../types';
+import {IRestaurantItem} from '../../types';
 import {useAppDispatch} from '@states/reduxHook.ts';
 import {useEffect} from 'react';
 import {replace} from '@utils/NavigationUtils.ts';
@@ -12,7 +12,7 @@ import CustomText from '@components/global/CustomText.tsx';
 
 function OrderSuccessScreen() {
     const route = useRoute() as any;
-    const restaurant = route.params.restaurant as RestaurantItem;
+    const restaurant = route.params.restaurant as IRestaurantItem;
     const dispatch = useAppDispatch();
 
     useEffect(() => {

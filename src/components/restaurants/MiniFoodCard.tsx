@@ -1,6 +1,6 @@
 import {memo, useRef} from 'react';
 import {useStyles} from 'react-native-unistyles';
-import {ICustomization, MiniFoodCardProps} from '../../types';
+import {ICustomization, IMiniFoodCardProps} from '../../types';
 import {modalStyles} from '@unistyles/modalStyles.tsx';
 import {useAppDispatch, useAppSelector} from '@states/reduxHook.ts';
 import {addCustomizableItem, removeCustomizableItem, selectRestaurantCartItem} from '@states/reducers/cartSlice.ts';
@@ -13,7 +13,7 @@ import Icon from '@components/global/Icon.tsx';
 import {RFValue} from 'react-native-responsive-fontsize';
 import AnimatedNumbers from 'react-native-animated-numbers';
 
-function MiniFoodCard({item, customization, restaurant}: MiniFoodCardProps) {
+function MiniFoodCard({item, customization, restaurant}: IMiniFoodCardProps) {
     const {styles} = useStyles(modalStyles);
     const dispatch = useAppDispatch();
     const cartItem = useAppSelector(selectRestaurantCartItem(restaurant?.id, item?.id));

@@ -2,7 +2,7 @@ import {FlatList, View} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
 import {cardStyles} from '@unistyles/cardStyles.tsx';
 import RestaurantCard from '@components/list/RestaurantCard.tsx';
-import {RestaurantItem} from '../../types';
+import {IRestaurantItem} from '../../types';
 import CustomText from '@components/global/CustomText.tsx';
 import {Fonts} from '@unistyles/Constants.tsx';
 import {recommendedListData} from '@utils/dummyData.ts';
@@ -10,7 +10,7 @@ import {recommendedListData} from '@utils/dummyData.ts';
 function RestaurantList() {
     const {styles} = useStyles(cardStyles);
 
-    const renderItem = ({item}: {item: RestaurantItem}) => {
+    const renderItem = ({item}: {item: IRestaurantItem}) => {
         return <RestaurantCard restaurant={item} />;
     };
 

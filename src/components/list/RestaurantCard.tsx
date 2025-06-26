@@ -4,13 +4,13 @@ import {restaurantStyles} from '@unistyles/restaurantStyles.tsx';
 import ScalePress from '@components/ui/ScalePress.tsx';
 import {navigate} from '@utils/NavigationUtils.ts';
 import screens from '@utils/screens.ts';
-import {RestaurantItem} from '../../types';
+import {IRestaurantItem} from '../../types';
 import CustomText from '@components/global/CustomText.tsx';
 import {Fonts} from '@unistyles/Constants.tsx';
 import StarRating from '@components/ui/StarRating.tsx';
 import DottedLine from '@components/ui/DottedLine.tsx';
 
-function RestaurantCard({restaurant}: {restaurant: RestaurantItem}) {
+function RestaurantCard({restaurant}: {restaurant: IRestaurantItem}) {
     const {styles} = useStyles(restaurantStyles);
 
     return (

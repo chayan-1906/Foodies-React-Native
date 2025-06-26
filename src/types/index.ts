@@ -5,8 +5,8 @@ import React from 'react';
 
 /** navigation types */
 export interface INavigationParams {
-    restaurantDetailsScreen: {restaurant: RestaurantItem};
-    checkoutScreen: {restaurant: RestaurantItem};
+    restaurantDetailsScreen: {restaurant: IRestaurantItem};
+    checkoutScreen: {restaurant: IRestaurantItem};
     orderSuccessScreen: undefined;
 }
 
@@ -31,7 +31,7 @@ export interface ILayoutEvent {
 
 /** modal refs */
 export interface IModalRef {
-    openModal: (data: FoodItem | CartCustomization) => void;
+    openModal: (data: IFoodItem | CartCustomization) => void;
     closeModal: () => void;
 }
 
@@ -116,7 +116,7 @@ export interface CustomGradientProps {
     style?: ViewStyle;
 }
 
-export type RecommendedItem = {
+export type IRecommendedItem = {
     id: number;
     name: string;
     imageUrl: string;
@@ -127,7 +127,7 @@ export type RecommendedItem = {
     rating?: number;
 };
 
-export type RestaurantItem = {
+export type IRestaurantItem = {
     id: number;
     name: string;
     imageUrl: string;
@@ -147,7 +147,7 @@ export interface RestaurantHeaderProps {
     title: string;
 }
 
-export interface FoodItem {
+export interface IFoodItem {
     id: string;
     name: string;
     description: string;
@@ -180,39 +180,39 @@ export type CustomModalHandle<T = any> = {
     closeModal: () => void;
 };
 
-export interface AddFoodModalProps {
-    food: FoodItem;
-    restaurant: RestaurantItem;
+export interface IAddFoodModalProps {
+    food: IFoodItem;
+    restaurant: IRestaurantItem;
     onClose: () => void;
 }
 
-export interface RepeatFoodModalProps {
+export interface IRepeatFoodModalProps {
     item: ICartItem;
-    restaurant: RestaurantItem;
+    restaurant: IRestaurantItem;
     onOpenAddFoodModal: () => void;
     closeModal: () => void;
 }
 
-export interface RemoveFoodModalProps {
+export interface IRemoveFoodModalProps {
     item: ICartItem;
-    restaurant: RestaurantItem;
+    restaurant: IRestaurantItem;
     closeModal: () => void;
 }
 
-export interface MiniFoodCardProps {
+export interface IMiniFoodCardProps {
     item: ICartItem;
     customization: ICartCustomization;
-    restaurant: RestaurantItem;
+    restaurant: IRestaurantItem;
 }
 
-export interface EditFoodModalProps {
+export interface IEditFoodModalProps {
     item: ICustomization;
     customization: ICustomization;
-    restaurant: RestaurantItem;
+    restaurant: IRestaurantItem;
     onClose: () => void;
 }
 
-export interface ICustomization extends ICartItem, FoodItem {
+export interface ICustomization extends ICartItem, IFoodItem {
     quantity: number;
     price: number;
     customizationOptions: any[];
@@ -252,7 +252,7 @@ interface ICustomizationState {
 }
 
 export interface SearchAndOffersProps {
-    restaurant: RestaurantItem;
+    restaurant: IRestaurantItem;
 }
 
 export interface ArrowButtonProps {

@@ -1,6 +1,6 @@
 import {TouchableOpacity, View} from 'react-native';
 import {memo, useCallback, useRef} from 'react';
-import {FoodItem, ICartItem, RestaurantItem} from '../../types';
+import {ICartItem, IFoodItem, IRestaurantItem} from '../../types';
 import {useStyles} from 'react-native-unistyles';
 import {foodStyles} from '@unistyles/foodStyles.tsx';
 import CustomText from '@components/global/CustomText.tsx';
@@ -16,7 +16,7 @@ import AddFoodModal from '@components/modal/AddFoodModal.tsx';
 import RepeatFoodModal from '@components/modal/RepeatFoodModal.tsx';
 import RemoveFoodModal from '@components/modal/RemoveFoodModal.tsx';
 
-function AddButton({item, restaurant}: {item: FoodItem | ICartItem; restaurant: RestaurantItem}) {
+function AddButton({item, restaurant}: {item: IFoodItem | ICartItem; restaurant: IRestaurantItem}) {
     const dispatch = useAppDispatch();
     const {styles} = useStyles(foodStyles);
     const {id: itemId, isCustomizable} = item;
@@ -24,26 +24,16 @@ function AddButton({item, restaurant}: {item: FoodItem | ICartItem; restaurant: 
     const cart = useAppSelector(selectRestaurantCartItem(restaurantId, itemId));
     const modalRef = useRef<any>(null);
 
-    const isCartItem = (item: FoodItem | ICartItem): item is ICartItem => {
-        return 'quantity' in item;
-    };
-
     const openAddModal = () => {
-        if (!isCartItem(item)) {
-            modalRef?.current?.openModal(<AddFoodModal food={item} restaurant={restaurant} onClose={() => modalRef?.current?.closeModal()} />);
-        }
+        modalRef?.current?.openModal(<AddFoodModal food={item as IFoodItem} restaurant={restaurant} onClose={() => modalRef?.current?.closeModal()} />);
     };
 
     const openRepeatModal = () => {
-        if (isCartItem(item)) {
-            modalRef?.current?.openModal(<RepeatFoodModal item={item} restaurant={restaurant} onOpenAddFoodModal={openAddModal} closeModal={() => modalRef?.current?.closeModal()} />);
-        }
+        modalRef?.current?.openModal(<RepeatFoodModal item={cart!} restaurant={restaurant} onOpenAddFoodModal={openAddModal} closeModal={() => modalRef?.current?.closeModal()} />);
     };
 
     const openRemoveModal = () => {
-        if (isCartItem(item)) {
-            modalRef?.current?.openModal(<RemoveFoodModal item={item} restaurant={restaurant} closeModal={() => modalRef?.current?.closeModal()} />);
-        }
+        modalRef?.current?.openModal(<RemoveFoodModal item={cart!} restaurant={restaurant} closeModal={() => modalRef?.current?.closeModal()} />);
     };
 
     const addCartHandler = useCallback(() => {

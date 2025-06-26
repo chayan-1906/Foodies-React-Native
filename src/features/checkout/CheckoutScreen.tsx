@@ -3,7 +3,7 @@ import {Image, Platform, ScrollView, StyleSheet, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {Colors} from '@unistyles/Constants.tsx';
 import {useRoute} from '@react-navigation/native';
-import {RestaurantItem} from '../../types';
+import {IRestaurantItem} from '../../types';
 import {useAppSelector} from '@states/reduxHook.ts';
 import {selectRestaurantCart} from '@states/reducers/cartSlice.ts';
 import {goBack, replace} from '@utils/NavigationUtils.ts';
@@ -18,7 +18,7 @@ import ArrowButton from '@components/checkout/ArrowButton.tsx';
 
 function CheckoutScreen() {
     const route = useRoute() as any;
-    const restaurant = route.params.restaurant as RestaurantItem;
+    const restaurant = route.params.restaurant as IRestaurantItem;
     const cart = useAppSelector(selectRestaurantCart(restaurant?.id));
     const totalItemPrice = cart?.reduce((total, item) => total + (item.cartPrice || 0), 0) || 0;
     const totalItems = cart?.reduce((total, item) => total + (item.quantity || 0), 0) || 0;
