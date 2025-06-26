@@ -76,15 +76,7 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     profileImage: {
         width: '100%',
         height: '100%',
-        borderRadius: border.full,
         resizeMode: 'contain',
-    },
-    goldenCircle: {
-        width: 50,
-        position: 'absolute',
-        zIndex: 1,
-        alignSelf: 'center',
-        height: 50,
         borderRadius: border.full,
     },
     profileAvatar: {
@@ -95,7 +87,6 @@ export const homeStyles = createStyleSheet(({colors, device, border}) => ({
         justifyContent: 'center',
         alignItems: 'center',
     },
-
     vegMode: {
         width: '15%',
         top: 3,

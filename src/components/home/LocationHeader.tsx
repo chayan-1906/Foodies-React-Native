@@ -44,8 +44,7 @@ function LocationHeader() {
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.profileAvatar}>
-                        <Image source={require('@assets/icons/golden_circle.png')} style={styles.goldenCircle} />
-                        <Image source={require('@assets/images/user.jpg')} style={styles.profileImage} />
+                        <Image source={require('@assets/images/user.png')} style={styles.profileImage} resizeMode={'cover'} />
                     </TouchableOpacity>
                 </View>
             </View>

@@ -15,7 +15,7 @@ function RecommendedList() {
 
     const renderItem = ({item}: {item: IRecommendedItem}) => {
         return (
-            <ScalePress style={styles.itemContainer} onPress={async () => await navigate(screens.restaurantDetailsScreen, {item})}>
+            <ScalePress style={styles.itemContainer} onPress={async () => await navigate(screens.restaurantDetailsScreen, {restaurant: item})}>
                 <View style={styles.imageContainer}>
                     <Image source={{uri: item?.imageUrl}} style={styles.itemImage} />
                     {item?.discount && (
