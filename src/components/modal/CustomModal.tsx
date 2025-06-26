@@ -1,9 +1,9 @@
-import {Modal, Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Modal, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {ForwardedRef, forwardRef, useImperativeHandle, useState} from 'react';
 import {Fonts, screenHeight} from '@unistyles/Constants.tsx';
-import {BlurView} from '@react-native-community/blur';
 import Icon from '@components/global/Icon.tsx';
 import {CustomModalHandle} from '../../types';
+import {BlurView} from '@react-native-community/blur';
 
 function CustomModal(props: any, ref: ForwardedRef<CustomModalHandle>) {
     const [visible, setVisible] = useState(false);
@@ -21,7 +21,7 @@ function CustomModal(props: any, ref: ForwardedRef<CustomModalHandle>) {
 
     return (
         <Modal transparent={true} visible={visible} animationType={'slide'} onRequestClose={() => setVisible(false)}>
-            {Platform.OS === 'ios' && <BlurView style={styles.absolute} blurType={'light'} blurAmount={10} />}
+            <BlurView style={styles.absolute} blurType={'light'} blurAmount={10} />
             <View style={styles.modalContainer}>
                 <View style={styles.contentContainer}>
                     <TouchableOpacity style={styles.closeIcon} onPress={() => setVisible(false)}>
@@ -48,9 +48,8 @@ const styles = StyleSheet.create({
     },
     modalContainer: {
         flex: 1,
-        backgroundColor: 'rgba(0,0,0,0.5)',
-        filter: Platform.OS === 'android' ? [{blur: 4}] : undefined,
         justifyContent: 'flex-end',
+        backgroundColor: 'rgba(0,0,0,0.5)',
     },
     contentContainer: {
         width: '100%',

@@ -83,7 +83,6 @@ export const foodStyles = createStyleSheet(({device, colors, border}) => ({
         alignItems: 'center',
     },
     plusSmallIcon: {
-        // position: 'absolute',
         top: -8,
         right: -24,
     },

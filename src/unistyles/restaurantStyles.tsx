@@ -1,6 +1,5 @@
 import {createStyleSheet} from 'react-native-unistyles';
 import {Colors} from './Constants';
-import {Platform} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 
 export const restaurantStyles = createStyleSheet(({device, colors, border}) => ({
@@ -13,8 +12,7 @@ export const restaurantStyles = createStyleSheet(({device, colors, border}) => (
         elevation: 5,
         shadowRadius: 10,
         shadowColor: colors.dark,
-        // backgroundColor: 'transparent',
-        backgroundColor: 'red',
+        backgroundColor: 'transparent',
     },
     card: {
         backgroundColor: colors.background,
@@ -120,7 +118,6 @@ export const searchStyles = createStyleSheet(({device, colors, border}) => ({
         shadowOpacity: 0.1,
         elevation: 5,
         shadowRadius: 5,
-        bottom: Platform.OS == 'android' ? 22 : 0,
         zIndex: 22,
         shadowColor: colors.secondary,
     },

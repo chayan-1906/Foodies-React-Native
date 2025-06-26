@@ -19,7 +19,7 @@ function CartHOC({}) {
     const dispatch = useDispatch();
     const carts = useAppSelector(state => state.cart.carts);
     const {scrollY} = useSharedState();
-    const bottom = useSafeAreaInsets();
+    const insets = useSafeAreaInsets();
     const {styles} = useStyles(cartStyles);
     const [isExpand, setIsExpand] = useState(false);
     const totalCartsLength = carts?.length;
@@ -40,7 +40,7 @@ function CartHOC({}) {
     if (!totalCartsLength) return null;
 
     return (
-        <Animated.View style={[isExpand ? styles.expandedCartContainer : styles.cartContainer, animatedStyle, {paddingBottom: !isExpand ? bottom.bottom + 16 : 0}]}>
+        <Animated.View style={[isExpand ? styles.expandedCartContainer : styles.cartContainer, animatedStyle, {paddingBottom: !isExpand ? (Platform.OS === 'android' ? insets.bottom + 40 : insets.bottom + 16) : 0}]}>
             {carts?.length > 1 && !isExpand && (
                 <TouchableOpacity activeOpacity={0.9} style={styles.moreButton} onPress={() => setIsExpand(true)}>
                     <CustomText style={{top: -1}} color={Colors.active} fontSize={9} fontFamily={'Okra-Medium'}>

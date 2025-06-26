@@ -34,6 +34,7 @@ function RestaurantScreen() {
                     data={restaurantItemsData}
                     renderItem={renderItem}
                     scrollEventThrottle={16}
+                    showsVerticalScrollIndicator={false}
                     keyExtractor={item => item.id}
                     ItemSeparatorComponent={() => (
                         <View>
