@@ -1,9 +1,9 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {UserState} from '../../types';
+import {IUser, IUserState} from '../../types';
 import {RootState} from '@states/store';
 
-const initialState: UserState = {
-    user: {},
+const initialState: IUserState = {
+    user: null,
     isVegMode: false,
 };
 
@@ -11,7 +11,7 @@ export const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        setUser: (state, action: PayloadAction<object>) => {
+        setUser: (state, action: PayloadAction<IUser>) => {
             state.user = action.payload;
         },
         setVegMode: (state, action: PayloadAction<boolean>) => {

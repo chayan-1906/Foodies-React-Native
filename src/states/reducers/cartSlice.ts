@@ -1,5 +1,5 @@
 import {createSelector, createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {Customization, ICartItem, RestaurantItem} from '../../types';
+import {ICartCustomization, ICartItem, ICustomization, RestaurantItem} from '../../types';
 import {RootState} from '@states/store.ts';
 import {v4 as uuid} from 'uuid';
 
@@ -24,7 +24,7 @@ export const cartSlice = createSlice({
             const {restaurant, cartItem} = action.payload;
             const existingRestaurantCart = state.carts.find(cart => cart?.restaurant?.id === restaurant?.id);
             if (existingRestaurantCart) {
-                const existingItem = existingRestaurantCart?.items?.find(item => item?.id === cartItem?.id);
+                const existingItem = existingRestaurantCart?.items?.find(item => item?.id === cartItem?.id) as ICartItem | undefined;
                 if (existingItem) {
                     existingItem.quantity += 1;
                     existingItem.cartPrice = (existingItem.cartPrice || 0) + existingItem?.price;
@@ -67,20 +67,27 @@ export const cartSlice = createSlice({
                 state.carts = state.carts.filter(cart => cart.restaurant.id !== restaurantId);
             }
         },
-        addCustomizableItem: (state, action: PayloadAction<{restaurant: RestaurantItem; item: ICartItem; customization: Customization}>) => {
+        addCustomizableItem: (state, action: PayloadAction<{restaurant: RestaurantItem; item: ICartItem; customization: ICustomization}>) => {
             const {restaurant, item, customization} = action.payload;
             const existingRestaurantCart = state.carts.find(cart => cart.restaurant.id === restaurant.id);
             if (existingRestaurantCart) {
-                const existingItem = existingRestaurantCart?.items?.find(cartItem => cartItem?.id === item.id) as any;
+                const existingItem = existingRestaurantCart?.items?.find(cartItem => cartItem?.id === item.id);
+
                 if (existingItem) {
-                    const existingCustomizationIndex = existingItem?.customizations?.findIndex((cust: any) => JSON.stringify(cust.customizationOptions) === JSON.stringify(customization.customizationOptions));
-                    if (existingCustomizationIndex !== undefined && existingCustomizationIndex !== -1) {
-                        const existingCustomization = existingItem?.customizations[existingCustomizationIndex];
+                    // Initialize customizations if needed
+                    if (!existingItem.customizations) {
+                        existingItem.customizations = [];
+                    }
+
+                    const existingCustomizationIndex = existingItem.customizations.findIndex((cust: ICartCustomization) => JSON.stringify(cust.customizationOptions) === JSON.stringify(customization.customizationOptions));
+
+                    if (existingCustomizationIndex !== -1) {
+                        const existingCustomization = existingItem.customizations[existingCustomizationIndex];
                         existingCustomization.quantity += customization?.quantity;
                         existingCustomization.cartPrice += customization?.price;
                     } else {
                         const newCustomizationId = uuid();
-                        existingItem?.customizations?.push({
+                        existingItem.customizations.push({
                             ...customization,
                             id: newCustomizationId,
                             quantity: customization?.quantity,
@@ -92,8 +99,9 @@ export const cartSlice = createSlice({
                     existingItem.quantity += customization?.quantity;
                     existingItem.cartPrice = (existingItem?.cartPrice || 0) + customization?.price;
                 } else {
+                    // Add new item to existing restaurant cart
                     const newCustomizationId = 'c1';
-                    existingRestaurantCart?.items?.push({
+                    existingRestaurantCart.items.push({
                         ...item,
                         quantity: customization.quantity,
                         cartPrice: customization.price,
@@ -108,27 +116,6 @@ export const cartSlice = createSlice({
                         ],
                     });
                 }
-            } else {
-                const newCustomizationId = 'c1';
-                state.carts.push({
-                    restaurant,
-                    items: [
-                        {
-                            ...item,
-                            quantity: customization.quantity,
-                            cartPrice: customization?.price,
-                            customizations: [
-                                {
-                                    ...customization,
-                                    id: newCustomizationId,
-                                    quantity: customization.quantity,
-                                    cartPrice: customization?.price,
-                                    price: customization.price / customization.quantity,
-                                },
-                            ],
-                        },
-                    ],
-                });
             }
         },
         removeCustomizableItem: (state, action: PayloadAction<{restaurantId: number; cartItemId: string; customizationId: string}>) => {
@@ -137,7 +124,7 @@ export const cartSlice = createSlice({
             if (!restaurantCart) return;
             const item = restaurantCart?.items?.find(cartItem => cartItem?.id === cartItemId);
             if (!item) return;
-            const customizationIndex = item?.customizations?.findIndex(cust => cust?.id === customizationId) as number;
+            const customizationIndex = item?.customizations?.findIndex((cust: ICartCustomization) => cust?.id === customizationId) as number;
 
             if (customizationIndex !== -1 && item?.customizations) {
                 const customization = item.customizations[customizationIndex];
@@ -176,9 +163,9 @@ export const cartSlice = createSlice({
             const item = restaurantCart?.items?.find(cartItem => cartItem?.id === cartItemId);
             if (!item || !item.customizations) return;
 
-            const matchingCustomizationIndex = item?.customizations?.findIndex((cust: any) => cust?.id !== customizationId && JSON.stringify(cust.customizationOptions) === JSON.stringify(newCustomization.customizationOptions));
+            const matchingCustomizationIndex = item?.customizations?.findIndex((cust: ICartCustomization) => cust?.id !== customizationId && JSON.stringify(cust.customizationOptions) === JSON.stringify(newCustomization.customizationOptions));
 
-            const targetCustomizationIndex = item?.customizations?.findIndex(cust => cust?.id === customizationId);
+            const targetCustomizationIndex = item?.customizations?.findIndex((cust: ICartCustomization) => cust?.id === customizationId);
             if (targetCustomizationIndex === -1) return;
 
             const targetCustomization = item?.customizations[targetCustomizationIndex];

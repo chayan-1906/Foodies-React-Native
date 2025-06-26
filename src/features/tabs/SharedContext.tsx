@@ -1,8 +1,8 @@
 import React, {createContext, useContext} from 'react';
-import {SharedStateContextType} from '../../types';
 import {useSharedValue, withTiming} from 'react-native-reanimated';
+import {ISharedStateContextType} from '../../types';
 
-const SharedStateContext = createContext<SharedStateContextType | undefined>(undefined);
+const SharedStateContext = createContext<ISharedStateContextType | undefined>(undefined);
 
 export function SharedStateProvider({children}: {children: React.ReactNode}) {
     const scrollY = useSharedValue(0);

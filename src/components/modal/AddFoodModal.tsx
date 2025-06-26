@@ -1,5 +1,5 @@
 import {Image, SafeAreaView, ScrollView, TouchableOpacity, View} from 'react-native';
-import {AddFoodModalProps, Customization} from '../../types';
+import {AddFoodModalProps, ICustomization} from '../../types';
 import {useAppDispatch} from '@states/reduxHook.ts';
 import {useStyles} from 'react-native-unistyles';
 import {modalStyles} from '@unistyles/modalStyles.tsx';
@@ -93,7 +93,7 @@ function AddFoodModal({food, restaurant, onClose}: AddFoodModalProps) {
                 quantity: data?.quantity,
                 price: data?.price,
                 customizationOptions,
-            } as Customization,
+            } as ICustomization,
         };
 
         dispatch(addCustomizableItem(customizedData));

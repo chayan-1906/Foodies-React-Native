@@ -1,6 +1,6 @@
 import {memo, useRef} from 'react';
 import {useStyles} from 'react-native-unistyles';
-import {Customization, MiniFoodCardProps} from '../../types';
+import {ICustomization, MiniFoodCardProps} from '../../types';
 import {modalStyles} from '@unistyles/modalStyles.tsx';
 import {useAppDispatch, useAppSelector} from '@states/reduxHook.ts';
 import {addCustomizableItem, removeCustomizableItem, selectRestaurantCartItem} from '@states/reducers/cartSlice.ts';
@@ -20,7 +20,7 @@ function MiniFoodCard({item, customization, restaurant}: MiniFoodCardProps) {
     const modalRef = useRef<any>(null);
 
     const openEditModal = () => {
-        modalRef?.current?.openModal(<EditFoodModal item={item} customization={customization} restaurant={restaurant} onClose={() => modalRef?.current?.closeModal()} />);
+        modalRef?.current?.openModal(<EditFoodModal item={item as ICustomization} customization={customization as ICustomization} restaurant={restaurant} onClose={() => modalRef?.current?.closeModal()} />);
     };
 
     const addCartHandler = (customization: any) => {
@@ -31,7 +31,7 @@ function MiniFoodCard({item, customization, restaurant}: MiniFoodCardProps) {
                 quantity: 1,
                 price: customization?.price,
                 customizationOptions: customization?.customizationOptions,
-            } as Customization,
+            } as ICustomization,
         };
 
         dispatch(addCustomizableItem(data));

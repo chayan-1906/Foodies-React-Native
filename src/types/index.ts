@@ -3,9 +3,50 @@ import Animated from 'react-native-reanimated';
 
 import React from 'react';
 
+/** navigation types */
+export interface INavigationParams {
+    restaurantDetailsScreen: {restaurant: RestaurantItem};
+    checkoutScreen: {restaurant: RestaurantItem};
+    orderSuccessScreen: undefined;
+}
+
+/** tab bar types */
+export interface ITabBarProps {
+    state: any;
+    descriptors: any;
+    navigation: any;
+}
+
+/** event types */
+export interface ILayoutEvent {
+    nativeEvent: {
+        layout: {
+            width: number;
+            height: number;
+            x: number;
+            y: number;
+        };
+    };
+}
+
+/** modal refs */
+export interface IModalRef {
+    openModal: (data: FoodItem | CartCustomization) => void;
+    closeModal: () => void;
+}
+
+/** user types */
+export interface IUser {
+    id: string;
+    name: string;
+    email?: string;
+    phone: string;
+    avatar?: string;
+}
+
 /** redux props */
-export interface UserState {
-    user: any;
+export interface IUserState {
+    user: IUser | null;
     isVegMode: boolean;
 }
 
@@ -22,7 +63,7 @@ export interface CustomTextProps {
     style?: TextStyle | TextStyle[];
     children: React.ReactNode;
     numberOfLines?: number;
-    onLayout?: (event: any) => void;
+    onLayout?: (event: ILayoutEvent) => void;
 }
 
 export interface PhoneInputProps {
@@ -39,7 +80,7 @@ export interface IconProps {
     iconFamily: 'Ionicons' | 'MaterialIcons' | 'MaterialCommunityIcons';
 }
 
-export interface SharedStateContextType {
+export interface ISharedStateContextType {
     scrollY: Animated.SharedValue<number>;
     scrollYGlobal: Animated.SharedValue<number>;
     scrollToTop: () => void;
@@ -66,7 +107,7 @@ export interface BackToTopButtonProps {
 
 export interface SortingFiltersProps {
     menuTitle: string;
-    options: Record<string, any>;
+    options: string[];
 }
 
 export interface CustomGradientProps {
@@ -131,11 +172,11 @@ export interface ICartItem {
     cartPrice?: number;
     isVeg: boolean;
     isCustomizable: boolean;
-    customizations?: any[];
+    customizations?: ICartCustomization[];
 }
 
-export type CustomModalHandle = {
-    openModal: (data: any) => void;
+export type CustomModalHandle<T = any> = {
+    openModal: (data: T) => void;
     closeModal: () => void;
 };
 
@@ -146,35 +187,68 @@ export interface AddFoodModalProps {
 }
 
 export interface RepeatFoodModalProps {
-    item: Customization;
+    item: ICartItem;
     restaurant: RestaurantItem;
     onOpenAddFoodModal: () => void;
     closeModal: () => void;
 }
 
 export interface RemoveFoodModalProps {
-    item: Customization;
+    item: ICartItem;
     restaurant: RestaurantItem;
     closeModal: () => void;
 }
 
 export interface MiniFoodCardProps {
-    item: Customization;
-    customization: Customization;
+    item: ICartItem;
+    customization: ICartCustomization;
     restaurant: RestaurantItem;
 }
 
 export interface EditFoodModalProps {
-    item: Customization;
-    customization: Customization;
+    item: ICustomization;
+    customization: ICustomization;
     restaurant: RestaurantItem;
     onClose: () => void;
 }
 
-export interface Customization extends ICartItem, FoodItem {
+export interface ICustomization extends ICartItem, FoodItem {
     quantity: number;
     price: number;
     customizationOptions: any[];
+}
+
+/** cart customization types */
+export interface ICustomizationOption {
+    name: string;
+    price: number;
+    isSelected?: boolean;
+}
+
+interface CartCustomization extends ICustomization {
+    id: string;
+    quantity: number;
+    cartPrice: number;
+    price: number;
+    customizationOptions: ICustomizationOption[];
+}
+
+interface ISelectedCustomizations {
+    [key: string]: ICustomizationOption[];
+}
+
+export interface ICartCustomization {
+    id: string;
+    quantity: number;
+    cartPrice: number;
+    price: number;
+    customizationOptions: ICustomizationOption[];
+}
+
+interface ICustomizationState {
+    selectedOptions: ISelectedCustomizations;
+    totalPrice: number;
+    quantity: number;
 }
 
 export interface SearchAndOffersProps {
@@ -193,5 +267,5 @@ export interface ReportItemProps {
     underline?: boolean;
     title: string;
     price: number;
-    styles: any;
+    styles: any; // TODO: Fix any type
 }

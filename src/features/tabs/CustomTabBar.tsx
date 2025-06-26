@@ -5,14 +5,14 @@ import {Colors, screenWidth} from '@unistyles/Constants.tsx';
 import {useStyles} from 'react-native-unistyles';
 import ScalePress from '@components/ui/ScalePress.tsx';
 import {useSharedState} from '@features/tabs/SharedContext.tsx';
-import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
 import {DeliveryTabIcon, DiningTabIcon, LiveTabIcon, ReorderTabIcon} from '@features/tabs/TabIcon.tsx';
 import {useAppSelector} from '@states/reduxHook.ts';
 import CartHOC from '@features/checkout/CartHOC.tsx';
+import {ITabBarProps} from '../../types';
 
-function CustomTabBar({state, navigation}: BottomTabBarProps) {
+function CustomTabBar({state, descriptors, navigation}: ITabBarProps) {
     const isVegMode = useAppSelector(state => state.user.isVegMode);
     const {scrollY} = useSharedState();
     const bottom = useSafeAreaInsets();
@@ -44,7 +44,7 @@ function CustomTabBar({state, navigation}: BottomTabBarProps) {
             {!isLiveTabFocused && <CartHOC />}
             <Animated.View style={[styles.tabBarContainer, animatedStyle, {paddingBottom: bottom.bottom, backgroundColor: isLiveTabFocused ? Colors.dark : Colors.background}]}>
                 <View style={styles.tabContainer}>
-                    {state.routes.map((route, index) => {
+                    {state.routes.map((route: any, index: number) => {
                         console.log('route:', route);
                         const isFocused = state.index === index;
 
@@ -78,16 +78,6 @@ function CustomTabBar({state, navigation}: BottomTabBarProps) {
                     })}
                     <View style={styles.verticalLine} />
                 </View>
-
-                {/*<Animated.View
-                    style={[
-                        styles.slidingIndicator,
-                        indicatorStyle,
-                        {
-                            backgroundColor: isLiveTabFocused ? '#FFF' : isVegMode ? Colors.active : Colors.primary,
-                        },
-                    ]}
-                />*/}
 
                 <View style={styles.groceryLogoContainer}>
                     <Image source={require('@assets/icons/grocery.png')} style={styles.groceryLogo} />

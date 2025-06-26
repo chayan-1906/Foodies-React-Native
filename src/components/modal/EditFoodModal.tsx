@@ -1,5 +1,5 @@
 import {Image, SafeAreaView, ScrollView, TouchableOpacity, View} from 'react-native';
-import {Customization, EditFoodModalProps} from '../../types';
+import {EditFoodModalProps, ICustomization} from '../../types';
 import {useAppDispatch} from '@states/reduxHook.ts';
 import {useStyles} from 'react-native-unistyles';
 import {modalStyles} from '@unistyles/modalStyles.tsx';
@@ -92,7 +92,7 @@ function EditFoodModal({item, customization, restaurant, onClose}: EditFoodModal
                 quantity: data?.quantity,
                 price: data?.price,
                 customizationOptions,
-            } as Customization,
+            } as ICustomization,
         };
 
         dispatch(updateCustomizableItem(customizedData));
