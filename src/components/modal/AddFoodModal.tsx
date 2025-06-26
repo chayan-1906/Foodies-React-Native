@@ -1,17 +1,17 @@
-import {Image, SafeAreaView, ScrollView, TouchableOpacity, View} from 'react-native';
-import {IAddFoodModalProps, ICustomization} from '../../types';
-import {useAppDispatch} from '@states/reduxHook.ts';
-import {useStyles} from 'react-native-unistyles';
-import {modalStyles} from '@unistyles/modalStyles.tsx';
 import {useEffect, useState} from 'react';
-import {addCustomizableItem} from '@states/reducers/cartSlice.ts';
-import CustomText from '@components/global/CustomText.tsx';
-import {Colors, Fonts} from '@unistyles/Constants.tsx';
-import Icon from '@components/global/Icon.tsx';
-import DottedLine from '@components/ui/DottedLine.tsx';
-import ScalePress from '@components/ui/ScalePress.tsx';
+import {Image, SafeAreaView, ScrollView, TouchableOpacity, View} from 'react-native';
+import {useStyles} from 'react-native-unistyles';
 import {RFValue} from 'react-native-responsive-fontsize';
 import AnimatedNumbers from 'react-native-animated-numbers';
+import {IAddFoodModalProps, ICustomization} from '@/types';
+import {useAppDispatch} from '@/states/reduxHook.ts';
+import {modalStyles} from '@/unistyles/modalStyles.tsx';
+import {addCustomizableItem} from '@/states/reducers/cartSlice.ts';
+import CustomText from '@/components/global/CustomText.tsx';
+import {Colors, Fonts} from '@/unistyles/Constants.tsx';
+import Icon from '@/components/global/Icon.tsx';
+import DottedLine from '@/components/ui/DottedLine.tsx';
+import ScalePress from '@/components/ui/ScalePress.tsx';
 
 function transformSelectedOptions(selectedOption: any, customizationOptions: any) {
     return Object.entries(selectedOption).map(([type, index]) => {

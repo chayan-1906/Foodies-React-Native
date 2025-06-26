@@ -1,14 +1,14 @@
 import {Image, View} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
-import {restaurantStyles} from '@unistyles/restaurantStyles.tsx';
-import ScalePress from '@components/ui/ScalePress.tsx';
-import {navigate} from '@utils/NavigationUtils.ts';
-import screens from '@utils/screens.ts';
-import {IRestaurantItem} from '../../types';
-import CustomText from '@components/global/CustomText.tsx';
-import {Fonts} from '@unistyles/Constants.tsx';
-import StarRating from '@components/ui/StarRating.tsx';
-import DottedLine from '@components/ui/DottedLine.tsx';
+import {IRestaurantItem} from '@/types';
+import {restaurantStyles} from '@/unistyles/restaurantStyles.tsx';
+import ScalePress from '@/components/ui/ScalePress.tsx';
+import {navigate} from '@/utils/NavigationUtils.ts';
+import screens from '@/utils/screens.ts';
+import CustomText from '@/components/global/CustomText.tsx';
+import {Fonts} from '@/unistyles/Constants.tsx';
+import StarRating from '@/components/ui/StarRating.tsx';
+import DottedLine from '@/components/ui/DottedLine.tsx';
 
 function RestaurantCard({restaurant}: {restaurant: IRestaurantItem}) {
     const {styles} = useStyles(restaurantStyles);

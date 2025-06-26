@@ -1,10 +1,10 @@
 import {Pressable, TextInput, View} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
-import {PhoneInputProps} from '../../types';
-import {phoneStyles} from '@unistyles/phoneStyles.tsx';
-import CustomText from '@components/global/CustomText.tsx';
-import Icon from '@components/global/Icon.tsx';
-import {Colors, Fonts} from '@unistyles/Constants.tsx';
+import {PhoneInputProps} from '@/types';
+import Icon from '@/components/global/Icon.tsx';
+import {phoneStyles} from '@/unistyles/phoneStyles.tsx';
+import CustomText from '@/components/global/CustomText.tsx';
+import {Colors, Fonts} from '@/unistyles/Constants.tsx';
 
 function PhoneInput({value, onChangeText, onBlur, onFocus}: PhoneInputProps) {
     const {styles} = useStyles(phoneStyles);

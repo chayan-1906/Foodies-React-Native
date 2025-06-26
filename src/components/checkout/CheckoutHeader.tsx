@@ -1,9 +1,9 @@
-import {Pressable, SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import {Colors} from '@unistyles/Constants.tsx';
-import {goBack} from '@utils/NavigationUtils.ts';
-import Icon from '@components/global/Icon.tsx';
-import CustomText from '@components/global/CustomText.tsx';
+import {Pressable, SafeAreaView, StyleSheet, View} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
+import {goBack} from "@/utils/NavigationUtils.ts";
+import Icon from "@/components/global/Icon.tsx";
+import CustomText from "@/components/global/CustomText.tsx";
+import {Colors} from "@/unistyles/Constants.tsx";
 
 function CheckoutHeader({title}: {title: string}) {
     return (

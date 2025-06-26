@@ -1,39 +1,18 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json",
+  "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "typeRoots": [
-      "node_modules/@types",
-      "src/types"
-    ],
-    "types": [
-      "jest"
-    ],
     "baseUrl": "./",
+    "allowImportingTsExtensions": true,
     "paths": {
-      "@assets/*": [
-        "src/assets/*"
-      ],
-      "@features/*": [
-        "src/features/*"
-      ],
-      "@navigation/*": [
-        "src/navigation/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@unistyles/*": [
-        "src/unistyles/*"
-      ],
-      "@states/*": [
-        "src/states/*"
-      ],
-      "@services/*": [
-        "src/services/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
+      "@/*": [
+        "src/*"
       ]
     }
-  }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ]
 }

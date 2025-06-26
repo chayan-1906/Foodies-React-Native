@@ -1,10 +1,10 @@
 import {ScrollView, TouchableOpacity, View} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
-import {filterStyles} from '@unistyles/filterStyles.tsx';
-import Icon from '@components/global/Icon.tsx';
-import {Colors, Fonts} from '@unistyles/Constants.tsx';
-import CustomText from '@components/global/CustomText.tsx';
-import {SortingFiltersProps} from '../../types';
+import {SortingFiltersProps} from '@/types';
+import {filterStyles} from '@/unistyles/filterStyles.tsx';
+import Icon from '@/components/global/Icon.tsx';
+import {Colors, Fonts} from '@/unistyles/Constants.tsx';
+import CustomText from '@/components/global/CustomText.tsx';
 
 function SortingAndFilters({menuTitle, options}: SortingFiltersProps) {
     const {styles} = useStyles(filterStyles);

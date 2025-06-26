@@ -1,19 +1,18 @@
 import {Image, View} from 'react-native';
-import screens from '@utils/screens.ts';
-import {tabStyles} from '@unistyles/tabStyles.tsx';
-import {Colors, screenWidth} from '@unistyles/Constants.tsx';
 import {useStyles} from 'react-native-unistyles';
-import ScalePress from '@components/ui/ScalePress.tsx';
-import {useSharedState} from '@features/tabs/SharedContext.tsx';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
-import {DeliveryTabIcon, DiningTabIcon, LiveTabIcon, ReorderTabIcon} from '@features/tabs/TabIcon.tsx';
-import {useAppSelector} from '@states/reduxHook.ts';
-import CartHOC from '@features/checkout/CartHOC.tsx';
-import {ITabBarProps} from '../../types';
+import {ITabBarProps} from '@/types';
+import screens from '@/utils/screens.ts';
+import {tabStyles} from '@/unistyles/tabStyles.tsx';
+import CartHOC from '@/features/checkout/CartHOC.tsx';
+import ScalePress from '@/components/ui/ScalePress.tsx';
+import {Colors} from '@/unistyles/Constants.tsx';
+import {useSharedState} from '@/features/tabs/SharedContext.tsx';
+import {DeliveryTabIcon, DiningTabIcon, LiveTabIcon, ReorderTabIcon} from '@/features/tabs/TabIcon.tsx';
+import GroceryImage from '@/assets/icons/grocery.png';
 
 function CustomTabBar({state, descriptors, navigation}: ITabBarProps) {
-    const isVegMode = useAppSelector(state => state.user.isVegMode);
     const {scrollY} = useSharedState();
     const bottom = useSafeAreaInsets();
 
@@ -27,15 +26,6 @@ function CustomTabBar({state, descriptors, navigation}: ITabBarProps) {
                     translateY: scrollY.value === 1 ? withTiming(100, {duration: 300}) : withTiming(0, {duration: 300}),
                 },
             ],
-        };
-    });
-
-    const indicatorStyle = useAnimatedStyle(() => {
-        const baseLeft = 10;
-        const slideValue = state.index === 3 ? 0.23 : 0.24;
-
-        return {
-            left: withTiming(baseLeft + state.index * screenWidth * slideValue),
         };
     });
 
@@ -80,7 +70,7 @@ function CustomTabBar({state, descriptors, navigation}: ITabBarProps) {
                 </View>
 
                 <View style={styles.groceryLogoContainer}>
-                    <Image source={require('@assets/icons/grocery.png')} style={styles.groceryLogo} />
+                    <Image source={GroceryImage} style={styles.groceryLogo} />
                 </View>
             </Animated.View>
         </>

@@ -1,15 +1,15 @@
-import {Image, TouchableOpacity, View} from 'react-native';
-import {clearRestaurantCart, RestaurantCart} from '@states/reducers/cartSlice.ts';
-import {useAppDispatch} from '@states/reduxHook.ts';
-import {useStyles} from 'react-native-unistyles';
-import {cartStyles} from '@unistyles/cartStyles.tsx';
 import {useMemo} from 'react';
-import CustomText from '@components/global/CustomText.tsx';
-import {navigate} from '@utils/NavigationUtils.ts';
-import screens from '@utils/screens.ts';
-import Icon from '@components/global/Icon.tsx';
-import {Colors} from '@unistyles/Constants.tsx';
+import {Image, TouchableOpacity, View} from 'react-native';
+import {useStyles} from 'react-native-unistyles';
 import {RFValue} from 'react-native-responsive-fontsize';
+import screens from '@/utils/screens.ts';
+import {Colors} from '@/unistyles/Constants.tsx';
+import Icon from '@/components/global/Icon.tsx';
+import {navigate} from '@/utils/NavigationUtils.ts';
+import {cartStyles} from '@/unistyles/cartStyles.tsx';
+import {useAppDispatch} from '@/states/reduxHook.ts';
+import CustomText from '@/components/global/CustomText.tsx';
+import {clearRestaurantCart, RestaurantCart} from '@/states/reducers/cartSlice.ts';
 
 function CartItem({item}: {item: RestaurantCart}) {
     const dispatch = useAppDispatch();

@@ -1,13 +1,13 @@
 import {Platform, StatusBar, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {useStyles} from 'react-native-unistyles';
-import {homeStyles} from '@unistyles/homeStyles.tsx';
-import {useSharedState} from '@features/tabs/SharedContext.tsx';
 import Animated, {Extrapolate, interpolate, useAnimatedStyle} from 'react-native-reanimated';
-import MainList from '@components/list/MainList.tsx';
-import Graphics from '@components/home/Graphics.tsx';
-import HeaderSection from '@components/home/HeaderSection.tsx';
-import {Colors} from '@unistyles/Constants.tsx';
+import {useStyles} from 'react-native-unistyles';
+import {homeStyles} from '@/unistyles/homeStyles.tsx';
+import MainList from '@/components/list/MainList.tsx';
+import Graphics from '@/components/home/Graphics.tsx';
+import {Colors} from '@/unistyles/Constants.tsx';
+import HeaderSection from '@/components/home/HeaderSection.tsx';
+import {useSharedState} from '@/features/tabs/SharedContext.tsx';
 
 function DeliveryScreen() {
     const insets = useSafeAreaInsets();

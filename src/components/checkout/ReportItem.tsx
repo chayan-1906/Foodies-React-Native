@@ -1,9 +1,9 @@
-import {StyleSheet, Text, View} from 'react-native';
-import {ReportItemProps} from '../../types';
-import Icon from '@components/global/Icon.tsx';
+import {View} from 'react-native';
+import {ReportItemProps} from '@/types';
 import {RFValue} from 'react-native-responsive-fontsize';
-import {Colors} from '@unistyles/Constants.tsx';
-import CustomText from '@components/global/CustomText.tsx';
+import Icon from '@/components/global/Icon.tsx';
+import {Colors} from '@/unistyles/Constants.tsx';
+import CustomText from '@/components/global/CustomText.tsx';
 
 const ReportItem = ({iconName, underline, title, price, styles}: ReportItemProps) => {
     return (

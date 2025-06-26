@@ -1,15 +1,16 @@
+import {useCallback, useEffect, useRef, useState} from 'react';
 import {ActivityIndicator, Animated, Image, Platform, StatusBar, TouchableOpacity, View} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
-import {loginStyles} from '@unistyles/authStyles.tsx';
-import screens from '@utils/screens.ts';
-import CustomText from '@components/global/CustomText.tsx';
-import BreakerText from '@components/ui/BreakerText.tsx';
-import PhoneInput from '@components/ui/PhoneInput.tsx';
-import {useCallback, useEffect, useRef, useState} from 'react';
-import {resetAndNavigate} from '@utils/NavigationUtils.ts';
-import SocialLogin from '@components/ui/SocialLogin.tsx';
-import useKeyboardOffsetHeight from '@utils/useKeyboardOffsetHeight.ts';
-import {Colors, Fonts} from '@unistyles/Constants.tsx';
+import {loginStyles} from '@/unistyles/authStyles.tsx';
+import screens from '@/utils/screens.ts';
+import {Colors, Fonts} from '@/unistyles/Constants.tsx';
+import CustomText from '@/components/global/CustomText.tsx';
+import BreakerText from '@/components/ui/BreakerText.tsx';
+import PhoneInput from '@/components/ui/PhoneInput.tsx';
+import {resetAndNavigate} from '@/utils/NavigationUtils.ts';
+import SocialLogin from '@/components/ui/SocialLogin.tsx';
+import useKeyboardOffsetHeight from '@/utils/useKeyboardOffsetHeight.ts';
+import LoginImage from '@/assets/images/login.png'
 
 function LoginScreen() {
     const animatedValue = useRef(new Animated.Value(0)).current;
@@ -41,16 +42,15 @@ function LoginScreen() {
                 useNativeDriver: true,
             }).start();
         }
-    }, [keyboardOffsetHeight]);
+    }, [animatedValue, keyboardOffsetHeight]);
 
     return (
         <View style={styles.container}>
             <StatusBar hidden={Platform.OS !== 'android'} barStyle={Platform.OS === 'ios' ? 'dark-content' : 'light-content'} backgroundColor={Platform.OS === 'android' ? Colors.primary : undefined} />
-            <Image source={require('@assets/images/login.png')} style={styles.cover} />
-
+            <Image source={LoginImage} style={styles.cover} />
             <Animated.ScrollView bounces={false} keyboardShouldPersistTaps={'handled'} keyboardDismissMode={'on-drag'} contentContainerStyle={styles.bottomContainer} style={{transform: [{translateY: animatedValue}]}}>
                 <CustomText fontFamily={Fonts.Bold} variant={'h2'} style={styles.title}>
-                    India's #1 Food Delivery and Dining App
+                    India&apos;s #1 Food Delivery and Dining App
                 </CustomText>
 
                 <BreakerText text={'Log in or Sign Up'} />

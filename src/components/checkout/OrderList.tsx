@@ -1,16 +1,17 @@
 import {Image, StyleSheet, View} from 'react-native';
-import {IRestaurantItem} from '../../types';
-import {Colors} from '@unistyles/Constants.tsx';
-import CustomText from '@components/global/CustomText.tsx';
-import NonCustomizableCard from '@components/checkout/NonCustomizableCard.tsx';
-import MiniFoodCard from '@components/restaurants/MiniFoodCard.tsx';
+import {IRestaurantItem} from '@/types';
+import {Colors} from '@/unistyles/Constants.tsx';
+import CustomText from '@/components/global/CustomText.tsx';
+import MiniFoodCard from '@/components/restaurants/MiniFoodCard.tsx';
+import NonCustomizableCard from '@/components/checkout/NonCustomizableCard.tsx';
+import ClockIcon from '@/assets/icons/clock.png';
 
 function OrderList({restaurant, cartItems, totalItems}: {restaurant: IRestaurantItem; cartItems: any; totalItems: number}) {
     return (
         <View style={styles.container}>
             <View style={styles.flexRow}>
                 <View style={styles.imgContainer}>
-                    <Image source={require('@assets/icons/clock.png')} style={styles.img} />
+                    <Image source={ClockIcon} style={styles.img} />
                 </View>
                 <View>
                     <CustomText fontSize={12} fontFamily={'Okra-Bold'}>

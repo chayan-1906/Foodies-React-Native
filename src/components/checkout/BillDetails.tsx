@@ -1,7 +1,7 @@
-import {StyleSheet, Text, View} from 'react-native';
-import {Colors} from '@unistyles/Constants.tsx';
-import CustomText from '@components/global/CustomText.tsx';
-import ReportItem from '@components/checkout/ReportItem.tsx';
+import {StyleSheet, View} from 'react-native';
+import {Colors} from '@/unistyles/Constants.tsx';
+import CustomText from '@/components/global/CustomText.tsx';
+import ReportItem from '@/components/checkout/ReportItem.tsx';
 
 function BillDetails({totalItemPrice}: {totalItemPrice: number}) {
     return (

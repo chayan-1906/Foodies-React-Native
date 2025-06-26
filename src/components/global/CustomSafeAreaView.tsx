@@ -1,6 +1,6 @@
 import {SafeAreaView, StyleSheet, View} from 'react-native';
-import {Colors} from '@unistyles/Constants.tsx';
-import {CustomSafeAreaViewProps} from '../../types';
+import {Colors} from '@/unistyles/Constants.tsx';
+import {CustomSafeAreaViewProps} from '@/types';
 
 function CustomSafeAreaView({children, style}: CustomSafeAreaViewProps) {
     return (

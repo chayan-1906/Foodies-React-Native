@@ -1,5 +1,5 @@
-import {SharedStateProvider} from '@features/tabs/SharedContext.tsx';
-import UserBottomTab from '@features/tabs/UserBottomTab.tsx';
+import UserBottomTab from '@/features/tabs/UserBottomTab.tsx';
+import {SharedStateProvider} from '@/features/tabs/SharedContext.tsx';
 
 function AnimatedTabs() {
     return (

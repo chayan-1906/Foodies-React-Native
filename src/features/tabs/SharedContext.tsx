@@ -1,6 +1,6 @@
 import React, {createContext, useContext} from 'react';
 import {useSharedValue, withTiming} from 'react-native-reanimated';
-import {ISharedStateContextType} from '../../types';
+import {ISharedStateContextType} from '@/types';
 
 const SharedStateContext = createContext<ISharedStateContextType | undefined>(undefined);
 

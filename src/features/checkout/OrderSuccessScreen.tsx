@@ -1,14 +1,15 @@
-import {StyleSheet, View} from 'react-native';
-import {useRoute} from '@react-navigation/native';
-import {IRestaurantItem} from '../../types';
-import {useAppDispatch} from '@states/reduxHook.ts';
 import {useEffect} from 'react';
-import {replace} from '@utils/NavigationUtils.ts';
-import screens from '@utils/screens.ts';
-import {clearRestaurantCart} from '@states/reducers/cartSlice.ts';
-import {Colors, screenWidth} from '@unistyles/Constants.tsx';
+import {StyleSheet, View} from 'react-native';
 import LottieView from 'lottie-react-native';
-import CustomText from '@components/global/CustomText.tsx';
+import {useRoute} from '@react-navigation/native';
+import {IRestaurantItem} from '@/types';
+import {useAppDispatch} from '@/states/reduxHook.ts';
+import {replace} from '@/utils/NavigationUtils.ts';
+import screens from '@/utils/screens.ts';
+import CustomText from '@/components/global/CustomText.tsx';
+import {clearRestaurantCart} from '@/states/reducers/cartSlice.ts';
+import {Colors, screenWidth} from '@/unistyles/Constants.tsx';
+import ConfirmLottie from '@/assets/animations/confirm.json';
 
 function OrderSuccessScreen() {
     const route = useRoute() as any;
@@ -22,11 +23,11 @@ function OrderSuccessScreen() {
         }, 2000);
 
         return () => clearTimeout(timeoutId);
-    }, []);
+    }, [dispatch, restaurant.id]);
 
     return (
         <View style={styles.container}>
-            <LottieView source={require('@assets/animations/confirm.json')} autoPlay={true} duration={2000} loop={false} speed={1} style={styles.lottieView} enableMergePathsAndroidForKitKatAndAbove={true} hardwareAccelerationAndroid={true} />
+            <LottieView source={ConfirmLottie} autoPlay={true} duration={2000} loop={false} speed={1} style={styles.lottieView} enableMergePathsAndroidForKitKatAndAbove={true} hardwareAccelerationAndroid={true} />
             <CustomText fontSize={12} fontFamily={'Okra-Bold'} style={styles.orderPlaceText}>
                 ORDER PLACED
             </CustomText>

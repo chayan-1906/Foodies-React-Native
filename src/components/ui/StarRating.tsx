@@ -1,7 +1,7 @@
 import {StyleSheet, View} from 'react-native';
-import CustomText from '@components/global/CustomText.tsx';
-import {Fonts} from '@unistyles/Constants.tsx';
-import Icon from '@components/global/Icon.tsx';
+import Icon from '@/components/global/Icon.tsx';
+import {Fonts} from '@/unistyles/Constants.tsx';
+import CustomText from '@/components/global/CustomText.tsx';
 
 const getRatingColor = (rating: number) => {
     if (rating >= 4) {

@@ -1,7 +1,7 @@
 import {RFValue} from 'react-native-responsive-fontsize';
 import {createStyleSheet} from 'react-native-unistyles';
 import {Platform} from 'react-native';
-import {bannerHeight} from '@unistyles/Constants.tsx';
+import {bannerHeight} from '@/unistyles/Constants.tsx';
 
 export const homeStyles = createStyleSheet(({colors, device, border}) => ({
     container: {

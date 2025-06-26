@@ -5,8 +5,8 @@ import React from 'react';
 
 /** navigation types */
 export interface INavigationParams {
-    restaurantDetailsScreen: {restaurant: IRestaurantItem};
-    checkoutScreen: {restaurant: IRestaurantItem};
+    restaurantDetailsScreen: { restaurant: IRestaurantItem };
+    checkoutScreen: { restaurant: IRestaurantItem };
     orderSuccessScreen: undefined;
 }
 

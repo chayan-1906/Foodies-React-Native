@@ -1,6 +1,6 @@
 import {ViewStyle} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {CustomGradientProps} from '../../types';
+import {CustomGradientProps} from '@/types';
 
 const darkColors = ['rgba(0,0,0,0.9)', 'rgba(0,0,0,0.6)', 'rgba(0,0,0,0.1)', 'rgba(0,0,0,0)'];
 const lightColors = ['rgba(255,255,255,1)', 'rgba(255,255,255,0.9)', 'rgba(255,255,255,0.1)'];

@@ -1,7 +1,7 @@
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import {CustomTextProps, PlatformType, TextVariant} from '../../types';
+import {CustomTextProps, PlatformType, TextVariant} from '@/types';
 import {RFValue} from 'react-native-responsive-fontsize';
-import {Colors} from '@unistyles/Constants.tsx';
+import {Colors} from '@/unistyles/Constants.tsx';
 
 const fontSizeMap: Record<TextVariant, Record<PlatformType, number>> = {
     h1: {android: 24, ios: 22},

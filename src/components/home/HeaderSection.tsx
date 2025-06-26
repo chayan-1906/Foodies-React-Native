@@ -1,6 +1,6 @@
 import {View} from 'react-native';
-import LocationHeader from '@components/home/LocationHeader.tsx';
-import SearchBar from '@components/home/SearchBar.tsx';
+import SearchBar from '@/components/home/SearchBar.tsx';
+import LocationHeader from '@/components/home/LocationHeader.tsx';
 
 function HeaderSection() {
     return (

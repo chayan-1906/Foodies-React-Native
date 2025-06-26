@@ -1,14 +1,14 @@
-import {NativeScrollEvent, NativeSyntheticEvent, SectionList, ViewToken} from 'react-native';
-import ExploreList from '@components/list/ExploreList.tsx';
-import RestaurantList from '@components/list/RestaurantList.tsx';
-import {useStyles} from 'react-native-unistyles';
-import {restaurantStyles} from '@unistyles/restaurantStyles.tsx';
-import {useSharedState} from '@features/tabs/SharedContext.tsx';
 import {useRef, useState} from 'react';
+import {NativeScrollEvent, NativeSyntheticEvent, SectionList, ViewToken} from 'react-native';
+import {useStyles} from 'react-native-unistyles';
+import {filtersOption} from '@/utils/dummyData.ts';
+import ExploreList from '@/components/list/ExploreList.tsx';
+import RestaurantList from '@/components/list/RestaurantList.tsx';
+import {restaurantStyles} from '@/unistyles/restaurantStyles.tsx';
+import {useSharedState} from '@/features/tabs/SharedContext.tsx';
 import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
-import BackToTopButton from '@components/ui/BackToTopButton.tsx';
-import {filtersOption} from '@utils/dummyData.ts';
-import SortingAndFilters from '@components/home/SortingAndFilters.tsx';
+import BackToTopButton from '@/components/ui/BackToTopButton.tsx';
+import SortingAndFilters from '@/components/home/SortingAndFilters.tsx';
 
 const sectionedData = [
     {

@@ -1,5 +1,5 @@
 import {Animated, TouchableOpacity} from 'react-native';
-import {ScalePressProps} from '../../types';
+import {ScalePressProps} from '@/types';
 
 function ScalePress({onPress, onLongPress, children, style}: ScalePressProps) {
     const scaleValue = new Animated.Value(1);

@@ -1,11 +1,13 @@
 import {Image, SafeAreaView, TouchableOpacity, View} from 'react-native';
 import Animated, {interpolate, useAnimatedStyle} from 'react-native-reanimated';
 import {useStyles} from 'react-native-unistyles';
-import {homeStyles} from '@unistyles/homeStyles.tsx';
-import {useSharedState} from '@features/tabs/SharedContext.tsx';
-import Icon from '@components/global/Icon.tsx';
-import CustomText from '@components/global/CustomText.tsx';
-import {Fonts} from '@unistyles/Constants.tsx';
+import {Fonts} from '@/unistyles/Constants.tsx';
+import Icon from '@/components/global/Icon.tsx';
+import {homeStyles} from '@/unistyles/homeStyles.tsx';
+import CustomText from '@/components/global/CustomText.tsx';
+import {useSharedState} from '@/features/tabs/SharedContext.tsx';
+import TranslationIcon from '@/assets/icons/translation.png';
+import UserImage from '@/assets/images/user.png';
 
 function LocationHeader() {
     const {scrollYGlobal} = useSharedState();
@@ -40,11 +42,11 @@ function LocationHeader() {
 
                 <View style={styles.flexRowGap}>
                     <TouchableOpacity style={styles.translation}>
-                        <Image source={require('@assets/icons/translation.png')} style={styles.translationIcon} />
+                        <Image source={TranslationIcon} style={styles.translationIcon} />
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.profileAvatar}>
-                        <Image source={require('@assets/images/user.png')} style={styles.profileImage} resizeMode={'cover'} />
+                        <Image source={UserImage} style={styles.profileImage} resizeMode={'cover'} />
                     </TouchableOpacity>
                 </View>
             </View>

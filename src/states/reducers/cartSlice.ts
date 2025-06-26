@@ -1,7 +1,7 @@
-import {createSelector, createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {ICartCustomization, ICartItem, ICustomization, IRestaurantItem} from '../../types';
-import {RootState} from '@states/store.ts';
 import {v4 as uuid} from 'uuid';
+import {createSelector, createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {RootState} from '@/states/store.ts';
+import {ICartCustomization, ICartItem, ICustomization, IRestaurantItem} from '@/types';
 
 export interface RestaurantCart {
     restaurant: IRestaurantItem;

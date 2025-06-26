@@ -1,12 +1,12 @@
-import {SafeAreaView, ScrollView, View} from 'react-native';
-import {IRemoveFoodModalProps} from '../../types';
-import {useAppSelector} from '@states/reduxHook.ts';
-import {useStyles} from 'react-native-unistyles';
-import {modalStyles} from '@unistyles/modalStyles.tsx';
 import {useEffect} from 'react';
-import {selectRestaurantCartItem} from '@states/reducers/cartSlice.ts';
-import CustomText from '@components/global/CustomText.tsx';
-import MiniFoodCard from '@components/restaurants/MiniFoodCard.tsx';
+import {SafeAreaView, ScrollView, View} from 'react-native';
+import {useStyles} from 'react-native-unistyles';
+import {IRemoveFoodModalProps} from '@/types';
+import {useAppSelector} from '@/states/reduxHook.ts';
+import {modalStyles} from '@/unistyles/modalStyles.tsx';
+import CustomText from '@/components/global/CustomText.tsx';
+import MiniFoodCard from '@/components/restaurants/MiniFoodCard.tsx';
+import {selectRestaurantCartItem} from '@/states/reducers/cartSlice.ts';
 
 function RemoveFoodModal({item, restaurant, closeModal}: IRemoveFoodModalProps) {
     const cartItem = useAppSelector(selectRestaurantCartItem(restaurant.id, item.id));

@@ -1,17 +1,19 @@
 import {memo, useRef} from 'react';
-import {useStyles} from 'react-native-unistyles';
-import {ICustomization, IMiniFoodCardProps} from '../../types';
-import {modalStyles} from '@unistyles/modalStyles.tsx';
-import {useAppDispatch, useAppSelector} from '@states/reduxHook.ts';
-import {addCustomizableItem, removeCustomizableItem, selectRestaurantCartItem} from '@states/reducers/cartSlice.ts';
-import EditFoodModal from '@components/modal/EditFoodModal.tsx';
-import CustomModal from '@components/modal/CustomModal.tsx';
 import {Image, TouchableOpacity, View} from 'react-native';
-import CustomText from '@components/global/CustomText.tsx';
-import {Colors, Fonts} from '@unistyles/Constants.tsx';
-import Icon from '@components/global/Icon.tsx';
+import {useStyles} from 'react-native-unistyles';
 import {RFValue} from 'react-native-responsive-fontsize';
 import AnimatedNumbers from 'react-native-animated-numbers';
+import {ICustomization, IMiniFoodCardProps} from '@/types';
+import {modalStyles} from '@/unistyles/modalStyles.tsx';
+import Icon from '@/components/global/Icon.tsx';
+import {Colors, Fonts} from '@/unistyles/Constants.tsx';
+import CustomText from '@/components/global/CustomText.tsx';
+import CustomModal from '@/components/modal/CustomModal.tsx';
+import EditFoodModal from '@/components/modal/EditFoodModal.tsx';
+import {useAppDispatch, useAppSelector} from '@/states/reduxHook.ts';
+import {addCustomizableItem, removeCustomizableItem, selectRestaurantCartItem} from '@/states/reducers/cartSlice.ts';
+import VegIcon from '@/assets/icons/veg.png';
+import NonVegIcon from '@/assets/icons/non_veg.png';
 
 function MiniFoodCard({item, customization, restaurant}: IMiniFoodCardProps) {
     const {styles} = useStyles(modalStyles);
@@ -52,7 +54,7 @@ function MiniFoodCard({item, customization, restaurant}: IMiniFoodCardProps) {
             <CustomModal ref={modalRef} />
             <View style={styles.flexRowItemBaseline}>
                 <View style={styles.flexRowGapBaseline}>
-                    <Image source={cartItem?.isVeg ? require('@assets/icons/veg.png') : require('@assets/icons/non_veg.png')} style={styles.vegIcon} />
+                    <Image source={cartItem?.isVeg ? VegIcon : NonVegIcon} style={styles.vegIcon} />
 
                     <View>
                         <CustomText fontFamily={Fonts.Bold}>{cartItem?.name}</CustomText>

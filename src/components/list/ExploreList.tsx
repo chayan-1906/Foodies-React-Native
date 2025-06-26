@@ -1,9 +1,9 @@
 import {View} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
-import {homeStyles} from '@unistyles/homeStyles.tsx';
-import RecommendedList from '@components/list/RecommendedList.tsx';
-import BreakerText from '@components/ui/BreakerText.tsx';
-import RegularFoodList from '@components/list/RegularFoodList.tsx';
+import {homeStyles} from '@/unistyles/homeStyles.tsx';
+import BreakerText from '@/components/ui/BreakerText.tsx';
+import RecommendedList from '@/components/list/RecommendedList.tsx';
+import RegularFoodList from '@/components/list/RegularFoodList.tsx';
 
 function ExploreList() {
     const {styles} = useStyles(homeStyles);

@@ -1,11 +1,11 @@
 import {TouchableOpacity, View} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
-import {restaurantHeaderStyles} from '@unistyles/restaurantStyles.tsx';
-import {RestaurantHeaderProps} from '../../types';
-import {goBack} from '@utils/NavigationUtils.ts';
-import Icon from '@components/global/Icon.tsx';
-import CustomText from '@components/global/CustomText.tsx';
-import {Fonts} from '@unistyles/Constants.tsx';
+import {RestaurantHeaderProps} from '@/types';
+import Icon from '@/components/global/Icon.tsx';
+import {Fonts} from '@/unistyles/Constants.tsx';
+import {goBack} from '@/utils/NavigationUtils.ts';
+import CustomText from '@/components/global/CustomText.tsx';
+import {restaurantHeaderStyles} from '@/unistyles/restaurantStyles.tsx';
 
 function RestaurantHeader({title}: RestaurantHeaderProps) {
     const {styles} = useStyles(restaurantHeaderStyles);

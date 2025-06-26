@@ -1,9 +1,9 @@
 import {Modal, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {ForwardedRef, forwardRef, useImperativeHandle, useState} from 'react';
-import {Fonts, screenHeight} from '@unistyles/Constants.tsx';
-import Icon from '@components/global/Icon.tsx';
-import {CustomModalHandle} from '../../types';
 import {BlurView} from '@react-native-community/blur';
+import {CustomModalHandle} from '@/types';
+import {Fonts, screenHeight} from '@/unistyles/Constants.tsx';
+import Icon from '@/components/global/Icon.tsx';
 
 function CustomModal(props: any, ref: ForwardedRef<CustomModalHandle>) {
     const [visible, setVisible] = useState(false);

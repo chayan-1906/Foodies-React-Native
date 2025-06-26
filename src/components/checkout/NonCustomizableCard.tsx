@@ -1,14 +1,16 @@
 import {memo, useCallback} from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {useAppDispatch} from '@states/reduxHook.ts';
+import {Image, TouchableOpacity, View} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
-import {modalStyles} from '@unistyles/modalStyles.tsx';
-import {addItemToCart, removeItemFromCart} from '@states/reducers/cartSlice.ts';
-import CustomText from '@components/global/CustomText.tsx';
-import Icon from '@components/global/Icon.tsx';
 import {RFValue} from 'react-native-responsive-fontsize';
-import {Colors} from '@unistyles/Constants.tsx';
 import AnimatedNumber from 'react-native-animated-numbers';
+import {useAppDispatch} from '@/states/reduxHook.ts';
+import {modalStyles} from '@/unistyles/modalStyles.tsx';
+import {addItemToCart, removeItemFromCart} from '@/states/reducers/cartSlice.ts';
+import CustomText from '@/components/global/CustomText.tsx';
+import Icon from '@/components/global/Icon.tsx';
+import {Colors} from '@/unistyles/Constants.tsx';
+import VegIcon from '@/assets/icons/veg.png';
+import NonVegIcon from '@/assets/icons/non_veg.png';
 
 function NonCustomizableCard({item, restaurant}: {item: any; restaurant: any}) {
     const dispatch = useAppDispatch();
@@ -25,7 +27,7 @@ function NonCustomizableCard({item, restaurant}: {item: any; restaurant: any}) {
     return (
         <View style={styles.flexRowItemBaseline}>
             <View style={styles.flexRowGapBaseline}>
-                <Image source={item.isVeg ? require('@assets/icons/veg.png') : require('@assets/icons/non_veg.png')} style={styles.vegIcon} />
+                <Image source={item.isVeg ? VegIcon : NonVegIcon} style={styles.vegIcon} />
                 <View>
                     <CustomText fontFamily={'Okra-Bold'}>{item?.name}</CustomText>
                     <CustomText fontFamily={'Okra-Medium'}>{item?.price}</CustomText>

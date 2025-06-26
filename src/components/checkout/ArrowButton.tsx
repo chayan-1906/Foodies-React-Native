@@ -1,8 +1,8 @@
-import {ActivityIndicator, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {ArrowButtonProps} from '../../types';
-import {Colors} from '@unistyles/Constants.tsx';
-import CustomText from '@components/global/CustomText.tsx';
-import Icon from '@components/global/Icon.tsx';
+import {ActivityIndicator, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {ArrowButtonProps} from '@/types';
+import {Colors} from '@/unistyles/Constants.tsx';
+import CustomText from '@/components/global/CustomText.tsx';
+import Icon from '@/components/global/Icon.tsx';
 import {RFValue} from 'react-native-responsive-fontsize';
 
 function ArrowButton({title, onPress, price, isLoading}: ArrowButtonProps) {

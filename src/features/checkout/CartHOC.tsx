@@ -1,21 +1,21 @@
 import {useState} from 'react';
 import {Platform, ScrollView, TouchableOpacity, View} from 'react-native';
 import {useDispatch} from 'react-redux';
-import {useStyles} from 'react-native-unistyles';
-import {cartStyles} from '@unistyles/cartStyles.tsx';
-import {useAppSelector} from '@states/reduxHook.ts';
-import {useSharedState} from '@features/tabs/SharedContext.tsx';
+import {BlurView} from '@react-native-community/blur';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Animated, {useAnimatedStyle, withTiming} from 'react-native-reanimated';
-import {clearAllCarts} from '@states/reducers/cartSlice.ts';
-import {BlurView} from '@react-native-community/blur';
-import CustomText from '@components/global/CustomText.tsx';
-import {Colors} from '@unistyles/Constants.tsx';
-import Icon from '@components/global/Icon.tsx';
+import {useStyles} from 'react-native-unistyles';
+import {cartStyles} from '@/unistyles/cartStyles.tsx';
+import {useAppSelector} from '@/states/reduxHook.ts';
+import {useSharedState} from '@/features/tabs/SharedContext.tsx';
+import {clearAllCarts} from '@/states/reducers/cartSlice.ts';
+import CustomText from '@/components/global/CustomText.tsx';
+import {Colors} from '@/unistyles/Constants.tsx';
+import Icon from '@/components/global/Icon.tsx';
 import LinearGradient from 'react-native-linear-gradient';
-import CartItem from '@features/checkout/CartItem.tsx';
+import CartItem from '@/features/checkout/CartItem.tsx';
 
-function CartHOC({}) {
+function CartHOC() {
     const dispatch = useDispatch();
     const carts = useAppSelector(state => state.cart.carts);
     const {scrollY} = useSharedState();

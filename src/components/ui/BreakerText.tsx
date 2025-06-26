@@ -1,8 +1,8 @@
 import {View} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
-import {loginStyles} from '@unistyles/authStyles.tsx';
-import CustomText from '@components/global/CustomText.tsx';
-import {Fonts} from '@unistyles/Constants.tsx';
+import {Fonts} from '@/unistyles/Constants.tsx';
+import {loginStyles} from '@/unistyles/authStyles.tsx';
+import CustomText from '@/components/global/CustomText.tsx';
 
 function BreakerText({text}: {text: string}) {
     const {styles} = useStyles(loginStyles);

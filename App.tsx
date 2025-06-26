@@ -1,8 +1,8 @@
-import '@unistyles/unistyles.tsx';
-import Navigation from '@navigation/Navigation.tsx';
+import '@/unistyles/unistyles';
 import {Provider} from 'react-redux';
-import {persistor, store} from '@states/store.ts';
 import {PersistGate} from 'redux-persist/integration/react';
+import {persistor, store} from "@/states/store";
+import Navigation from "@/navigation/Navigation";
 
 function App() {
     console.log('App loaded');
@@ -10,7 +10,7 @@ function App() {
     return (
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-                <Navigation />
+                <Navigation/>
             </PersistGate>
         </Provider>
     );

@@ -1,9 +1,9 @@
 import {FlatList, Image, ScrollView} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
-import {cardStyles} from '@unistyles/cardStyles.tsx';
-import {IRecommendedItem} from '../../types';
-import ScalePress from '@components/ui/ScalePress.tsx';
-import {regularFoodData} from '@utils/dummyData.ts';
+import {IRecommendedItem} from '@/types';
+import {cardStyles} from '@/unistyles/cardStyles.tsx';
+import ScalePress from '@/components/ui/ScalePress.tsx';
+import {regularFoodData} from '@/utils/dummyData.ts';
 
 function RegularFoodList() {
     const {styles} = useStyles(cardStyles);

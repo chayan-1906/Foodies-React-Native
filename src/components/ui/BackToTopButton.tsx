@@ -1,9 +1,9 @@
 import {TouchableOpacity} from 'react-native';
-import {Fonts} from '@unistyles/Constants.tsx';
-import {BackToTopButtonProps} from '../../types';
-import Icon from '@components/global/Icon.tsx';
+import {BackToTopButtonProps} from '@/types';
 import {RFValue} from 'react-native-responsive-fontsize';
-import CustomText from '@components/global/CustomText.tsx';
+import {Fonts} from '@/unistyles/Constants.tsx';
+import Icon from '@/components/global/Icon.tsx';
+import CustomText from '@/components/global/CustomText.tsx';
 
 function BackToTopButton({onPress}: BackToTopButtonProps) {
     return (

@@ -1,20 +1,21 @@
 import {memo, useEffect, useMemo, useRef, useState} from 'react';
 import {Animated, Platform, TouchableOpacity, View} from 'react-native';
-import {SearchAndOffersProps} from '../../types';
-import {useStyles} from 'react-native-unistyles';
-import {searchStyles} from '@unistyles/restaurantStyles.tsx';
-import {useAppSelector} from '@states/reduxHook.ts';
-import {selectRestaurantCart} from '@states/reducers/cartSlice.ts';
-import Icon from '@components/global/Icon.tsx';
-import {RFValue} from 'react-native-responsive-fontsize';
-import {Colors} from '@unistyles/Constants.tsx';
-import RollingBar from 'react-native-rolling-bar';
-import CustomText from '@components/global/CustomText.tsx';
-import LinearGradient from 'react-native-linear-gradient';
 import LottieView from 'lottie-react-native';
-import {navigate} from '@utils/NavigationUtils.ts';
-import screens from '@utils/screens.ts';
+import {RFValue} from 'react-native-responsive-fontsize';
+import RollingBar from 'react-native-rolling-bar';
 import AnimatedNumbers from 'react-native-animated-numbers';
+import {useStyles} from 'react-native-unistyles';
+import {SearchAndOffersProps} from '@/types';
+import screens from '@/utils/screens.ts';
+import {searchStyles} from '@/unistyles/restaurantStyles.tsx';
+import {useAppSelector} from '@/states/reduxHook.ts';
+import {selectRestaurantCart} from '@/states/reducers/cartSlice.ts';
+import Icon from '@/components/global/Icon.tsx';
+import {Colors} from '@/unistyles/Constants.tsx';
+import CustomText from '@/components/global/CustomText.tsx';
+import LinearGradient from 'react-native-linear-gradient';
+import {navigate} from '@/utils/NavigationUtils.ts';
+import Confetti2Lottie from '@/assets/animations/confetti_2.json';
 
 const searchItems: string[] = ['Search "chai samosa"', 'Search "Cake"', 'Search "icecream"', 'Search "pizza"', 'Search "Biriyani"'];
 
@@ -84,7 +85,7 @@ function SearchAndOffers({restaurant}: SearchAndOffersProps) {
             hasShownCongrats.current = false;
             scaleAnimation.setValue(1);
         }
-    }, [summary.totalItems, summary.totalPrice]);
+    }, [scaleAnimation, showConfetti, slideAnimation, summary.totalItems, summary.totalPrice]);
 
     return (
         <View style={[styles.container, {shadowOpacity: 0.2, shadowColor: 'black'}]}>
@@ -114,7 +115,7 @@ function SearchAndOffers({restaurant}: SearchAndOffersProps) {
                 <Animated.View style={{transform: [{translateY}]}}>
                     <LinearGradient colors={showConfetti ? ['#3A7BD5', '#3A6073'] : ['#E9425E', '#9145B6']} start={{x: 1, y: 0}} end={{x: 1, y: 1.2}} style={styles.offerContainer}>
                         <View style={{padding: 15, paddingBottom: Platform.OS === 'ios' ? 25 : 15, paddingHorizontal: 20}}>
-                            {showConfetti && <LottieView source={require('@assets/animations/confetti_2.json')} style={styles.confetti} autoPlay={true} loop={false} onAnimationFinish={() => setShowConfetti(false)} />}
+                            {showConfetti && <LottieView source={Confetti2Lottie} style={styles.confetti} autoPlay={true} loop={false} onAnimationFinish={() => setShowConfetti(false)} />}
                             <TouchableOpacity style={styles.offerContent} activeOpacity={0.8} onPress={async () => await navigate(screens.checkoutScreen, {restaurant})}>
                                 <AnimatedNumbers includeComma={false} animationDuration={300} animateToNumber={summary?.totalItems} fontStyle={styles.animatedCount} />
                                 <CustomText style={styles.offerText}>{` item${summary.totalItems > 1 ? 's' : ''}`} added</CustomText>

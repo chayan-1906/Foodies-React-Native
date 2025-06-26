@@ -1,20 +1,21 @@
 import {useEffect, useState} from 'react';
 import {Image, Platform, ScrollView, StyleSheet, View} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {Colors} from '@unistyles/Constants.tsx';
 import {useRoute} from '@react-navigation/native';
-import {IRestaurantItem} from '../../types';
-import {useAppSelector} from '@states/reduxHook.ts';
-import {selectRestaurantCart} from '@states/reducers/cartSlice.ts';
-import {goBack, replace} from '@utils/NavigationUtils.ts';
-import screens from '@utils/screens.ts';
-import CheckoutHeader from '@components/checkout/CheckoutHeader.tsx';
-import OrderList from '@components/checkout/OrderList.tsx';
-import CustomText from '@components/global/CustomText.tsx';
-import Icon from '@components/global/Icon.tsx';
+import {IRestaurantItem} from '@/types';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {Colors} from '@/unistyles/Constants.tsx';
+import screens from '@/utils/screens.ts';
+import Icon from '@/components/global/Icon.tsx';
+import {useAppSelector} from '@/states/reduxHook.ts';
+import {selectRestaurantCart} from '@/states/reducers/cartSlice.ts';
+import {goBack, replace} from '@/utils/NavigationUtils.ts';
+import CheckoutHeader from '@/components/checkout/CheckoutHeader.tsx';
+import OrderList from '@/components/checkout/OrderList.tsx';
+import CustomText from '@/components/global/CustomText.tsx';
 import {RFValue} from 'react-native-responsive-fontsize';
-import BillDetails from '@components/checkout/BillDetails.tsx';
-import ArrowButton from '@components/checkout/ArrowButton.tsx';
+import BillDetails from '@/components/checkout/BillDetails.tsx';
+import ArrowButton from '@/components/checkout/ArrowButton.tsx';
+import CouponIcon from '@/assets/icons/coupon.png';
 
 function CheckoutScreen() {
     const route = useRoute() as any;
@@ -42,21 +43,19 @@ function CheckoutScreen() {
 
     return (
         <View style={styles.container}>
-            <View style={{height: Platform.OS === 'android' ? insets.top : 0}} />
-            <CheckoutHeader title={restaurant?.name} />
+            <View style={{height: Platform.OS === 'android' ? insets.top : 0}}/>
+            <CheckoutHeader title={restaurant?.name}/>
             <ScrollView contentContainerStyle={styles.scrollContainer}>
-                <OrderList restaurant={restaurant} cartItems={cart} totalItems={totalItems} />
+                <OrderList restaurant={restaurant} cartItems={cart} totalItems={totalItems}/>
                 <View style={styles.flexRowBetween}>
                     <View style={styles.flexRow}>
-                        <Image source={require('@assets/icons/coupon.png')} style={{height: 25, width: 25}} />
-                        <CustomText variant={'h6'} fontFamily={'Okra-Medium'}>
-                            View all restaurant coupons
-                        </CustomText>
+                        <Image source={CouponIcon} style={{height: 25, width: 25}}/>
+                        <CustomText variant={'h6'} fontFamily={'Okra-Medium'}>View all restaurant coupons</CustomText>
                     </View>
-                    <Icon size={RFValue(16)} name={'chevron-right'} iconFamily={'MaterialCommunityIcons'} color={Colors.text} />
+                    <Icon size={RFValue(16)} name={'chevron-right'} iconFamily={'MaterialCommunityIcons'} color={Colors.text}/>
                 </View>
 
-                <BillDetails totalItemPrice={totalItemPrice} />
+                <BillDetails totalItemPrice={totalItemPrice}/>
 
                 <View style={styles.flexRowBetween}>
                     <View>
@@ -80,7 +79,7 @@ function CheckoutScreen() {
                     </CustomText>
                 </View>
                 <View style={{width: '70%'}}>
-                    <ArrowButton title={'Place Order'} onPress={handlePlaceOrder} isLoading={isLoading} price={totalItemPrice} />
+                    <ArrowButton title={'Place Order'} onPress={handlePlaceOrder} isLoading={isLoading} price={totalItemPrice}/>
                 </View>
             </View>
         </View>

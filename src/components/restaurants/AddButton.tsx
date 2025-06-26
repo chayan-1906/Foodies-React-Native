@@ -1,20 +1,20 @@
 import {memo, useCallback, useRef} from 'react';
 import {TouchableOpacity, View} from 'react-native';
-import {useStyles} from 'react-native-unistyles';
-import {foodStyles} from '@unistyles/foodStyles.tsx';
-import CustomText from '@components/global/CustomText.tsx';
-import {Colors, Fonts} from '@unistyles/Constants.tsx';
-import Icon from '@components/global/Icon.tsx';
-import ScalePress from '@components/ui/ScalePress.tsx';
 import {RFValue} from 'react-native-responsive-fontsize';
 import AnimatedNumbers from 'react-native-animated-numbers';
-import {ICartItem, IFoodItem, IRestaurantItem} from '../../types';
-import {useAppDispatch, useAppSelector} from '@states/reduxHook.ts';
-import {addItemToCart, removeCustomizableItem, removeItemFromCart, selectRestaurantCartItem} from '@states/reducers/cartSlice.ts';
-import CustomModal from '@components/modal/CustomModal.tsx';
-import AddFoodModal from '@components/modal/AddFoodModal.tsx';
-import RepeatFoodModal from '@components/modal/RepeatFoodModal.tsx';
-import RemoveFoodModal from '@components/modal/RemoveFoodModal.tsx';
+import {ICartItem, IFoodItem, IRestaurantItem} from '@/types';
+import Icon from '@/components/global/Icon.tsx';
+import {useStyles} from 'react-native-unistyles';
+import {foodStyles} from '@/unistyles/foodStyles.tsx';
+import CustomText from '@/components/global/CustomText.tsx';
+import {Colors, Fonts} from '@/unistyles/Constants.tsx';
+import ScalePress from '@/components/ui/ScalePress.tsx';
+import {useAppDispatch, useAppSelector} from '@/states/reduxHook.ts';
+import CustomModal from '@/components/modal/CustomModal.tsx';
+import AddFoodModal from '@/components/modal/AddFoodModal.tsx';
+import RepeatFoodModal from '@/components/modal/RepeatFoodModal.tsx';
+import RemoveFoodModal from '@/components/modal/RemoveFoodModal.tsx';
+import {addItemToCart, removeCustomizableItem, removeItemFromCart, selectRestaurantCartItem} from '@/states/reducers/cartSlice.ts';
 
 function AddButton({item, restaurant}: {item: IFoodItem | ICartItem; restaurant: IRestaurantItem}) {
     const dispatch = useAppDispatch();
