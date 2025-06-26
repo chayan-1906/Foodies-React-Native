@@ -1,6 +1,5 @@
-import {TouchableOpacity, View} from 'react-native';
 import {memo, useCallback, useRef} from 'react';
-import {ICartItem, IFoodItem, IRestaurantItem} from '../../types';
+import {TouchableOpacity, View} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
 import {foodStyles} from '@unistyles/foodStyles.tsx';
 import CustomText from '@components/global/CustomText.tsx';
@@ -9,6 +8,7 @@ import Icon from '@components/global/Icon.tsx';
 import ScalePress from '@components/ui/ScalePress.tsx';
 import {RFValue} from 'react-native-responsive-fontsize';
 import AnimatedNumbers from 'react-native-animated-numbers';
+import {ICartItem, IFoodItem, IRestaurantItem} from '../../types';
 import {useAppDispatch, useAppSelector} from '@states/reduxHook.ts';
 import {addItemToCart, removeCustomizableItem, removeItemFromCart, selectRestaurantCartItem} from '@states/reducers/cartSlice.ts';
 import CustomModal from '@components/modal/CustomModal.tsx';

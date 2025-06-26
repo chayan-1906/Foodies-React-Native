@@ -100,21 +100,23 @@ function EditFoodModal({item, customization, restaurant, onClose}: IEditFoodModa
     };
 
     useEffect(() => {
-        const defaultSelectedOption: Record<string, number> = {};
-        customization.customizationOptions?.forEach((customizationOption: any) => {
-            const itemCustomization = item?.customizationOptions.find((option: any) => option.type === customizationOption.type);
+        const existingOptions: Record<string, number> = {};
+        let initialPrice = item.price || 0;
 
-            if (itemCustomization) {
-                const selectedIndex = itemCustomization.options.findIndex((option: any) => option?.name === customizationOption.selectedIndex?.name);
-                if (selectedIndex !== 1) {
-                    defaultSelectedOption[customizationOption.type] = selectedIndex;
+        customization.customizationOptions?.forEach((customizationOption: any) => {
+            const customizationType = item.customizationOptions?.find((option: any) => option.type === customizationOption.type);
+            if (customizationType) {
+                const optionIndex = customizationType.options.findIndex((opt: any) => opt.name === customizationOption.selectedOption.name);
+                if (optionIndex !== -1) {
+                    existingOptions[customizationOption.type] = optionIndex;
+                    initialPrice += customizationOption.selectedOption.price || 0;
                 }
             }
         });
 
         setData(prevData => ({
             ...prevData,
-            selectedOption: defaultSelectedOption,
+            selectedOption: existingOptions,
         }));
     }, [customization, item]);
 
