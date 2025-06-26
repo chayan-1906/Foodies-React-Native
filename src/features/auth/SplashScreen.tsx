@@ -1,4 +1,4 @@
-import {Image, Platform, StatusBar, View} from 'react-native';
+import {Image, StatusBar, View} from 'react-native';
 import Animated, {FadeInDown} from 'react-native-reanimated';
 import {useStyles} from 'react-native-unistyles';
 import {splashStyles} from '@unistyles/authStyles.tsx';
@@ -21,7 +21,7 @@ function SplashScreen() {
 
     return (
         <View style={styles.container}>
-            <StatusBar hidden={Platform.OS !== 'android'} />
+            <StatusBar hidden={true} />
             <Image source={require('@assets/images/logo_t.png')} style={styles.logoImage} />
             <Animated.View style={styles.animatedContainer} entering={FadeInDown.delay(400).duration(800)}>
                 <Image source={require('@assets/images/tree.png')} style={styles.treeImage} />

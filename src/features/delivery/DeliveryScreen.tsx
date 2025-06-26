@@ -1,4 +1,4 @@
-import {Platform, View} from 'react-native';
+import {Platform, StatusBar, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useStyles} from 'react-native-unistyles';
 import {homeStyles} from '@unistyles/homeStyles.tsx';
@@ -7,6 +7,7 @@ import Animated, {Extrapolate, interpolate, useAnimatedStyle} from 'react-native
 import MainList from '@components/list/MainList.tsx';
 import Graphics from '@components/home/Graphics.tsx';
 import HeaderSection from '@components/home/HeaderSection.tsx';
+import {Colors} from '@unistyles/Constants.tsx';
 
 function DeliveryScreen() {
     const insets = useSafeAreaInsets();
@@ -36,6 +37,7 @@ function DeliveryScreen() {
 
     return (
         <View style={styles.container}>
+            <StatusBar barStyle={Platform.OS === 'ios' ? 'dark-content' : 'light-content'} backgroundColor={Platform.OS === 'android' ? Colors.primary : undefined} />
             <View style={{height: Platform.OS === 'android' ? insets.top : 0}} />
 
             <Animated.View style={moveUpStyle}>

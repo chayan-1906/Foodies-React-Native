@@ -9,7 +9,7 @@ import {useCallback, useEffect, useRef, useState} from 'react';
 import {resetAndNavigate} from '@utils/NavigationUtils.ts';
 import SocialLogin from '@components/ui/SocialLogin.tsx';
 import useKeyboardOffsetHeight from '@utils/useKeyboardOffsetHeight.ts';
-import {Fonts} from '@unistyles/Constants.tsx';
+import {Colors, Fonts} from '@unistyles/Constants.tsx';
 
 function LoginScreen() {
     const animatedValue = useRef(new Animated.Value(0)).current;
@@ -45,7 +45,7 @@ function LoginScreen() {
 
     return (
         <View style={styles.container}>
-            <StatusBar hidden={Platform.OS !== 'android'} />
+            <StatusBar hidden={Platform.OS !== 'android'} barStyle={Platform.OS === 'ios' ? 'dark-content' : 'light-content'} backgroundColor={Platform.OS === 'android' ? Colors.primary : undefined} />
             <Image source={require('@assets/images/login.png')} style={styles.cover} />
 
             <Animated.ScrollView bounces={false} keyboardShouldPersistTaps={'handled'} keyboardDismissMode={'on-drag'} contentContainerStyle={styles.bottomContainer} style={{transform: [{translateY: animatedValue}]}}>
