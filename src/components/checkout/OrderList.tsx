@@ -4,7 +4,7 @@ import {Colors} from '@/unistyles/Constants.tsx';
 import CustomText from '@/components/global/CustomText.tsx';
 import MiniFoodCard from '@/components/restaurants/MiniFoodCard.tsx';
 import NonCustomizableCard from '@/components/checkout/NonCustomizableCard.tsx';
-import ClockIcon from '@/assets/icons/clock.png';
+import ClockIcon from '../../../assets/icons/clock.png';
 
 function OrderList({restaurant, cartItems, totalItems}: {restaurant: IRestaurantItem; cartItems: any; totalItems: number}) {
     return (

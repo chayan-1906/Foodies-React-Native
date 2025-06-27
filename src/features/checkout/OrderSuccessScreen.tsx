@@ -9,7 +9,7 @@ import screens from '@/utils/screens.ts';
 import CustomText from '@/components/global/CustomText.tsx';
 import {clearRestaurantCart} from '@/states/reducers/cartSlice.ts';
 import {Colors, screenWidth} from '@/unistyles/Constants.tsx';
-import ConfirmLottie from '@/assets/animations/confirm.json';
+import ConfirmLottie from '../../../assets/animations/confirm.json';
 
 function OrderSuccessScreen() {
     const route = useRoute() as any;

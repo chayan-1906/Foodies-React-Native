@@ -9,8 +9,8 @@ import CustomText from '@/components/global/CustomText.tsx';
 import {Colors, Fonts} from '@/unistyles/Constants.tsx';
 import CustomGradient from '@/components/global/CustomGradient.tsx';
 import {recommendedListData} from '@/utils/dummyData.ts';
-import ClockIcon from '@/assets/icons/clock.png';
-import BookmarkIcon from '@/assets/icons/bookmark.png';
+import ClockIcon from '../../../assets/icons/clock.png';
+import BookmarkIcon from '../../../assets/icons/bookmark.png';
 
 function RecommendedList() {
     const {styles} = useStyles(cardStyles);

@@ -15,7 +15,7 @@ import CustomText from '@/components/global/CustomText.tsx';
 import {RFValue} from 'react-native-responsive-fontsize';
 import BillDetails from '@/components/checkout/BillDetails.tsx';
 import ArrowButton from '@/components/checkout/ArrowButton.tsx';
-import CouponIcon from '@/assets/icons/coupon.png';
+import CouponIcon from '../../../assets/icons/coupon.png';
 
 function CheckoutScreen() {
     const route = useRoute() as any;

@@ -9,8 +9,8 @@ import {addItemToCart, removeItemFromCart} from '@/states/reducers/cartSlice.ts'
 import CustomText from '@/components/global/CustomText.tsx';
 import Icon from '@/components/global/Icon.tsx';
 import {Colors} from '@/unistyles/Constants.tsx';
-import VegIcon from '@/assets/icons/veg.png';
-import NonVegIcon from '@/assets/icons/non_veg.png';
+import VegIcon from '../../../assets/icons/veg.png';
+import NonVegIcon from '../../../assets/icons/non_veg.png';
 
 function NonCustomizableCard({item, restaurant}: {item: any; restaurant: any}) {
     const dispatch = useAppDispatch();

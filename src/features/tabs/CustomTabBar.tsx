@@ -10,7 +10,7 @@ import ScalePress from '@/components/ui/ScalePress.tsx';
 import {Colors} from '@/unistyles/Constants.tsx';
 import {useSharedState} from '@/features/tabs/SharedContext.tsx';
 import {DeliveryTabIcon, DiningTabIcon, LiveTabIcon, ReorderTabIcon} from '@/features/tabs/TabIcon.tsx';
-import GroceryImage from '@/assets/icons/grocery.png';
+import GroceryImage from '../../../assets/icons/grocery.png';
 
 function CustomTabBar({state, descriptors, navigation}: ITabBarProps) {
     const {scrollY} = useSharedState();

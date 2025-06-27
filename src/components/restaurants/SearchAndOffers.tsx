@@ -15,7 +15,7 @@ import {Colors} from '@/unistyles/Constants.tsx';
 import CustomText from '@/components/global/CustomText.tsx';
 import LinearGradient from 'react-native-linear-gradient';
 import {navigate} from '@/utils/NavigationUtils.ts';
-import Confetti2Lottie from '@/assets/animations/confetti_2.json';
+import Confetti2Lottie from '../../../assets/animations/confetti_2.json';
 
 const searchItems: string[] = ['Search "chai samosa"', 'Search "Cake"', 'Search "icecream"', 'Search "pizza"', 'Search "Biriyani"'];
 

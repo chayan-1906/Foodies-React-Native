@@ -9,8 +9,8 @@ import {Colors, Fonts} from '@/unistyles/Constants.tsx';
 import CustomText from '@/components/global/CustomText.tsx';
 import {useAppDispatch, useAppSelector} from '@/states/reduxHook.ts';
 import {setVegMode} from '@/states/reducers/userSlice.ts';
-import SwitchOnIcon from '@/assets/icons/switch_on.png';
-import SwitchOffIcon from '@/assets/icons/switch_off.png';
+import SwitchOnIcon from '../../../assets/icons/switch_on.png';
+import SwitchOffIcon from '../../../assets/icons/switch_off.png';
 
 const searchItems: string[] = ['Search "Chai Samosa"', 'Search "Cake"', 'Search "Ice Cream"', 'Search "pizza"', 'Search "Biriyani"'];
 

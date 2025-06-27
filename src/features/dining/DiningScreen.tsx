@@ -1,7 +1,7 @@
 import {Image, View} from 'react-native';
 import {useStyles} from 'react-native-unistyles';
 import {emptyStyles} from '@/unistyles/emptyStyles.tsx';
-import ComingSoonImage from '@/assets/images/coming_soon.jpg';
+import ComingSoonImage from '../../../assets/images/coming_soon.jpg';
 
 function DiningScreen() {
     const {styles} = useStyles(emptyStyles);

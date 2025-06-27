@@ -10,7 +10,7 @@ import PhoneInput from '@/components/ui/PhoneInput.tsx';
 import {resetAndNavigate} from '@/utils/NavigationUtils.ts';
 import SocialLogin from '@/components/ui/SocialLogin.tsx';
 import useKeyboardOffsetHeight from '@/utils/useKeyboardOffsetHeight.ts';
-import LoginImage from '@/assets/images/login.png'
+import LoginImage from '../../../assets/images/login.png'
 
 function LoginScreen() {
     const animatedValue = useRef(new Animated.Value(0)).current;

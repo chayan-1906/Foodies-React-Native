@@ -7,8 +7,8 @@ import {Fonts} from '@/unistyles/Constants.tsx';
 import {splashStyles} from '@/unistyles/authStyles.tsx';
 import CustomText from '@/components/global/CustomText.tsx';
 import {resetAndNavigate} from '@/utils/NavigationUtils.ts';
-import LogoTImage from '@/assets/images/logo_t.png';
-import TreeImage from '@/assets/images/tree.png';
+import LogoTImage from '../../../assets/images/logo_t.png';
+import TreeImage from '../../../assets/images/tree.png';
 
 function SplashScreen() {
     const {styles} = useStyles(splashStyles);

@@ -2,7 +2,7 @@ import {View} from 'react-native';
 import LottieView from 'lottie-react-native';
 import {useStyles} from 'react-native-unistyles';
 import {homeStyles} from '@/unistyles/homeStyles.tsx';
-import EventLottie from '@/assets/animations/event.json';
+import EventLottie from '../../../assets/animations/event.json';
 
 function Graphics() {
     const {styles} = useStyles(homeStyles);

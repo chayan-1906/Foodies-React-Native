@@ -12,8 +12,8 @@ import CustomModal from '@/components/modal/CustomModal.tsx';
 import EditFoodModal from '@/components/modal/EditFoodModal.tsx';
 import {useAppDispatch, useAppSelector} from '@/states/reduxHook.ts';
 import {addCustomizableItem, removeCustomizableItem, selectRestaurantCartItem} from '@/states/reducers/cartSlice.ts';
-import VegIcon from '@/assets/icons/veg.png';
-import NonVegIcon from '@/assets/icons/non_veg.png';
+import VegIcon from '../../../assets/icons/veg.png';
+import NonVegIcon from '../../../assets/icons/non_veg.png';
 
 function MiniFoodCard({item, customization, restaurant}: IMiniFoodCardProps) {
     const {styles} = useStyles(modalStyles);

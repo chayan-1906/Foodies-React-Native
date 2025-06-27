@@ -7,8 +7,8 @@ import CustomText from "@/components/global/CustomText.tsx";
 import {Colors, Fonts} from "@/unistyles/Constants.tsx";
 import Icon from "@/components/global/Icon.tsx";
 import AddButton from "@/components/restaurants/AddButton.tsx";
-import VegIcon from '@/assets/icons/veg.png';
-import NonVegIcon from '@/assets/icons/non_veg.png';
+import VegIcon from '../../../assets/icons/veg.png';
+import NonVegIcon from '../../../assets/icons/non_veg.png';
 
 function FoodCard({food, restaurant}: { food: IFoodItem; restaurant: IRestaurantItem }) {
     const {styles} = useStyles(foodStyles);
