@@ -107,7 +107,7 @@ export const restaurantHeaderStyles = createStyleSheet(({device, colors, border}
     },
     scrollContainer: {
         backgroundColor: colors.background,
-        paddingBottom: 100,
+        paddingBottom: 40,
     },
 }));
 
