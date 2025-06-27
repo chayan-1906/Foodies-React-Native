@@ -22,7 +22,7 @@ function MiniFoodCard({item, customization, restaurant}: IMiniFoodCardProps) {
     const modalRef = useRef<any>(null);
 
     const openEditModal = () => {
-        modalRef?.current?.openModal(<EditFoodModal item={item as ICustomization} customization={customization as ICustomization} restaurant={restaurant} onClose={() => modalRef?.current?.closeModal()} />);
+        modalRef?.current?.openModal(<EditFoodModal item={item as ICustomization} customization={customization as ICustomization} restaurant={restaurant} onClose={() => modalRef?.current?.closeModal()}/>);
     };
 
     const addCartHandler = (customization: any) => {
@@ -51,30 +51,26 @@ function MiniFoodCard({item, customization, restaurant}: IMiniFoodCardProps) {
 
     return (
         <>
-            <CustomModal ref={modalRef} />
+            <CustomModal ref={modalRef}/>
             <View style={styles.flexRowItemBaseline}>
                 <View style={styles.flexRowGapBaseline}>
-                    <Image source={cartItem?.isVeg ? VegIcon : NonVegIcon} style={styles.vegIcon} />
+                    <Image source={cartItem?.isVeg ? VegIcon : NonVegIcon} style={styles.vegIcon}/>
 
                     <View>
                         <CustomText fontFamily={Fonts.Bold}>{cartItem?.name}</CustomText>
-                        <CustomText fontFamily={Fonts.Medium}>{customization?.price}</CustomText>
-                        <CustomText fontFamily={Fonts.Medium} style={styles.selectedOptions}>
+                        <CustomText fontFamily={Fonts.Medium}>₹{customization?.price}</CustomText>
+                        <View style={{flexDirection: 'row', gap: 2}}>
                             {customization?.customizationOptions?.map((i: any, idx: number) => {
                                 return (
-                                    <CustomText key={idx} fontFamily={Fonts.Medium} fontSize={9}>
-                                        {i?.selectedOption?.name}
-                                    </CustomText>
+                                    <CustomText key={idx} fontFamily={Fonts.Medium} fontSize={8} style={{opacity: 0.6}}>{i?.selectedOption?.name}</CustomText>
                                 );
                             })}
-                        </CustomText>
+                        </View>
 
                         <TouchableOpacity style={styles.flexRow} onPress={openEditModal}>
-                            <CustomText fontFamily={Fonts.Medium} color={'#444'} fontSize={9}>
-                                Edit
-                            </CustomText>
+                            <CustomText fontFamily={Fonts.Medium} color={'#444'} fontSize={9}>Edit</CustomText>
                             <View style={{bottom: -1}}>
-                                <Icon size={16} name={'arrow-right'} iconFamily={'MaterialIcons'} color={'#888'} />
+                                <Icon size={16} name={'arrow-right'} iconFamily={'MaterialIcons'} color={'#888'}/>
                             </View>
                         </TouchableOpacity>
                     </View>
@@ -83,11 +79,11 @@ function MiniFoodCard({item, customization, restaurant}: IMiniFoodCardProps) {
                 <View style={styles.cartOperationContainer}>
                     <View style={styles.miniAddButtonContainer}>
                         <TouchableOpacity onPress={() => removeCartHandler(customization)}>
-                            <Icon size={RFValue(10)} name={'minus-thick'} iconFamily={'MaterialCommunityIcons'} color={Colors.active} />
+                            <Icon size={RFValue(10)} name={'minus-thick'} iconFamily={'MaterialCommunityIcons'} color={Colors.active}/>
                         </TouchableOpacity>
-                        <AnimatedNumbers includeComma={false} animationDuration={300} fontStyle={styles.miniAnimatedCount} animateToNumber={customization?.quantity} />
+                        <AnimatedNumbers includeComma={false} animationDuration={300} fontStyle={styles.miniAnimatedCount} animateToNumber={customization?.quantity}/>
                         <TouchableOpacity onPress={() => addCartHandler(customization)}>
-                            <Icon size={RFValue(10)} name={'plus-thick'} iconFamily={'MaterialCommunityIcons'} color={Colors.active} />
+                            <Icon size={RFValue(10)} name={'plus-thick'} iconFamily={'MaterialCommunityIcons'} color={Colors.active}/>
                         </TouchableOpacity>
                     </View>
                     <CustomText fontFamily={Fonts.Medium}>₹{customization.cartPrice}</CustomText>

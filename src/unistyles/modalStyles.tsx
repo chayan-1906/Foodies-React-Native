@@ -1,6 +1,7 @@
 import {Platform} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {createStyleSheet} from 'react-native-unistyles';
+import {Colors} from "@/unistyles/Constants.tsx";
 
 export const modalStyles = createStyleSheet(({device, border, colors}) => ({
     headerContainer: {
@@ -139,10 +140,6 @@ export const modalStyles = createStyleSheet(({device, border, colors}) => ({
         justifyContent: 'center',
         alignItems: 'center',
         height: 45,
-    },
-    selectedOptions: {
-        opacity: 0.6,
-        marginTop: 2,
     },
     cartOperationContainer: {
         width: '25%',
