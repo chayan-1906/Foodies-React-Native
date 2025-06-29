@@ -26,7 +26,7 @@ function RestaurantCard({restaurant}: {restaurant: IRestaurantItem}) {
                             <CustomText variant={'h5'} style={styles.name} numberOfLines={1} fontFamily={Fonts.Bold}>
                                 {restaurant.name}
                             </CustomText>
-                            <CustomText>
+                            <CustomText fontFamily={Fonts.Medium}>
                                 {restaurant.time} • {restaurant.distance} • ₹150 for one
                             </CustomText>
                         </View>
@@ -36,7 +36,7 @@ function RestaurantCard({restaurant}: {restaurant: IRestaurantItem}) {
 
                     <DottedLine />
                     {restaurant.discount && (
-                        <CustomText>
+                        <CustomText fontFamily={Fonts.Medium}>
                             {restaurant.discount} {restaurant.discountAmount && `• ${restaurant.discountAmount}`}
                         </CustomText>
                     )}

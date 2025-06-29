@@ -1,50 +1,189 @@
-# Welcome to your Expo app 👋
+# 🍕 Foodies - Food Delivery App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+[![React Native](https://img.shields.io/badge/React%20Native-0.79.4-blue.svg)](https://reactnative.dev/)
+[![Expo](https://img.shields.io/badge/Expo-53.0.12-000000.svg)](https://expo.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue.svg)](https://www.typescriptlang.org/)
+[![Redux](https://img.shields.io/badge/Redux%20Toolkit-2.8.2-purple.svg)](https://redux-toolkit.js.org/)
 
-## Get started
+> A modern, feature-rich food delivery application built with React Native and Expo, featuring smooth animations, intuitive UI, and production-ready architecture.
 
-1. Install dependencies
+## ✨ Features
 
+- 🎨 **Beautiful UI/UX** - Custom animations with Lottie and Reanimated
+- 🍔 **Food Ordering** - Browse restaurants, add items to cart, place orders
+- 🔐 **Authentication** - Secure user login and registration
+- 📱 **Cross-Platform** - iOS and Android support with native performance
+- 🌗 **Theme Support** - Light and dark mode compatibility
+- 📍 **Location Services** - Real-time location tracking and delivery updates
+- 🔄 **State Management** - Redux Toolkit with persistence
+- 🎭 **Smooth Animations** - 60fps animations using Reanimated 3
+- 📦 **Offline Support** - Redux Persist for offline functionality
+- 🎯 **TypeScript** - Full type safety and better developer experience
+
+## 📱 Screenshots
+
+<div>
+  <img src="https://github.com/user-attachments/assets/7c8f7888-23b2-4553-9c5d-18bd38b31961" width="200" alt="Splash Screen" />
+  <img src="https://github.com/user-attachments/assets/8254578c-eb48-4e42-be01-d0ab6aa032de" width="200" alt="Login Screen" />
+  <img src="https://github.com/user-attachments/assets/f58d2004-17e6-4a16-a900-3508a62ddd0d" width="200" alt="Home Screen" />
+  <img src="https://github.com/user-attachments/assets/35160987-80d2-422f-9756-66b4c2e25a25" width="200" alt="Restaurant List - I" />
+  <img src="https://github.com/user-attachments/assets/ec2bc537-ab74-4733-b78f-e12e28d449fe" width="200" alt="Restaurant List - II" />
+  <img src="https://github.com/user-attachments/assets/2673ac83-bcaf-49e6-9395-8503c3740658" width="200" alt="Restaurant Menu" />
+  <img src="https://github.com/user-attachments/assets/9f8dc5df-be2f-4294-90b4-1417333144ce" width="200" alt="Repeat Customization" />
+  <img src="https://github.com/user-attachments/assets/e7a32f3f-0e45-4957-b553-b3624789e864" width="200" alt="Modify Customization" />
+  <img src="https://github.com/user-attachments/assets/202d2d45-e9fa-428e-9e41-072f34340275" width="200" alt="Multi Cart" />
+  <img src="https://github.com/user-attachments/assets/64e80c8e-335b-468d-944d-4f3b55d2c15b" width="200" alt="Cart" />
+  <img src="https://github.com/user-attachments/assets/90e7f93a-2d46-4c26-a4c9-a4fc7bbab819" width="200" alt="Order Successful" />
+</div>
+
+*Add more screenshots showcasing key features*
+
+## 🎥 Demo Video
+
+Demo Video
+https://github.com/user-attachments/assets/c235e0b4-683e-4a58-a4ce-56ab29bf852e
+
+*Click to watch the full demo*
+
+## 🏗️ Tech Stack
+
+### 📱 Frontend
+
+- ⚛️ **React Native** 0.79.4 - Mobile app framework
+- 🚀 **Expo** 53.0.12 - Development platform and tools
+- 📘 **TypeScript** 5.8.3 - Type safety and better DX
+- 🗺️ **React Navigation** 7.x - Navigation library
+
+### 🔄 State Management
+
+- 🏪 **Redux Toolkit** 2.8.2 - State management
+- 💾 **Redux Persist** 6.0.0 - State persistence
+- 🔗 **React Redux** 9.2.0 - React bindings for Redux
+
+### 🎨 UI & Styling
+
+- 💅 **React Native Unistyles** 2.43.0 - Styling system
+- 🌈 **React Native Linear Gradient** 2.8.3 - Gradient effects
+- 🫧 **Expo Blur** 14.1.5 - Blur effects
+- 🎯 **React Native Vector Icons** 10.2.0 - Icon library
+- 🎬 **Lottie React Native** 7.2.2 - Animations
+
+### 🧭 Navigation & Gestures
+
+- 🗺️ **React Navigation** 7.x - Screen navigation
+- 👆 **React Native Gesture Handler** 2.26.0 - Touch gestures
+- ✨ **React Native Reanimated** 3.18.0 - Smooth animations
+
+### 🔧 Utilities
+
+- ⚡ **React Native MMKV** 3.3.0 - Fast storage
+- 🆔 **UUID** 11.1.0 - Unique identifiers
+- 📳 **Expo Haptics** 14.1.4 - Haptic feedback
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (≥18.0.0)
+- npm or yarn
+- Expo CLI
+- iOS Simulator (Mac) or Android Emulator
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/chayan-1906/foodies-expo-prebuild.git
+   cd foodies-expo-prebuild
+   ```
+
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-2. Start the app
-
+3. **iOS Setup** (Mac only)
    ```bash
-   npx expo start
+   npm run pod-install
    ```
 
-In the output, you'll find options to open the app in a
+4. **Start the development server**
+   ```bash
+   npm start
+   ```
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+5. **Run on device/simulator**
+   ```bash
+   # iOS
+   npm run ios
+   
+   # Android
+   npm run android
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 📦 Build for Production
 
-## Get a fresh project
-
-When you're ready, run:
+### Android APK
 
 ```bash
-npm run reset-project
+npm run generate-apk
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### iOS Build
 
-## Learn more
+Use Xcode or EAS Build for iOS production builds.
 
-To learn more about developing your project with Expo, look at the following resources:
+## 🏗️ Project Structure
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```
+src/
+├── components/         # Reusable UI components
+├── features/          # Feature-specific modules
+├── navigation/        # Navigation configuration
+├── states/           # Redux store and slices
+├── types/            # TypeScript type definitions
+├── unistyles/        # Styling system configuration
+└── utils/            # Utility functions and helpers
+```
 
-## Join the community
+## 🎯 Key Highlights
 
-Join our community of developers creating universal apps.
+- **Production Ready**: Pre-built for iOS and Android with optimized performance
+- **Modern Architecture**: Clean code structure with TypeScript and Redux Toolkit
+- **Smooth UX**: 60fps animations and gesture handling
+- **Scalable**: Modular architecture for easy feature additions
+- **Developer Friendly**: ESLint, TypeScript, and hot reload for better DX
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 👨‍💻 Author
+
+**Padmanabha Das**
+
+- GitHub: [@chayan-1906](https://github.com/chayan-1906)
+- LinkedIn: [Padmanabha Das](https://www.linkedin.com/in/padmanabha-das-59bb2019b/)
+- Email: padmanabhadas9647@gmail.com
+
+## 🌟 Show Your Support
+
+If this project helped you, please give it a ⭐️!
+
+## 📱 Connect With Me
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/padmanabha-das-59bb2019b/)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/chayan-1906)
+
+---
+
+<div align="center">
+  <p>Made with ❤️ by Padmanabha Das</p>
+  <p>⭐ Star this repo if you found it helpful!</p>
+</div>
