@@ -36,14 +36,15 @@
   <img src="https://github.com/user-attachments/assets/90e7f93a-2d46-4c26-a4c9-a4fc7bbab819" width="200" alt="Order Successful" />
 </div>
 
-*Add more screenshots showcasing key features*
-
 ## 🎥 Demo Video
 
-Demo Video
-https://github.com/user-attachments/assets/c235e0b4-683e-4a58-a4ce-56ab29bf852e
+<div align="center">
 
-*Click to watch the full demo*
+https://github.com/user-attachments/assets/d534ec86-46b4-4e95-949a-5f1a7dd7e939
+
+*Watch the full app demo showcasing key features*
+
+</div>
 
 ## 🏗️ Tech Stack
 
