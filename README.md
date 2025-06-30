@@ -46,6 +46,12 @@ https://github.com/user-attachments/assets/d534ec86-46b4-4e95-949a-5f1a7dd7e939
 
 </div>
 
+## 📱 Download & Try
+
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen.svg?style=for-the-badge)](https://github.com/chayan-1906/Foodies-React-Native/releases/download/v1.0.0/foodies-expo.apk)
+
+*Download and install the APK to experience the full app on your Android device*
+
 ## 🏗️ Tech Stack
 
 ### 📱 Frontend
@@ -94,8 +100,8 @@ https://github.com/user-attachments/assets/d534ec86-46b4-4e95-949a-5f1a7dd7e939
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/chayan-1906/foodies-expo-prebuild.git
-   cd foodies-expo-prebuild
+   git clone https://github.com/chayan-1906/Foodies-React-Native.git
+   cd Foodies-React-Native
    ```
 
 2. **Install dependencies**
